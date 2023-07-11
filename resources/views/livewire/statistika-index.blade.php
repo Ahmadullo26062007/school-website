@@ -6,15 +6,21 @@
               $c=0;
 
               foreach ($a->teachers as $t){
+                  if($t->degrees){
+
+
                if (count($t->degrees)!==0){
               if($t->degrees[0]->type_id ==1){
                    if($c++ == 1)continue;
               }
                }
-
+                }
               }
-
+              if($c==0){
+                  return 1;
+              }else{
               return $c;
+              }
           }
           function GreatStudents($a)
           {
@@ -28,8 +34,11 @@
                }
 
               }
-
+   if($c==0){
+                  return 1;
+              }else{
               return $c;
+              }
           }
     function ItStudents($a)
           {
@@ -44,11 +53,16 @@
 
               }
 
+                if($c==0){
+                  return 1;
+              }else{
               return $c;
+              }
           }
+
               $r=[];
               foreach(\App\Models\About::all() as $c=>$a){
-                  $r[$a->id]=((int)GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
+                  $r[$a->id]=((int) GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
               }
 
 
