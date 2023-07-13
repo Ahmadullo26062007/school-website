@@ -22,6 +22,7 @@
 
     </section>
 
+
     <!--classes-page end-->
     <!--newsletter-sec end-->
 @endsection

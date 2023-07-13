@@ -106,55 +106,80 @@
 
 
     <div class="row">
-        <div class="col-9">
-            <table>
-                <thead>
-                <tr>
-                    <th>
-                        N
-                    </th>
-                    <th>
-                        Maktab
-                    </th>
-                    <th>
-                        <span>oliy malumotli o`qituvchilar</span>
-                    </th>
-                    <th>
-                        <span>Sertifikatga ega o`quvchilar</span>
-                    </th>
-                    <th>
-                        <span>IT o`quvchilar</span>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
+        <div class="col-12 ">
 
+            <ul class="responsive-table">
+                <li class="table-header li1">
+                    <div class="col col-1">N#</div>
+                    <div class="col col-2">Maktab</div>
+                    <div class="col col-3">oliy malumotli o`qituvchilar</div>
+                    <div class="col col-3">Sertifikatga ega o`quvchilar</div>
+                    <div class="col col-4">IT o`quvchila</div>
+                </li>
                 @foreach($r as $c=>$b)
                     @php
-                    $a=\App\Models\About::find($c);
+                        $a=\App\Models\About::find($c);
                     @endphp
-                    <tr class="text-dark">
-                        <td>{{$c}}</td>
-                        <td>
-                            {{$a->name}}
-                        </td>
-                        <td>
-                            <span>{{GreatTeachers($a)}}</span>
-                        </td>
-                        <td>
-                            <span>{{GreatStudents($a)}}</span>
-                        </td>
-                        <td>
-                            <span>{{ItStudents($a)}}</span>
-                        </td>
-                    </tr>
+                <li class="table-row li1">
+                    <div class="col col-1" data-label="Job Id">{{$c}}</div>
+                    <div class="col col-2" data-label="Customer Name">    {{$a->name}}</div>
+                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a)}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a)}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a)}}</div>
+                </li>
                 @endforeach
-
-
-
-                </tbody>
-            </table>
+            </ul>
         </div>
+
+{{--        <div class="col-9">--}}
+{{--            <table>--}}
+{{--                <thead>--}}
+{{--                <tr>--}}
+{{--                    <th>--}}
+{{--                        N--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        Maktab--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        <span>oliy malumotli o`qituvchilar</span>--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        <span>Sertifikatga ega o`quvchilar</span>--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        <span>IT o`quvchilar</span>--}}
+{{--                    </th>--}}
+{{--                </tr>--}}
+{{--                </thead>--}}
+{{--                <tbody>--}}
+
+{{--                @foreach($r as $c=>$b)--}}
+{{--                    @php--}}
+{{--                    $a=\App\Models\About::find($c);--}}
+{{--                    @endphp--}}
+{{--                    <tr class="text-dark">--}}
+{{--                        <td>{{$c}}</td>--}}
+{{--                        <td>--}}
+{{--                            {{$a->name}}--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <span>{{GreatTeachers($a)}}</span>--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <span>{{GreatStudents($a)}}</span>--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <span>{{ItStudents($a)}}</span>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+{{--                @endforeach--}}
+
+
+
+{{--                </tbody>--}}
+{{--            </table>--}}
+{{--        </div>--}}
 
      </div>
 </div>
