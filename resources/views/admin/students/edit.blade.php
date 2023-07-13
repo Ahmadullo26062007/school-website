@@ -59,6 +59,19 @@
                                         </div>
                                     </div>
                                 @endif
+                                <div class="col-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title ">Rasimi</h5>
+                                        <input type="file" name="image" id="image" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">O'quchini Rasimi</h5>
+                                        <img width="340px" src="{{asset('images/'.$student->image)}}" alt="O'quchini rasimi">
+                                    </div>
+                                </div>
                             </div>
                             <button class="btn btn-primary mt-3" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
