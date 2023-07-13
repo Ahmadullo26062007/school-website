@@ -70,11 +70,11 @@
                   foreach(\App\Models\About::all() as $c=>$a){
                       $r[$a->id]=((int) GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
                   }
-
-
+                 arsort($r);
+                $count=0;
     @endphp
         <div class="row">
-            <div class="col-8">
+            <div class="col-9">
                 <div id="chart">
                 </div>
             </div>
@@ -86,12 +86,13 @@
                         <h3 class="widget-title">Eng yaxshi maktab</h3>
                         <ul>
                             @foreach($r as $c=>$b)
+                                @if($count<4)
                                 @php
                                     $a=\App\Models\About::find($c);
-
+                                if($count++ == 1) continue;
                                 @endphp
-                                <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$c}}</span></li>
-
+                                <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$count}}</span></li>
+                                @endif
                             @endforeach
 
 
