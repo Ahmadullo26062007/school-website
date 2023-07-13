@@ -43,6 +43,10 @@ class About extends Model
         return $this->hasMany(Student::class,'school_id');
     }
 
+    public function users()
+    {
+        return $this->hasMany(User::class,'school_id');
+    }
 
     function GreatTeachers()
     {
