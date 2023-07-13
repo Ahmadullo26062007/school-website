@@ -11,18 +11,14 @@
                         <table class="table table-hover my-0">
                             <tr>
                                 <th>Sinf</th>
-                                <td>{{$classes->class}}</td>
+                                <td>{{$classes->number}}"<sup>{{$classes->name}}</sup>"</td>
                             </tr>
                             <tr>
                                 <th>Sinf raxbari</th>
                                 @php
                                     $teacher=\App\Models\Teacher::find($classes->teacher_id);
                                 @endphp
-                                @if($teacher)
                                 <td>{{$teacher->firstname}} {{$teacher->lastname}}</td>
-                                @else
-                                    <td>Sinf raxbari yoq</td>
-                                @endif
                             </tr>
                             <tr>
                                 <th>Tavsifi</th>

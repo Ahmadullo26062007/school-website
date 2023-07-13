@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class About extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'name',
@@ -42,10 +41,6 @@ class About extends Model
     public function students()
     {
         return $this->hasMany(Student::class,'school_id');
-    }
-    public function users()
-    {
-        return $this->hasMany(User::class,'school_id');
     }
 
 

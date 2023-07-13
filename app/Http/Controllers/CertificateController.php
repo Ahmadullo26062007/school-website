@@ -60,8 +60,8 @@ class CertificateController extends Controller
      */
     public function edit(Certificate $certificate)
     {
-             
-        return view('admin.certificate.edit',compact('certificate'));
+        $students=Student::pluck('fullname','id');
+        return view('admin.certificate.edit',compact('students','certificate'));
     }
 
     /**

@@ -33,11 +33,13 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'class'=>'required',
+           'number'=>'required',
+           'name'=>'required',
            'teacher_id'=>'required',
            'description'=>'required|min:10',
         ],[
-            'class.required'=>'Sinf Nomi kiritilmadi',
+            'number.required'=>'Sinf raqami kiritilmadi',
+            'name.required'=>'Sinf Harifi kiritilmadi',
             'teacher_id.required'=>'Sinf Raxbari tanlanmadi',
 
             'description.required'=>'Sinf Haqida ma\'lumot kiritilmadi',
@@ -48,13 +50,7 @@ class ClassesController extends Controller
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('images'), $image_name);
-        Classes::create([
-            'school_id'=>auth()->user()->school_id,
-            'class'=>$data['class'],
-            'teacher_id'=>$data['teacher_id'],
-            'description'=>$data['description'],
-            'image'=>$data['image'],
-        ]);
+        Classes::create($data);
         return redirect()->route('class.index');
     }
 
@@ -101,22 +97,9 @@ class ClassesController extends Controller
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
             $file->move(public_path('images'), $image_name);
-            $classes->update([
-                'school_id'=>auth()->user()->school_id,
-                'class'=>$data['class'],
-                'teacher_id'=>$data['teacher_id'],
-                'description'=>$data['description'],
-                'image'=>$data['image'],
-            ]);
+            $classes->update($data);
         }else{
-            $classes->update([
-                'school_id'=>auth()->user()->school_id,
-                'class'=>$data['class'],
-                'teacher_id'=>$data['teacher_id'],
-                'description'=>$data['description'],
-            ]);
-
-
+            $classes->update($data);
         }
         return redirect()->route('class.index');
     }

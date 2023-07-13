@@ -156,8 +156,6 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-//        dd($teacher->degrees);
-        $teacher->degrees->delete();
         $teacher->delete();
         return back();
     }

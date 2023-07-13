@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('image_type');
             $table->morphs('parentable');
             $table->timestamps();
-            $table->softDeletes();
-
         });
     }
 

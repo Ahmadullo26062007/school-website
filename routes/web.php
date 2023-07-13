@@ -119,7 +119,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/degree', \App\Http\Controllers\DegreeController::class);
     Route::resource('/students', \App\Http\Controllers\StudentController::class);
     Route::resource('/certificate', \App\Http\Controllers\CertificateController::class);
-    Route::resource('/users', \App\Http\Controllers\UserController::class);
 });
 Route::get('login', function () {
     return view('admin.login');

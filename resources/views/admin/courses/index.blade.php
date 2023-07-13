@@ -36,11 +36,7 @@
                                         @php
                                             $teacher=\App\Models\Teacher::find($course->teacher_id);
                                         @endphp
-                                        @if($teacher)
                                         <td>{{$teacher->firstname}} {{$teacher->lastname}}</td>
-                                        @else
-                                            <td>Kurs ravbari yo'q</td>
-                                        @endif
                                         <td  class="d-none d-xl-table-cell"><img width="100px" src="{{'images/'.$course->image}}"
                                                  alt="{{$course->name}} rasimi"></td>
                                         @php

@@ -8,7 +8,7 @@
     <section class="pager-section">
         <div class="container">
             <div class="pager-content text-center">
-                <div id="chart" style="width: 1240px">
+                <div id="chart">
                 </div>
             </div>
             <!--pager-content end-->
@@ -18,8 +18,8 @@
     <!--pager-section end-->
     <section class="classes-page">
 
-        <!--classes-banner end-->
-        @livewire('statistika-index')
+            <!--classes-banner end-->
+            @livewire('statistika-index')
 
     </section>
 
