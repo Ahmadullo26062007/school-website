@@ -97,14 +97,14 @@ small {
     color: black;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 766px) {
     .table-header {
         display: none;
     }
     .table-row{
 
     }
-    
+
     .col {
 
         flex-basis: 100%;
