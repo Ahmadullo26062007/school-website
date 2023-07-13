@@ -74,38 +74,18 @@
 <div class="container ">
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                 <div id="chart">
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="sidebar">
 
-                    <div class="widget widget-categories">
-                        <h3 class="widget-title">Eng yaxshi maktab</h3>
-                        <ul>
-                            @foreach($r as $c=>$b)
-                                @php
-                                    $a=\App\Models\About::find($c);
-
-                                @endphp
-                                <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$c}}</span></li>
-
-                            @endforeach
-
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
 
 
     <div class="row">
-        <div class="col-10">
+        <div class="col-9">
             <table>
                 <thead>
                 <tr>
@@ -153,6 +133,27 @@
 
                 </tbody>
             </table>
+        </div>
+        <div class="col-lg-3">
+            <div class="sidebar">
+
+                <div class="widget widget-categories">
+                    <h3 class="widget-title">Eng yaxshi maktab</h3>
+                    <ul>
+                        @foreach($r as $c=>$b)
+                            @php
+                                $a=\App\Models\About::find($c);
+
+                            @endphp
+                            <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$c}}</span></li>
+
+                        @endforeach
+
+
+                    </ul>
+                </div>
+
+            </div>
         </div>
      </div>
 </div>
