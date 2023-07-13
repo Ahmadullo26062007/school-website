@@ -12,7 +12,8 @@ class Student extends Model
     protected $fillable=[
         'fullname',
         'class_id',
-        'school_id'
+        'school_id',
+        'image'
     ];
     const TYPES=[
         '0'=>null,

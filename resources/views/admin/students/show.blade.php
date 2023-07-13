@@ -16,19 +16,26 @@
                             <tr>
                                 <th>Sinfi</th>
                                 @php
-                                $class=\App\Models\Classes::find($student->class_id);
+                                    $class=\App\Models\Classes::find($student->class_id);
                                 @endphp
                                 <td>{{$class->class}}</td>
                             </tr>
                             @if(auth()->user()->school_id==null)
-                            <tr>
-                                <th>Maktabi</th>
-                                @php
-                                $school=\App\Models\About::find($student->school_id);
-                                @endphp
-                                <td>{{$school->name}}</td>
-                            </tr>
+                                <tr>
+                                    <th>Maktabi</th>
+                                    @php
+                                        $school=\App\Models\About::find($student->school_id);
+                                    @endphp
+                                    <td>{{$school->name}}</td>
+                                </tr>
                             @endif
+                            <tr>
+                                <th>Rasimi</th>
+
+                                <td><img width="340px" src="{{asset('images/'.$student->image)}}"
+                                         alt="O'quchini rasimi">
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>

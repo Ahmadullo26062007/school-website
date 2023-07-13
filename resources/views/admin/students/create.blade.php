@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-6 ">
 
-                                    
+
                                     <div class="card-body">
                                         <h5 class="card-title mb-3">Ism Familya</h5>
                                         <input type="text" name="fullname" class="form-control"
@@ -32,8 +32,6 @@
                                     </div>
                                 </div>
                                 <div class="col-6 ">
-
-                                    
                                     <div class="card-body">
                                         <h5 class="card-title mb-3">Sinifi</h5>
                                        <select name="class_id" class="form-select">
@@ -45,9 +43,9 @@
                                     </div>
                                 </div>
                                 @if(auth()->user()->school_id==null)
-                                    <div class="col-6 ">
-                                        <h5 class="card-title mb-0">Maktabi</h5>
+                                    <div class="col-6">
                                         <div class="card-body">
+                                        <h5 class="card-title ">Maktabi</h5>
                                             <select class="form-select" name="school_id" id="">
                                                 <option disabled selected>Maktabni tanlang</option>
                                                 @foreach($school as $id=> $s)
@@ -57,6 +55,12 @@
                                         </div>
                                     </div>
                                 @endif
+                                <div class="col-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title ">Rasimi</h5>
+                                        <input type="file" name="image" id="image" class="form-control">
+                                    </div>
+                                </div>
                             </div>
                             <button class="btn btn-primary mt-3" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

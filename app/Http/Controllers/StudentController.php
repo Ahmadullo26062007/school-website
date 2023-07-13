@@ -14,8 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students=Student::with('about')->get();
-        return view('admin.students.index',compact('students'));
+        $students = Student::with('about')->get();
+        return view('admin.students.index', compact('students'));
     }
 
     /**
@@ -23,9 +23,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $school=About::pluck('name','id');
-        $classes=Classes::pluck('class','id');
-        return view('admin.students.create',compact('school','classes'));
+        $school = About::pluck('name', 'id');
+        $classes = Classes::pluck('class', 'id');
+        return view('admin.students.create', compact('school', 'classes'));
     }
 
     /**
@@ -34,7 +34,6 @@ class StudentController extends Controller
     public function store(Request $request)
     {
 
-        dd("Post request", $request->all());
         $request->validate([
             'fullname' => 'required',
             'class_id' => 'required',
@@ -43,21 +42,27 @@ class StudentController extends Controller
             'class_id.required' => 'Sinf kiriting',
         ]);
 
-        dd("Validation done");
-
+        $data = $request->all();
+        $file = $request->file('image');
+        $image_name = uniqid() . $file->getClientOriginalName();
+        $data['image'] = $image_name;
+        $file->move(public_path('images'), $image_name);
         if (auth()->user()->school_id == null) {
             Student::create([
-                'fullname' => $request->firstname,
+                'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
+                'image' => $data['image'],
                 'school_id' => $request->school_id,
             ]);
         } else {
             Student::create([
-                'fullname' => $request->firstname,
+                'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
+                'image' => $data['image'],
                 'school_id' => auth()->user()->school_id,
             ]);
         }
+
         return redirect()->route('students.index');
     }
 
@@ -67,7 +72,7 @@ class StudentController extends Controller
     public function show(Student $student)
     {
 
-        return view('admin.students.show',compact('student'));
+        return view('admin.students.show', compact('student'));
     }
 
     /**
@@ -75,9 +80,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        $school=About::pluck('name','id');
-        $classes=Classes::pluck('class','id');
-        return view('admin.students.edit',compact('school','classes','student'));
+        $school = About::pluck('name', 'id');
+        $classes = Classes::pluck('class', 'id');
+        return view('admin.students.edit', compact('school', 'classes', 'student'));
     }
 
     /**
@@ -86,25 +91,57 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         $request->validate([
-            'firstname' => 'required',
+            'fullname' => 'required',
             'class_id' => 'required',
         ], [
-            'firstname.required' => 'Ismni kiriting',
+            'fullname.required' => 'Ismni kiriting',
             'class_id.required' => 'Sinf kiriting',
         ]);
-        if (auth()->user()->school_id == null) {
-            $student->update([
-                'fullname' => $request->firstname,
-                'class_id' => $request->class_id,
-                'school_id' => $request->school_id,
-            ]);
+        if ($request->image) {
+            // removing old image
+//            unlink(public_path("images/$student->image"));
+            // get image
+            $data = $request->all();
+            $file = $request->file('image');
+            $image_name = uniqid() . $file->getClientOriginalName();
+            $data['image'] = $image_name;
+            if (auth()->user()->school_id == null) {
+                $student->update([
+                    'fullname' => $request->fullname,
+                    'class_id' => $request->class_id,
+                    'image' => $image_name,
+                    'school_id' => $request->school_id,
+
+                ]);
+            } else {
+                $student->update([
+                    'fullname' => $request->fullname,
+                    'class_id' => $request->class_id,
+                    'image' => $image_name,
+                    'school_id' => auth()->user()->school_id,
+                ]);
+            }
+
+            $file->move(public_path('images'), $image_name);
+
         } else {
-            $student->update([
-                'fullname' => $request->firstname,
-                'class_id' => $request->class_id,
-                'school_id' => auth()->user()->school_id,
-            ]);
+            if (auth()->user()->school_id == null) {
+                $student->update([
+                    'fullname' => $request->fullname,
+                    'class_id' => $request->class_id,
+                    'school_id' => $request->school_id,
+
+
+                ]);
+            } else {
+                $student->update([
+                    'fullname' => $request->fullname,
+                    'class_id' => $request->class_id,
+                    'school_id' => auth()->user()->school_id,
+                ]);
+            }
         }
+
         return redirect()->route('students.index');
     }
 

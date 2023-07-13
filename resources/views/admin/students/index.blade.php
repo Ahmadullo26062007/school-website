@@ -24,6 +24,7 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
+                                <th>Rasimi</th>
                                 <th>Ism familyasi</th>
                                 <th>Sinifi</th>
                                 <th>Maktabi</th>
@@ -38,6 +39,7 @@
                                             $class=App\Models\Classes::find($student->class_id);
                                         @endphp
                                         <td>{{$student->id}}</td>
+                                        <td><img src="{{asset('images/'.$student->image)}}" alt="Rasm" width="60px"></td>
                                         <td>{{$student->fullname}}</td>
                                         <td>{{$class->class}}</td>
                                         @php
