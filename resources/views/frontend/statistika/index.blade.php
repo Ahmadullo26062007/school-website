@@ -16,16 +16,7 @@
     </section>
     <!--pager-section end-->
     <section class="classes-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div id="chart">
-                    </div>
-                </div>
-                <div class="col-1"></div>
-            </div>
-        </div>
+
             <!--classes-banner end-->
             @livewire('statistika-index')
 
