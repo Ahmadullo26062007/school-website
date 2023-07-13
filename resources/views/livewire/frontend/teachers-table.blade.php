@@ -13,6 +13,12 @@
                                             {{ $teacher->lastname }}</a></h3>
                                     <span>{{ $teacher->category }}
                                         O'qituvchisi</span>
+                                        @foreach ($teacher->degrees as $degree)
+                                        <span class="text-dark">
+                                            {{ App\Models\Degree::TYPES[$degree->type_id] }}
+                                            
+                                        </span>
+                                            @endforeach
                                 </div>
                             </div>
                             <!--teacher end-->
