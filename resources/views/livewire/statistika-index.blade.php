@@ -127,7 +127,7 @@
             <div class="sidebar">
 
                 <div class="widget widget-categories">
-                    <h3 class="widget-title">Eng yacshi maktab</h3>
+                    <h3 class="widget-title">Eng yaxshi maktab</h3>
                     <ul>
                         @foreach($r as $c=>$b)
                             @php
