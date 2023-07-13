@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@php
+    $a = \App\Models\About::find(1);
+@endphp
 <head>
     <meta charset="UTF-8">
-    <title>1-maktab</title>
+    <title>{{$a->name}}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Shelly - Website">
     <meta name="author" content="merkulove">
@@ -28,182 +30,182 @@
                                 srcset="assets/img/01_Logo_2x.png 2x"></a>
                     </div>
                     @php
-                        $a = \App\Models\About::find(1);
 
-                              function GreatTeachersProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->teachers->ToArray());
-                           $p=100/$t;
-                            foreach ($a->teachers as $t){
-                                if($t->degrees){
-                             if (count($t->degrees)!==0){
-                             if($t->degrees[0]->type_id ==1){
-                             if($c++ == 1)continue;
-                                 }
-                                   }
+
+                        function GreatTeachersProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->teachers->ToArray());
+                     $p=100/$t;
+                      foreach ($a->teachers as $t){
+                          if($t->degrees){
+                       if (count($t->degrees)!==0){
+                       if($t->degrees[0]->type_id ==1){
+                       if($c++ == 1)continue;
+                           }
                              }
-                                     }
-                                   if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-
-                              }
-                              function GoodTeachersProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->teachers->ToArray());
-                           $p=100/$t;
-                            foreach ($a->teachers as $t){
-                                if($t->degrees){
-                             if (count($t->degrees)!==0){
-                             if($t->degrees[0]->type_id ==2){
-                             if($c++ == 1)continue;
-                                 }
-                                   }
+                       }
+                               }
+                             if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
                              }
-                                     }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
-                          if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-                               }
 
-                              }
-                              function EmptyTeachersProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->teachers->ToArray());
-                           $p=100/$t;
-                            foreach ($a->teachers as $t){
-                                if($t->degrees){
-                             if (count($t->degrees)==0){
-
-                             if($c++ == 1)continue;
-
-                                   }
+                        }
+                        function GoodTeachersProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->teachers->ToArray());
+                     $p=100/$t;
+                      foreach ($a->teachers as $t){
+                          if($t->degrees){
+                       if (count($t->degrees)!==0){
+                       if($t->degrees[0]->type_id ==2){
+                       if($c++ == 1)continue;
+                           }
                              }
-                                     }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
-                           if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
+                       }
                                }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
+                    if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
+                         }
 
-                              }
-                              function GreatStudentsProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->students->ToArray());
-                           $p=100/$t;
-                          foreach ($a->students as $s){
-            if ($s->certificate){
-               if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
-                   if ($c ++ ==1)continue;
-               }
-            }
+                        }
+                        function EmptyTeachersProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->teachers->ToArray());
+                     $p=100/$t;
+                      foreach ($a->teachers as $t){
+                          if($t->degrees){
+                       if (count($t->degrees)==0){
 
-           }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
+                       if($c++ == 1)continue;
 
-                            if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-
+                             }
+                       }
                                }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
+                     if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
+                         }
 
-                              }
-                              function CEFRStudentsProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->students->ToArray());
-                           $p=100/$t;
-                          foreach ($a->students as $s){
-            if ($s->certificate){
-               if ($s->certificate->type==2 ){
-                   if ($c ++ ==1)continue;
-               }
-            }
+                        }
+                        function GreatStudentsProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->students->ToArray());
+                     $p=100/$t;
+                    foreach ($a->students as $s){
+      if ($s->certificate){
+         if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
+             if ($c ++ ==1)continue;
+         }
+      }
 
-           }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
+     }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
 
-                         if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-                               }
+                      if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
 
-                              }
-                              function ITStudentsProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->students->ToArray());
-                           $p=100/$t;
-                          foreach ($a->students as $s){
-            if ($s->certificate){
-               if ($s->certificate->type==3){
-                   if ($c ++ ==1)continue;
-               }
-            }
+                         }
 
-           }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
+                        }
+                        function CEFRStudentsProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->students->ToArray());
+                     $p=100/$t;
+                    foreach ($a->students as $s){
+      if ($s->certificate){
+         if ($s->certificate->type==2 ){
+             if ($c ++ ==1)continue;
+         }
+      }
 
-                           if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-                               }
+     }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
 
-                              }
-                              function EmptyStudentsProsent($a)
-                                             {
-                            $c=0;
-                          $t=count($a->students->ToArray());
-                           $p=100/$t;
-                          foreach ($a->students as $s){
-            if (!$s->certificate){
-                   if ($c ++ ==1)continue;
-            }else{
-                if ($s->certificate->type==1 && $s->certificate->ball <5){
-                      if ($c ++ ==1)continue;
-                }
-            }
+                   if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
+                         }
 
-           }
-                               if($c*$p==0){
-                                   return 1;
-                               }else{
+                        }
+                        function ITStudentsProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->students->ToArray());
+                     $p=100/$t;
+                    foreach ($a->students as $s){
+      if ($s->certificate){
+         if ($s->certificate->type==3){
+             if ($c ++ ==1)continue;
+         }
+      }
 
-                           if($c==0){
-                                       return 1;
-                                   }       else{
-                           return $c*$p;
-                                   }
-                               }
+     }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
 
-                              }
+                     if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
+                         }
+
+                        }
+                        function EmptyStudentsProsent($a)
+                                       {
+                      $c=0;
+                    $t=count($a->students->ToArray());
+                     $p=100/$t;
+                    foreach ($a->students as $s){
+      if (!$s->certificate){
+             if ($c ++ ==1)continue;
+      }else{
+          if ($s->certificate->type==1 && $s->certificate->ball <5){
+                if ($c ++ ==1)continue;
+          }
+      }
+
+     }
+                         if($c*$p==0){
+                             return 1;
+                         }else{
+
+                     if($c==0){
+                                 return 1;
+                             }       else{
+                     return $c*$p;
+                             }
+                         }
+
+                        }
 
                     @endphp
                         <!--logo end-->
@@ -405,11 +407,11 @@
         series: [
             {
                 name: "sales",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}, 100, 100]
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]
             }
         ],
         xaxis: {
-            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar', 'hamma o`qtuvchilar', 'hamma o`quvchilar']
+            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']
         },
         yaxis: {
             tickAmount: 10,

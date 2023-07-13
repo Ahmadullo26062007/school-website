@@ -8,7 +8,7 @@
     <section class="pager-section">
         <div class="container">
             <div class="pager-content text-center">
-                <div id="chart">
+                <div id="chart" style="width: 1240px">
                 </div>
             </div>
             <!--pager-content end-->

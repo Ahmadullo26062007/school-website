@@ -66,7 +66,8 @@
               }
 
 
- @endphp
+@endphp
+
 
 
 
@@ -98,7 +99,7 @@
 
                 @foreach($r as $c=>$b)
                     @php
-                    $a=\App\Models\About::find($c);
+                        $a=\App\Models\About::find($c);
                     @endphp
                     <tr class="text-dark">
                         <td>{{$c}}</td>
@@ -126,22 +127,25 @@
             <div class="sidebar">
 
                 <div class="widget widget-categories">
-                    <h3 class="widget-title">Eng yacshi maktab</h3>
+                    <h3 class="widget-title">Eng yaxshi maktab</h3>
                     <ul>
+                        @foreach($r as $c=>$b)
+                            @php
+                                $a=\App\Models\About::find($c);
 
-                            <li><a href="blog.html#" title=""> 1-maktab</a> <span>N 1</span></li>
-                            <li><a href="blog.html#" title=""> 12-dimi</a> <span>N 2</span></li>
-                            <li><a href="blog.html#" title=""> 6-dimi </a> <span>N 3</span></li>
+                            @endphp
+                            <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$c}}</span></li>
 
-
+                        @endforeach
 
 
                     </ul>
                 </div>
 
-             </div>
+            </div>
         </div>
 
 
-</div>
+    </div>
+
 </div>
