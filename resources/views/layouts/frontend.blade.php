@@ -221,7 +221,7 @@
                         <li>
                             <div class="contact-info"><img src="assets/img/icon2.png" alt="">
                                 <div class="contact-tt">
-                                    <h4>O`qish vaqti</h4><span>Dush - Shan {{ $a->start_time }} -
+                                    <h4>O`qishjchaohf vaqti</h4><span>Dush - Shan {{ $a->start_time }} -
                                             {{ $a->end_time }}</span>
                                 </div>
                             </div>
