@@ -208,12 +208,17 @@
                               }
 
                     @endphp
+                    @php
+                        $phone_number = "+998" . $a->phone_number; // example phone number
+                        $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
+                        // echo $formatted_number; // output: +998 90 123 4567
+                    @endphp
                         <!--logo end-->
                     <ul class="contact-add d-flex flex-wrap">
                         <li>
                             <div class="contact-info"><img src="assets/img/icon1.png" alt="">
                                 <div class="contact-tt">
-                                    <h4>Bog'lanish uchun</h4><span>+998 {{ $a->phone_number }}</span>
+                                    <h4>Bog'lanish uchun</h4><span> {{ $formatted_number }}</span>
                                 </div>
                             </div>
                             <!--contact-info end-->
@@ -325,7 +330,14 @@
                                 <li>
                                     <div class="contact-info"><img src="assets/img/icon1.png" alt="">
                                         <div class="contact-tt">
-                                            <h4>Call</h4><span>+998 {{ $a->phone_number }}</span>
+                                                 {{-- formatting phone number start --}}
+                                             @php
+                                                 $phone_number = "+998" . $a->phone_number; // example phone number
+                                                 $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
+                                                 // echo $formatted_number; // output: +998 90 123 4567
+                                             @endphp
+                                            {{-- fromatting phone number end --}}
+                                            <h4>Call</h4><span> {{ $formatted_number }}</span>kj
                                         </div>
                                     </div>
                                     <!--contact-info end-->
