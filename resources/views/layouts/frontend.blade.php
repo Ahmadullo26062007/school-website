@@ -407,11 +407,11 @@
         series: [
             {
                 name: "sales",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}, 100, 100]
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]
             }
         ],
         xaxis: {
-            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar', 'hamma o`qtuvchilar', 'hamma o`quvchilar']
+            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']
         },
         yaxis: {
             tickAmount: 10,
