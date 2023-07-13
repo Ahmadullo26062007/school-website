@@ -14,7 +14,7 @@
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }}
                                             O'qituvchisi</span>
-                                        @if (empty($teacher->degrees))
+                                        @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
                                                 Yangi toifa
                                             </span>
