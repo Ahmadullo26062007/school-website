@@ -45,6 +45,14 @@
                         <i class="align-middle" data-feather="user"></i> <span class="align-middle">Maktab haqida</span>
                     </a>
                 </li>
+                @if(auth()->user()->school_id==null)
+
+                    <li class="sidebar-item {{ request()->is('users*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="{{route('users.index')}}">
+                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Maktab adminlari</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="sidebar-item {{ request()->is('teacher*') ? 'active' : '' }}">
                     <a class="sidebar-link" href="{{route('teacher.index')}}">
                         <i class="align-middle" data-feather="users"></i> <span class="align-middle">O'qtuvchilar</span>
@@ -230,9 +238,12 @@
                         <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
                             <i class="align-middle" data-feather="settings"></i>
                         </a>
-
+@php
+$a=env('SCHOOL_ID');
+$user=\App\Models\About::find($a);
+ @endphp
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img src="{{asset('back/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                            <img src="{{asset("images/$user->image")}}" class="avatar img-fluid rounded me-1" alt="{{$user->name}} rasimi" /> <span class="text-dark">{{$user->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
