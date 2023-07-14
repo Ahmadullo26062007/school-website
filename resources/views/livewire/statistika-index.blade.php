@@ -114,7 +114,7 @@
                     <div class="col col-2">Maktab</div>
                     <div class="col col-3">oliy malumotli o`qituvchilar</div>
                     <div class="col col-3">Sertifikatga ega o`quvchilar</div>
-                    <div class="col col-4">IT o`quvchila</div>
+                    <div class="col col-4">IT o`quvchilar</div>
                 </li>
                 @foreach($r as $c=>$b)
                     @php
