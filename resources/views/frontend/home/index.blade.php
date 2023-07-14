@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="class-info">
                                     <h3><a href="{{ route('class.detail', $class->id) }}"
-                                            title="">{{ $class->number }}-{{ $class->name }}
+                                            title="">{{ $class->class }}-
                                             Sinf</a></h3>
                                     <span>Xar kuni</span> <span></span>
                                     <div class="d-flex flex-wrap align-items-center">
@@ -97,6 +97,7 @@
                                     <h3><a href="teacher-single.html" title="">{{ $teacher->firstname }}
                                             {{ $teacher->lastname }}</a></h3>
                                     <span>{{ $teacher->category }} O`qituvchisi</span>
+                                    <span>@if($teacher->degree) @dd($teacher->degree) @endif O`qituvchi</span>
                                 </div>
                             </div>
                             <!--teacher end-->
@@ -145,9 +146,8 @@
                                 <h3><a href="{{ route('course.detail', $course->id) }}"
                                         title="">{{ $course->name }}</a></h3>
                                 <div class="d-flex flex-wrap">
-                                    <div class="posted-by"><img style="width: 10%"
-                                            src="{{ asset("images/$course->image") }}" alt="Class image"> <a
-                                            href="{{ asset('images/' . $course->teacher->image) }}"
+                                    <div class="posted-by"><img style="width: 25px ;height: 25px" src="{{ asset("images/".$course->teacher->image) }}" alt="Class image">
+                                        <a href="{{ asset('images/' . $course->teacher->image) }}"
                                             title="">{{ $course->teacher->firstname }}
                                             {{ $course->teacher->firstname }}</a></div><span class="locat"><img
                                             src="assets/img/loct.png" alt="">{{ $a->name }}

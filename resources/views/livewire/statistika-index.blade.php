@@ -73,36 +73,36 @@
                  arsort($r);
                 $count=0;
     @endphp
-        <div class="row">
-            <div class="col-9">
-                <div id="chart">
-                </div>
+    <div class="row">
+        <div class="col-9">
+            <div id="chart">
             </div>
+        </div>
 
-            <div class="col-3">
-                <div class="sidebar">
+        <div class="col-3">
+            <div class="sidebar">
 
-                    <div class="widget widget-categories">
-                        <h3 class="widget-title">Eng yahshi maktab</h3>
-                        <ul>
-                            @foreach($r as $c=>$b)
-                                @if($count<4)
+                <div class="widget widget-categories">
+                    <h3 class="widget-title">Eng yaxshi maktab</h3>
+                    <ul>
+                        @foreach($r as $c=>$b)
+                            @if($count<4)
                                 @php
-                                    $a=\App\Models\About::find($c);
+                                    $a2=\App\Models\About::find($c);
                                 if($count++ == 1) continue;
                                 @endphp
-                                <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$count}}</span></li>
-                                @endif
-                            @endforeach
+                                <li><a  title=""> {{$a2->name}}</a> <span>N {{$count}}</span></li>
+                            @endif
+                        @endforeach
 
 
-                        </ul>
-                    </div>
-
+                    </ul>
                 </div>
-            </div>
 
+            </div>
         </div>
+
+    </div>
 
 
     <div class="row">

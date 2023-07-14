@@ -17,6 +17,7 @@
     <!--pager-section end-->
     <section class="classes-page">
 
+
             <!--classes-banner end-->
             @livewire('statistika-index')
 
