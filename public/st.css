@@ -36,16 +36,16 @@ tbody tr{
 }
 
 
-body {
+.body {
     font-family: 'lato', sans-serif;
 }
-.container {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+/*.container {*/
+/*    max-width: 1000px;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    padding-left: 10px;*/
+/*    padding-right: 10px;*/
+/*}*/
 
 
 small {
@@ -93,23 +93,23 @@ small {
     color: black;
 }
 
-@media all and (max-width: 766px) {
-    .table-header {
-        display: none;
-    }
-    .table-row{
+/*@media all and (max-width: 766px) {*/
+/*    .table-header {*/
+/*        display: none;*/
+/*    }*/
+/*    .table-row{*/
 
-    }
+/*    }*/
 
-    .col {
+/*    .col {*/
 
-        flex-basis: 100%;
+/*        flex-basis: 100%;*/
 
-    }
-    .col {
-        display: flex;
-        padding: 10px 0;
+/*    }*/
+/*    .col {*/
+/*        display: flex;*/
+/*        padding: 10px 0;*/
 
-}
-}
+/*}*/
+/*}*/
 
