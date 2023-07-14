@@ -243,7 +243,7 @@ $a=env('SCHOOL_ID');
 $user=\App\Models\About::find($a);
  @endphp
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img src="{{asset("images/$user->image")}}" class="avatar img-fluid rounded me-1" alt="{{$user->name}} rasimi" /> <span class="text-dark">{{$user->name}}</span>
+                            <img src="{{asset("images/school.png")}}" class="avatar img-fluid rounded me-1" alt="{{$user->name}} rasimi" /> <span class="text-dark">{{$user->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>

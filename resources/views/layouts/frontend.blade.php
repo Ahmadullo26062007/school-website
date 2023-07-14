@@ -497,7 +497,7 @@
         },
         series: [
             {
-                name: "sales",
+                name: "foiz",
                 data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]
             }
         ],
