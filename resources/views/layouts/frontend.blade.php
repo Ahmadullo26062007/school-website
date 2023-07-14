@@ -13,8 +13,87 @@
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
-    @livewireStyles()
     <link rel="stylesheet" href="{{asset('st.css')}}">
+    <style>
+
+        .body {
+            font-family: 'lato', sans-serif;
+        }
+        /*.container {*/
+        /*    max-width: 1000px;*/
+        /*    margin-left: auto;*/
+        /*    margin-right: auto;*/
+        /*    padding-left: 10px;*/
+        /*    padding-right: 10px;*/
+        /*}*/
+
+
+        small {
+            font-size: 0.5em;
+        }
+
+
+        .table-header {
+            background-color: #ffffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            border: 1px solid #f6986b;
+            border-radius: 30px;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            color: black;
+        }
+        .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+            border-radius: 3px;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            color: black;
+        }
+        .col-1 {
+            flex-basis: 10%;
+            color: black;
+        }
+        .col-2 {
+            flex-basis: 40%;
+            color: black;
+        }
+        .col-3 {
+            flex-basis: 25%;
+            color: black;
+        }
+        .col-4 {
+            flex-basis: 25%;
+            color: black;
+        }
+
+        /*@media all and (max-width: 766px) {*/
+        /*    .table-header {*/
+        /*        display: none;*/
+        /*    }*/
+        /*    .table-row{*/
+
+        /*    }*/
+
+        /*    .col {*/
+
+        /*        flex-basis: 100%;*/
+
+        /*    }*/
+        /*    .col {*/
+        /*        display: flex;*/
+        /*        padding: 10px 0;*/
+
+        /*}*/
+        /*}*/
+    </style>
+    @livewireStyles()
 </head>
 
 <body>
