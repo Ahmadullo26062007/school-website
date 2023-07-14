@@ -13,8 +13,8 @@
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
-    @livewireStyles()
     <link rel="stylesheet" href="{{asset('st.css')}}">
+    @livewireStyles()
 </head>
 
 <body>
