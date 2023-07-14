@@ -34,7 +34,6 @@
                             <tbody>
                                 @if (auth()->user()->school_id == null)
                                 @foreach ($certificates as $certificate)
-                                @dd($certificate->id)
                                         <tr>
                                             @php
                                                 $student = App\Models\Student::find($certificate->student_id);

@@ -13,7 +13,7 @@
                                         <h3><a href="#" title="">{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }}
-                                            O'qituvchisi</span>
+                                            O'qituvchisi</span> 
                                         @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
                                                 Yangi toifa
