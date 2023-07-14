@@ -376,10 +376,27 @@
         <div class="responsive-menu">
             <ul>
                 <li><a href="{{ route('home') }}" title="">Bosh sahifa</a></li>
-                <li><a href="{{ route('classes.index') }}" title="">Sinflar</a></li>
-                <li><a href="{{ route('teachers.index') }}" title="">O'qituvchilar</a></li>
-                <li><a href="{{ route('blog.index') }}" title="">Blog</a></li>
-                <li><a href="{{ route('about') }}" title="">Biz haqimizda</a></li>
+                <li><a class="{{ request()->is('classes*') ? 'active' : '' }}"
+                       href="{{ route('statistika') }}" title="">statistika</a>
+                </li>
+                <li><a class="{{ request()->is('kurslar*') ? 'active' : '' }}"
+                       href="{{ route('course.index') }}" title="">Kurslar</a>
+                </li>
+                <li><a class="{{ request()->is('teachers*') ? 'active' : '' }}"
+                       href="{{ route('teachers.index') }}" title="">O'qtuvchilar</a>
+                </li>
+
+                <li><a class="{{ request()->is('students*') ? 'active' : '' }}"
+                       href="{{ route('front.students') }}" title="">O'quvchilar</a>
+                </li>
+                <li>
+                    <a class="{{ request()->is('blog*') ? 'active' : '' }}"
+                       href="{{ route('blog.index') }}" title="">Blog</a>
+                </li>
+
+                <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
+                       href="{{ route('about') }}" title="">Biz haqimizda</a>
+                </li>
             </ul>
         </div>
         <!--responsive-menu end-->
