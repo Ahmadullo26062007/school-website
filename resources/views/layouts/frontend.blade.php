@@ -334,7 +334,7 @@
                                    title="">Bosh sahifa</a>
                             </li>
 
-                            <li><a class="{{ request()->is('classes*') ? 'active' : '' }}"
+                            <li><a class="{{ request()->is('statistika') ? 'active' : '' }}"
                                    href="{{ route('statistika') }}" title="">statistika</a>
                             </li>
                             <li><a class="{{ request()->is('kurslar*') ? 'active' : '' }}"
@@ -344,7 +344,7 @@
                                    href="{{ route('teachers.index') }}" title="">O'qtuvchilar</a>
                             </li>
 
-                            <li><a class="{{ request()->is('students*') ? 'active' : '' }}"
+                            <li><a class="{{ request()->is('front/students') ? 'active' : '' }}"
                                    href="{{ route('front.students') }}" title="">O'quvchilar</a>
                             </li>
                             <li>
