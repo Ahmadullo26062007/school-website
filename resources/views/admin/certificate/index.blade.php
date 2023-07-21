@@ -34,7 +34,6 @@
                             <tbody>
                                 @if (auth()->user()->school_id == null)
                                 @foreach ($certificates as $certificate)
-                                @dd($certificate->id)
                                         <tr>
                                             @php
                                                 $student = App\Models\Student::find($certificate->student_id);
@@ -49,7 +48,6 @@
                                             <td>{{ $school1->name }}</td>
                                             <td>
 
-                                                Abduraxmon, [7/3/2023 11:10 AM]
                                                 <a href="{{ route('certificate.edit', [$certificate->id]) }}"
                                                     class="btn btn-info">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
