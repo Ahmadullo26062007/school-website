@@ -73,9 +73,11 @@
                  arsort($r);
                 $count=0;
     @endphp
-    <div class="row">
+
+
+    <div class="row d-flex flex-wrap">
         <div class="col-9">
-            <div id="chart">
+            <div id="chart" >
             </div>
         </div>
 

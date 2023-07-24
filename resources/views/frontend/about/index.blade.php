@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-        $a= \App\Models\About::find(1);
+        $a= \App\Models\About::find(env("SCHOOL_ID"));
     @endphp
     <section class="pager-section">
         <div class="container">
