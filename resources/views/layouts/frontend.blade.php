@@ -114,6 +114,7 @@
                               function GreatTeachersProsent($a)
                                              {
                             $c=0;
+                            if ($a->teachers){
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
                             foreach ($a->teachers as $t){
@@ -131,6 +132,9 @@
                                        $n=$c*$p;
                            return floor($n);
                                    }
+                            }else{
+                                return '?';
+                            }
 
                               }
                               function GoodTeachersProsent($a)
