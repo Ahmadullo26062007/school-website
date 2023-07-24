@@ -14,14 +14,14 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         Student::insert([
-            ['fullname'=>'Tomy keyn','class_id'=>2,'school_id'=>1],
-            ['fullname'=>'Tomy keyn1','class_id'=>4,'school_id'=>1],
-            ['fullname'=>'Tomy keyn2','class_id'=>5,'school_id'=>1],
-            ['fullname'=>'Tomy keyn3','class_id'=>6,'school_id'=>1],
-            ['fullname'=>'Tomy keyn4','class_id'=>2,'school_id'=>1],
-            ['fullname'=>'Tomy keyn5','class_id'=>3,'school_id'=>1],
-            ['fullname'=>'Tomy keyn6','class_id'=>2,'school_id'=>1],
-            ['fullname'=>'Tomy keyn7','class_id'=>5,'school_id'=>1],
+            ['fullname'=>'Tomy keyn','class_id'=>2,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn1','class_id'=>4,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn2','class_id'=>5,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn3','class_id'=>6,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn4','class_id'=>2,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn5','class_id'=>3,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn6','class_id'=>2,'school_id'=>1, 'image' => 'people.png'],
+            ['fullname'=>'Tomy keyn7','class_id'=>5,'school_id'=>1, 'image' => 'people.png'],
         ]);
     }
 }

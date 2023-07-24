@@ -340,9 +340,8 @@
                             <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}"
                                    title="">Bosh sahifa</a>
                             </li>
-
                             <li><a class="{{ request()->is('statistika') ? 'active' : '' }}"
-                                   href="{{ route('statistika') }}" title="">statistika</a>
+                                   href="{{ route('statistika') }}" title="">Statistika</a>
                             </li>
                             <li><a class="{{ request()->is('kurslar*') ? 'active' : '' }}"
                                    href="{{ route('course.index') }}" title="">Kurslar</a>
@@ -350,7 +349,6 @@
                             <li><a class="{{ request()->is('teachers*') ? 'active' : '' }}"
                                    href="{{ route('teachers.index') }}" title="">O'qtuvchilar</a>
                             </li>
-
                             <li><a class="{{ request()->is('front/students') ? 'active' : '' }}"
                                    href="{{ route('front.students') }}" title="">O'quvchilar</a>
                             </li>
@@ -358,11 +356,9 @@
                                 <a class="{{ request()->is('blog*') ? 'active' : '' }}"
                                    href="{{ route('blog.index') }}" title="">Blog</a>
                             </li>
-
                             <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
                                    href="{{ route('about') }}" title="">Biz haqimizda</a>
                             </li>
-
                         </ul>
                     </nav>
                     <!--nav end-->
@@ -372,7 +368,6 @@
                         </li>
                         <li>
                             <a href="{{ $a->instagram }}"><i class="fab fa-instagram"></i></a>
-
                         </li>
                     </ul>
                 </div>
