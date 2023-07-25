@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @php
-    $a = \App\Models\About::find(1);
+    $a = \App\Models\About::find(env('SCHOOL_ID'));
  @endphp
 <head>
     <meta charset="UTF-8">
