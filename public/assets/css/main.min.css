@@ -18682,7 +18682,7 @@ header .navigation-bar nav ul ul ul {
 }
 
 .course-section {
-    padding-bottom: 138px
+    /*padding-bottom: 138px*/
 }
 
 .course-section .find-course .sec-title h2:before {
@@ -20705,6 +20705,7 @@ footer .bottom-footer .social-links {
 
 .class-single-content {
     max-width: 760px
+
 }
 
 .class-single-content h2 {
@@ -21454,7 +21455,7 @@ footer .bottom-footer .social-links {
     }
 
     .course-section {
-        padding-bottom: 70px
+        /*padding-bottom: 70px*/
     }
 
     .blog-section .blog-posts .blog-post .blog-info > h3 {
