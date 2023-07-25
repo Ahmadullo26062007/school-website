@@ -139,10 +139,13 @@
                             <div class="course-img"><img src="assets/img/course-img.png" alt=""></div>
                             <!--course-img end-->
                         </div>
-                        <a href="{{ route('course.index') }}" title=""
-                           style="color: #044e7c
-                                 " class="read-more text-bg-primary">Ko`proq
-                            <i class="fa fa-long-arrow-alt-right"></i></a>
+{{--                        <a href="{{ route('course.index') }}" title=""--}}
+{{--                           style="color: #044e7c--}}
+{{--                                 " class="read-more text-bg-primary">Ko`proq--}}
+{{--                            <i class="fa fa-long-arrow-alt-right"></i></a>--}}
+                        <div class="lnk-dv"><a href="{{ route('course.index') }}" title=""
+                                                           class="btn-default">Koproq <i
+                                    class="fa fa-long-arrow-alt-right"></i></a></div>
                         <!--find-course end-->
                     </div>
                     {{-- Ma'lumot yo' --}}
