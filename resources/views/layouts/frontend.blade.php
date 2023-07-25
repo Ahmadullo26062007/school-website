@@ -512,31 +512,62 @@
 
 @livewireScripts()
 <script src="{{ asset('assets/js/bundle.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>--}}
+{{--<script>--}}
+{{--    var options = {--}}
+{{--        chart: {--}}
+{{--            type: "bar"--}}
+{{--        },--}}
+
+
+{{--        colors: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],--}}
+{{--        series: [--}}
+{{--            {--}}
+{{--                name: "foiz",--}}
+{{--                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]--}}
+{{--            }--}}
+{{--        ],--}}
+{{--        xaxis: {--}}
+{{--            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']--}}
+{{--        },--}}
+{{--        yaxis: {--}}
+{{--            tickAmount: 10,--}}
+{{--        }--}}
+{{--    };--}}
+
+{{--    var chart = new ApexCharts(document.querySelector("#chart"), options);--}}
+
+{{--    chart.render();--}}
+
+{{--</script>--}}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var options = {
-        chart: {
-            type: "bar"
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: "online tutorial subjects",
+                data: [20, 40, 30, 35, 30, 20],
+                backgroundColor: ['yellow', 'aqua', 'pink', 'lightgreen', 'lightblue', 'gold'],
+
+                borderWidth: 2,
+            }],
         },
-        series: [
-            {
-                name: "foiz",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        ],
-        xaxis: {
-            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']
-        },
-        yaxis: {
-            tickAmount: 10,
         }
-    };
-
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-    chart.render();
-
+    });
 </script>
+
 <script src="{{ asset('assets/js/button.min.js') }}"></script><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180910402-1"></script>
     <script>
