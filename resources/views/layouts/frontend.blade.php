@@ -366,14 +366,6 @@
                         </ul>
                     </nav>
                     <!--nav end-->
-                    <ul class="social-links ml-auto d-flex ml-5">
-                        <li>
-                            <a href="{{ $a->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="{{ $a->instagram }}"><i class="fab fa-instagram"></i></a>
-                        </li>
-                    </ul>
                 </div>
                 <!--navigation-bar end-->
             </div>
@@ -487,17 +479,12 @@
             <div class="bottom-footer">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <p>© Copyrights 2020 Shelly All rights reserved</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <ul class="social-links">
-                            <li><a title=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a title=""><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a title=""><i class="fab fa-instagram"></i></a></li>
 
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="https://www.instagram.com/ahmadullorahmatullayev/"><i
+                            <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{$a->instagram}}"><i
                                         class="fab fa-instagram"></i></a></li>
 
                         </ul>
