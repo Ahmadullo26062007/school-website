@@ -439,7 +439,7 @@
                                                  // echo $formatted_number; // output: +998 90 123 4567
                                              @endphp
                                             {{-- fromatting phone number end --}}
-                                            <h4>Call</h4><span> {{ $formatted_number }}</span>kj
+                                            <h4>Call</h4><span> {{ $formatted_number }}</span>
                                         </div>
                                     </div>
                                     <!--contact-info end-->

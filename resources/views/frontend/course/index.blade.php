@@ -17,7 +17,7 @@
 {{--            <h2 class="page-titlee">{{$a->name}}</h2>--}}
         </div>
     </section>
-    <!--pager-section end-->
+    <!--pager-section end-->    
     <section class="classes-page">
         <div class="container">
             <div class="classes-banner"><span>Try now</span>
