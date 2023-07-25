@@ -179,6 +179,7 @@
                         </div>
                     </div>
                     <!--course-section end-->
+
                     <section class="blog-section">
                         <div class="container">
                             <div class="section-title text-center">
@@ -228,7 +229,12 @@
                             <!--blog-posts end-->
                         </div>
                     </section>
+
                     <!--blog-section end-->
                     <!--newsletter-sec end-->
+                </div>
+
+            </div>
+        </section>
     @endif
 @endsection

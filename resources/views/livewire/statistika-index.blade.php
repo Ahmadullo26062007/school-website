@@ -76,62 +76,40 @@
 
 
     <div class="row d-flex flex-wrap">
-        <div class="col-9">
+        <div class="col-12">
             <div id="chart" >
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="sidebar">
-
-                <div class="widget widget-categories">
-                    <h3 class="widget-title">Eng yaxshi maktab</h3>
-                    <ul>
-                        @foreach($r as $c=>$b)
-                            @if($count<4)
-                                @php
-                                    $a2=\App\Models\About::find($c);
-                                if($count++ == 1) continue;
-                                @endphp
-                                <li><a  title=""> {{$a2->name}}</a> <span>N {{$count}}</span></li>
-                            @endif
-                        @endforeach
-
-
-                    </ul>
-                </div>
-
             </div>
         </div>
 
     </div>
 
 
-    <div class="row">
-        <div class="col-12 ">
+{{--    <div class="row">--}}
+{{--        <div class="col-12 ">--}}
 
-            <ul class="responsive-table">
-                <li class="table-header li1">
-                    <div class="col col-1">N#</div>
-                    <div class="col col-2">Maktab</div>
-                    <div class="col col-3">oliy malumotli o`qituvchilar</div>
-                    <div class="col col-3">Sertifikatga ega o`quvchilar</div>
-                    <div class="col col-4">IT o`quvchilar</div>
-                </li>
-                @foreach($r as $c=>$b)
-                    @php
-                        $a=\App\Models\About::find($c);
-                    @endphp
-                <li class="table-row li1">
-                    <div class="col col-1" data-label="Job Id">{{$c}}</div>
-                    <div class="col col-2" data-label="Customer Name">    {{$a->name}}</div>
-                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a)}}</div>
-                </li>
-                @endforeach
-            </ul>
-        </div>
+{{--            <ul class="responsive-table">--}}
+{{--                <li class="table-header li1">--}}
+{{--                    <div class="col col-1">N#</div>--}}
+{{--                    <div class="col col-2">Maktab</div>--}}
+{{--                    <div class="col col-3">oliy malumotli o`qituvchilar</div>--}}
+{{--                    <div class="col col-3">Sertifikatga ega o`quvchilar</div>--}}
+{{--                    <div class="col col-4">IT o`quvchilar</div>--}}
+{{--                </li>--}}
+
+{{--                @foreach($r as $c=>$b)--}}
+{{--                    @php--}}
+{{--                        $a=\App\Models\About::find($c);--}}
+{{--                    @endphp--}}
+{{--                <li class="table-row li1">--}}
+{{--                    <div class="col col-1" data-label="Job Id">{{$c}}</div>--}}
+{{--                    <div class="col col-2" data-label="Customer Name">    {{$a->name}}</div>--}}
+{{--                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a)}}</div>--}}
+{{--                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a)}}</div>--}}
+{{--                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a)}}</div>--}}
+{{--                </li>--}}
+{{--                @endforeach--}}
+{{--            </ul>--}}
+{{--        </div>--}}
 
 {{--        <div class="col-9">--}}
 {{--            <table>--}}
@@ -183,5 +161,35 @@
 {{--            </table>--}}
 {{--        </div>--}}
 
-     </div>
+{{--     </div>--}}
+
+    <table class="table">
+        <thead>
+        <tr>
+
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
