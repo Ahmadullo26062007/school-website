@@ -112,7 +112,7 @@
 
 
                               function GreatTeachersProsent($a){
-                            if ($a->teachers){
+                            if (!count($a->teachers->ToArray())==0){
                             $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;

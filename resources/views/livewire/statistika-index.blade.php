@@ -22,11 +22,9 @@
                    }
                     }
                   }
-                  if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
               function GreatStudents($a2)
               {
@@ -57,11 +55,9 @@
 
                   }
 
-                    if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
 
                   $r=[];
