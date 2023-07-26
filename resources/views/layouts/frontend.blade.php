@@ -113,8 +113,8 @@
 
                               function GreatTeachersProsent($a)
                                              {
-                            $c=0;
                             if ($a->teachers){
+                            $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
                             foreach ($a->teachers as $t){
@@ -133,7 +133,7 @@
                            return floor($n);
                                    }
                             }else{
-                                return 0;
+                                return 1;
                             }
 
                               }

@@ -7,11 +7,11 @@
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
 
-           function GreatTeachers($a)
+           function GreatTeachers($a2)
               {
                   $c=0;
 
-                  foreach ($a->teachers as $t){
+                  foreach ($a2->teachers as $t){
                       if($t->degrees){
 
 
@@ -28,11 +28,11 @@
                   return $c;
                   }
               }
-              function GreatStudents($a)
+              function GreatStudents($a2)
               {
                   $c=0;
 
-                  foreach ($a->students as $s){
+                  foreach ($a2->students as $s){
                    if ($s->certificate){
                       if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2  ){
                           if ($c ++ ==1)continue;
@@ -46,11 +46,11 @@
                   return $c;
                   }
               }
-        function ItStudents($a)
+        function ItStudents($a2)
               {
                   $c=0;
 
-                  foreach ($a->students as $s){
+                  foreach ($a2->students as $s){
                    if ($s->certificate){
                       if ( $s->certificate->type==3 ){
                           if ($c ++ ==1)continue;
@@ -67,8 +67,8 @@
               }
 
                   $r=[];
-                  foreach(\App\Models\About::all() as $c=>$a){
-                      $r[$a->id]=((int) GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
+                  foreach(\App\Models\About::all() as $c=>$a3){
+                      $r[$a3->id]=((int) GreatTeachers($a3))+((int)GreatTeachers($a3))+((int)GreatTeachers($a3));
                   }
                  arsort($r);
                 $count=0;
@@ -106,14 +106,14 @@
 
                 @foreach($r as $c=>$b)
                     @php
-                        $a=\App\Models\About::find($c);
+                        $a1=\App\Models\About::find($c);
                     @endphp
                 <li class="table-row li1">
                     <div class="col col-1" data-label="Job Id">{{$c}}</div>
-                    <div class="col col-2" data-label="Customer Name">    {{$a->name}}</div>
-                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a)}}</div>
+                    <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
+                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
+                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
                 </li>
                 @endforeach
             </ul>
