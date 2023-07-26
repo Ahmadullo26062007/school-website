@@ -111,8 +111,7 @@
                     @php
 
 
-                              function GreatTeachersProsent($a)
-                                             {
+                              function GreatTeachersProsent($a){
                             if ($a->teachers){
                             $c=0;
                           $t=count($a->teachers->ToArray());
