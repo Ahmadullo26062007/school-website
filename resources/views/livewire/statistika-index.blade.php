@@ -40,11 +40,9 @@
                    }
 
                   }
-       if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
         function ItStudents($a2)
               {
@@ -106,6 +104,7 @@
 
                 @foreach($r as $c=>$b)
                     @php
+
                         $a1=\App\Models\About::find($c);
                     @endphp
                 <li class="table-row li1">
