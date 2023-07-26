@@ -138,6 +138,7 @@
                               }
                               function GoodTeachersProsent($a)
                                              {
+                              if ($a->teachers){
                             $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
@@ -160,10 +161,13 @@
                            return floor($n);
                                    }
                                }
-
+                                   }else{
+                                  return 1;
+                                   }
                               }
                               function EmptyTeachersProsent($a)
                                              {
+                             if ($a->teachers){
                             $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
@@ -186,10 +190,13 @@
                            return floor($n);
                                    }
                                }
-
+                                 }else{
+                                 return 1;
+                                 }
                               }
                               function GreatStudentsProsent($a)
                                              {
+                              if ($a->students){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -213,10 +220,13 @@
                                    }
 
                                }
-
+                               }else{
+                                  return 1;
+                               }
                               }
                               function CEFRStudentsProsent($a)
                                              {
+                               if ($a->students){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -239,10 +249,13 @@
                            return floor($n);
                                    }
                                }
-
+                                }else{
+                                   return 1;
+                                }
                               }
                               function ITStudentsProsent($a)
                                              {
+                              if ($a->students){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -265,10 +278,13 @@
                            return floor($n);
                                    }
                                }
-
+                            }else{
+                                  return 1;
+                            }
                               }
                               function EmptyStudentsProsent($a)
                                              {
+                            if ($a->students){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -293,7 +309,9 @@
                            return floor($n);
                                    }
                                }
-
+                             }else{
+                                return 1;
+                             }
                               }
 
                     @endphp
