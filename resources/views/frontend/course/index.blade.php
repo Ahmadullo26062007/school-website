@@ -9,7 +9,7 @@
             <div class="pager-content text-center">
                 <h2>Course</h2>
                 <ul>
-                    <li><a href="classes.html#" title="">Home</a></li>
+                    <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><span>Courses</span></li>
                 </ul>
             </div>
@@ -17,7 +17,7 @@
 {{--            <h2 class="page-titlee">{{$a->name}}</h2>--}}
         </div>
     </section>
-    <!--pager-section end-->    
+    <!--pager-section end-->
     <section class="classes-page">
         <div class="container">
             <div class="classes-banner"><span>Try now</span>

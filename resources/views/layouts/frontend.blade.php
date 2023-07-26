@@ -133,7 +133,7 @@
                            return floor($n);
                                    }
                             }else{
-                                return '?';
+                                return 0;
                             }
 
                               }
@@ -536,11 +536,12 @@
         type: 'bar',
         data: {
             colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar'],
             datasets: [{
-                label: "online tutorial subjects",
-                data: [20, 40, 30, 35, 30, 20],
-                backgroundColor: ['yellow', 'aqua', 'pink', 'lightgreen', 'lightblue', 'gold'],
+                label: "",
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}],
+
+                backgroundColor: ['green', 'red', 'blue', '#5bbe00', '#2dff00', 'gold', 'gold'],
 
                 borderWidth: 2,
             }],

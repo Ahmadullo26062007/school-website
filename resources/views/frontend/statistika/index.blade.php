@@ -8,7 +8,11 @@
     <section class="pager-section">
         <div class="container">
             <div class="pager-content text-center">
-
+                <h2>Statistika</h2>
+                <ul>
+                    <li><a href="{{route('home')}}" title="">Home</a></li>
+                    <li><span>Statistika</span></li>
+                </ul>
             </div>
             <!--pager-content end-->
             {{--            <h2 class="page-titlee">{{$a->name}}</h2> --}}
