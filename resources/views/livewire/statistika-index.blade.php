@@ -93,9 +93,9 @@
                 <li class="table-header li1 d-md-none">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
-                    <div class="col col-3">1</div>
-                    <div class="col col-3">2</div>
-                    <div class="col col-4">3</div>
+                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/teacher.png')}}"></div>
+                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/student.png')}}"></div>
+                    <div class="col col-4"><img width="30" height="30" src="{{asset('images/it.png')}}"></div>
                 </li>
 
                 @foreach($r as $c=>$b)
