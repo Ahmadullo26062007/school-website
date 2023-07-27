@@ -138,7 +138,7 @@
                               }
                               function GoodTeachersProsent($a)
                                              {
-                              if ($a->teachers){
+                              if (!count($a->teachers->ToArray())==0){
                             $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
@@ -167,7 +167,7 @@
                               }
                               function EmptyTeachersProsent($a)
                                              {
-                             if ($a->teachers){
+                             if (!count($a->teachers->ToArray())==0){
                             $c=0;
                           $t=count($a->teachers->ToArray());
                            $p=100/$t;
@@ -196,7 +196,7 @@
                               }
                               function GreatStudentsProsent($a)
                                              {
-                              if ($a->students){
+                              if (!count($a->students->ToArray())==0){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -226,7 +226,7 @@
                               }
                               function CEFRStudentsProsent($a)
                                              {
-                               if ($a->students){
+                               if (!count($a->students->ToArray())==0){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -255,7 +255,7 @@
                               }
                               function ITStudentsProsent($a)
                                              {
-                              if ($a->students){
+                              if (!count($a->students->ToArray())==0){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
@@ -284,7 +284,7 @@
                               }
                               function EmptyStudentsProsent($a)
                                              {
-                            if ($a->students){
+                            if (!count($a->students->ToArray())==0){
                             $c=0;
                           $t=count($a->students->ToArray());
                            $p=100/$t;
