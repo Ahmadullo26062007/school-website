@@ -132,7 +132,7 @@
                            return floor($n);
                                    }
                             }else{
-                                return 1;
+                                return 0;
                             }
 
                               }
@@ -162,7 +162,7 @@
                                    }
                                }
                                    }else{
-                                  return 1;
+                                  return 0;
                                    }
                               }
                               function EmptyTeachersProsent($a)
@@ -184,14 +184,14 @@
                                    return 1;
                                }else{
                            if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
                                  $n=$c*$p;
                            return floor($n);
                                    }
                                }
                                  }else{
-                                 return 1;
+                                 return 0;
                                  }
                               }
                               function GreatStudentsProsent($a)
@@ -221,7 +221,7 @@
 
                                }
                                }else{
-                                  return 1;
+                                  return 0;
                                }
                               }
                               function CEFRStudentsProsent($a)
@@ -250,7 +250,7 @@
                                    }
                                }
                                 }else{
-                                   return 1;
+                                   return 0;
                                 }
                               }
                               function ITStudentsProsent($a)
@@ -279,7 +279,7 @@
                                    }
                                }
                             }else{
-                                  return 1;
+                                  return 0;
                             }
                               }
                               function EmptyStudentsProsent($a)
@@ -310,7 +310,7 @@
                                    }
                                }
                              }else{
-                                return 1;
+                                return 0;
                              }
                               }
 
