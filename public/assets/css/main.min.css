@@ -18711,8 +18711,11 @@ header .navigation-bar nav ul ul ul {
     background-image: url(../img/abt-element.png);
     background-repeat: no-repeat;
     background-position: 50%
-}
 
+}
+.course-imj {
+    border-radius:20px;
+}
 .course-section .find-course .course-img > img {
     max-width: 100%
 }

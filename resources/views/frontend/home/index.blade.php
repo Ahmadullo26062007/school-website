@@ -136,7 +136,7 @@
                                     </strong></h3>
                             </div>
                             <!--sec-title end-->
-                            <div class="course-img"><img src="assets/img/course-img.png" alt=""></div>
+                            <div class="course-img"><img class="course-imj" src="{{asset('images/course.jpg')}}" alt=""></div>
                             <!--course-img end-->
                         </div>
 {{--                        <a href="{{ route('course.index') }}" title=""--}}

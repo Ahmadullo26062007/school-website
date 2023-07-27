@@ -361,6 +361,10 @@
                             <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}"
                                    title="">Bosh sahifa</a>
                             </li>
+                            <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
+                                        href="{{ route('about') }}" title="">Biz haqimizda</a>
+                            </li>
+
                             <li><a class="{{ request()->is('statistika') ? 'active' : '' }}"
                                    href="{{ route('statistika') }}" title="">Statistika</a>
                             </li>
@@ -377,10 +381,7 @@
                                 <a class="{{ request()->is('blog*') ? 'active' : '' }}"
                                    href="{{ route('blog.index') }}" title="">Blog</a>
                             </li>
-                            <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
-                                   href="{{ route('about') }}" title="">Biz haqimizda</a>
-                            </li>
-                        </ul>
+                            </ul>
                     </nav>
                     <!--nav end-->
                 </div>

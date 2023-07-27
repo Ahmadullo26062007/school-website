@@ -16,8 +16,8 @@
                         <span class="category"> {{$blog->category->name}}, {{$a->name}}</span></div>
                     <div class="blog-info">
                         <ul class="meta">
-                            <li><a href="blog.html#" title="">{{$blog->created_at->format('d/m/Y')}}</a></li>
-                            <li><a href="blog.html#" title="">by Admin</a></li>
+                            <li><a  title="">{{$blog->created_at->format('d/m/Y')}}</a></li>
+                            <li><a  title="">by Admin</a></li>
                             <li><img src="assets/img/icon13.png" alt="">
                                 <a href="" title="">{{$blog->category->name}},</a><a href="blog.html#" title=""> School</a>
                             </li>
@@ -53,7 +53,7 @@
                 <h3 class="widget-title">Categories</h3>
                 <ul>
                     @foreach(\App\Models\Category::all() as $c)
-                        <li><a href="blog.html#" title="">{{$c->name}}</a> <span>{{count($c->blogs->ToArray())}}</span></li>
+                        <li><a  title="">{{$c->name}}</a> <span>{{count($c->blogs->ToArray())}}</span></li>
 
                     @endforeach
 
