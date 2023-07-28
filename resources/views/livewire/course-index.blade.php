@@ -27,9 +27,9 @@
                             </span> <span>{{$course->start_time}} - {{$course->end_time}}</span>
                             <div class="d-flex flex-wrap align-items-center">
                                 <div class="posted-by"><img style="width: 30px; height: 30px"
-                                                            src="{{asset('images/'.$course->teacher->image)}}" alt="">
-                                    <a href="classes.html#"
-                                       title="">{{$course->teacher->firstname}} {{$course->teacher->lastname}}</a></div>
+                                                            src="{{$course->teacher->image}}" alt="">
+
+                                       {{$course->teacher->firstname}} {{$course->teacher->lastname}}</div>
                                 <strong
                                     class="price">{{$course->price}}</strong>
                             </div>

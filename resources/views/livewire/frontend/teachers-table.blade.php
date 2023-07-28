@@ -13,8 +13,8 @@
                                     </div>
 
                                     <div class="teacher-info">
-                                        <h3><a href="#" title="">{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</a></h3>
+                                        <h3>{{ $teacher->firstname }}
+                                                {{ $teacher->lastname }}</h3>
                                         <span>{{ $teacher->category }}
                                             O'qituvchisi</span>
                                         @if (empty($teacher->degrees[0]))

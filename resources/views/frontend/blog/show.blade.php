@@ -13,10 +13,10 @@
                     <li><a href="{{route('blog.index')}}" title="">Blog</a></li>
                 </ul>
                 <h2>{{substr($blog->title,0,30)}}...</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
-                <ul class="meta">
-                    <li><a href="" title="">{{$blog->created_at->format('d/m/y')}}</a></li>
-                    <li><a href="" title="">by Admin</a></li>
-                    <li><img src="" alt=""><a href="" title="">{{$blog->category->name}},</a><a href="" title=""> maktab</a></li>
+                <ul class="meta text-light">
+                    <li>{{$blog->created_at->format('d/m/y')}}</li>
+                    <li>by Admin</li>
+                    <li><img src="" alt="">{{$blog->category->name}}, {{$a->name}}</li>
                 </ul>
             </div><!--pager-content end-->
         </div>

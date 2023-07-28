@@ -9,7 +9,7 @@
                         </div>
                         <div class="class-info">
 
-                            <h3><a href="#" title="">{{ $student->fullname }}</a>
+                            <h3>{{ $student->fullname }}
                             </h3>
                             <span>
 
