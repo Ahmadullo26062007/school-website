@@ -44,8 +44,21 @@ class AboutController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
-        About::create($data);
+        $n='https://bxtb.uz/images/'.$data['image'];
+        $file->move(public_path('../../images'), $image_name);
+        About::create([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'description' => $request->description,
+            'image' => $n,
+            // don't needed information
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'viloyat' => $request->viloyat,
+            'tuman' => $request->tuman,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+        ]);
         return redirect()->route('abouts.index');
 
     }
@@ -79,12 +92,13 @@ class AboutController extends Controller
                 $file = $request->file('image');
                 $image_name = uniqid() . $file->getClientOriginalName();
                 $data['image'] = $image_name;
-                $file->move(public_path('images'), $image_name);
+                $file->move(public_path('../../images'), $image_name);
+                $n='https://bxtb.uz/images/'.$data['image'];
                 $about->update([
                     'name' => $request->name,
                     'phone_number' => $request->phone_number,
                     'description' => $request->description,
-                    'image' => $data['image'],
+                    'image' => $n,
                     // don't needed information
                     'start_time' => $request->start_time,
                     'end_time' => $request->end_time,

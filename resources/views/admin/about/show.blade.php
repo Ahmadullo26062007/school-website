@@ -47,7 +47,7 @@
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{asset("images/$about->image")}}"
+                                <td><img width="100px" src="{{$about->image}}"
                                          alt="Maktab rasimi"></td>
                             </tr>
                         </table>

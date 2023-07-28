@@ -41,8 +41,8 @@
                                             {{$class->description}}
                                         </td>
                                         <td class="d-none d-xl-table-cell">
-                                            <img width="100px" src="{{'images/'.$class->image}}"
-                                                 alt="{{$class->number}} {{$class->name}} sinf rasimi">
+                                            <img width="100px" src="{{$class->image}}"
+                                                 alt="{{$class->class}} sinf rasimi">
                                         </td>
                                         @php
                                             $school=App\Models\About::find($class->school_id);

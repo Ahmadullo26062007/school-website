@@ -1,8 +1,3 @@
-
-
-
-
-
 <div class="container ">
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
@@ -79,7 +74,7 @@
     </div>
 
 
-    <div class="row py-5"   >
+    <div class="row py-5">
         <div class="col-12 ">
 
             <ul class="responsive-table">
@@ -103,48 +98,50 @@
 
                         $a1=\App\Models\About::find($c);
                     @endphp
-                <li class="table-row li1">
-                    <div class="col col-1" data-label="Job Id">{{$c}}</div>
-                    <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
-                    <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
-                    <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
-                </li>
+                    @if(empty($a1->id==1))
+                        <li class="table-row li1">
+                            <div class="col col-1" data-label="Job Id">{{$c}}</div>
+                            <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
+                            <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
+                            <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
+                            <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
+                        </li>
+                    @endif
                 @endforeach
             </ul>
         </div>
 
-     </div>
+    </div>
 
-{{--    <table class="table">--}}
-{{--        <thead>--}}
-{{--        <tr>--}}
+    {{--    <table class="table">--}}
+    {{--        <thead>--}}
+    {{--        <tr>--}}
 
-{{--            <th scope="col">First</th>--}}
-{{--            <th scope="col">Last</th>--}}
-{{--            <th scope="col">Handle</th>--}}
-{{--        </tr>--}}
-{{--        </thead>--}}
-{{--        <tbody>--}}
-{{--        <tr>--}}
+    {{--            <th scope="col">First</th>--}}
+    {{--            <th scope="col">Last</th>--}}
+    {{--            <th scope="col">Handle</th>--}}
+    {{--        </tr>--}}
+    {{--        </thead>--}}
+    {{--        <tbody>--}}
+    {{--        <tr>--}}
 
-{{--            <td>Mark</td>--}}
-{{--            <td>Otto</td>--}}
-{{--            <td>@mdo</td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <th scope="row">2</th>--}}
-{{--            <td>Jacob</td>--}}
-{{--            <td>Thornton</td>--}}
-{{--            <td>@fat</td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <th scope="row">3</th>--}}
-{{--            <td colspan="2">Larry the Bird</td>--}}
-{{--            <td>@twitter</td>--}}
-{{--        </tr>--}}
-{{--        </tbody>--}}
-{{--    </table> --}}
+    {{--            <td>Mark</td>--}}
+    {{--            <td>Otto</td>--}}
+    {{--            <td>@mdo</td>--}}
+    {{--        </tr>--}}
+    {{--        <tr>--}}
+    {{--            <th scope="row">2</th>--}}
+    {{--            <td>Jacob</td>--}}
+    {{--            <td>Thornton</td>--}}
+    {{--            <td>@fat</td>--}}
+    {{--        </tr>--}}
+    {{--        <tr>--}}
+    {{--            <th scope="row">3</th>--}}
+    {{--            <td colspan="2">Larry the Bird</td>--}}
+    {{--            <td>@twitter</td>--}}
+    {{--        </tr>--}}
+    {{--        </tbody>--}}
+    {{--    </table> --}}
 
 
 </div>

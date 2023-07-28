@@ -82,18 +82,12 @@
                                 @php
                                     $about=App\Models\About::find(auth()->user()->school_id);
                                 @endphp
-                                @foreach($about->teachers as $teach)
-                                    @foreach($teach->degrees as $deg)
-
+                                @foreach($about->teachers as $deg)
                                     <tr>
-
                                         <td>{{$deg->id}}</td>
-                                        <td>{{$teach->firstname}} {{$teach->lastname}}</td>
-                                        @php
-                                            $type=App\Models\Degree::TYPES[$deg->type_id];
-                                        @endphp
-                                        <td>{{$type}}</td>
-                                        <td>{{$deg->year}} yil</td>
+                                        <td>{{$deg->firstname}}</td>
+                                        <td class="d-none d-xl-table-cell">{{$deg->lastname}}</td>
+                                        <td>{{$deg->category}}</td>
 
                                         <td>
                                             <a href="{{route('teacher.edit',[$deg->id])}}" class="btn btn-info">
@@ -128,8 +122,6 @@
                                             </form>
                                         </td>
                                     </tr>
-                                    @endforeach
-
                                 @endforeach
 
                             @endif

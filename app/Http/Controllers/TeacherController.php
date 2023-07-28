@@ -47,13 +47,15 @@ class TeacherController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
+
         if (auth()->user()->school_id == null) {
             Teacher::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'category' => $request->category,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => $request->school_id,
             ]);
         } else {
@@ -61,7 +63,7 @@ class TeacherController extends Controller
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'category' => $request->category,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => auth()->user()->school_id,
             ]);
         }
@@ -107,12 +109,13 @@ class TeacherController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
+            $n = 'https://bxtb.uz/images/' . $data['image'];
             if (auth()->user()->school_id == null) {
                 $teacher->update([
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
-                    'image' => $image_name,
+                    'image' => $n,
                     'school_id' => $request->school_id,
 
                 ]);
@@ -121,12 +124,12 @@ class TeacherController extends Controller
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
-                    'image' => $image_name,
+                    'image' => $n,
                     'school_id' => auth()->user()->school_id,
                 ]);
             }
 
-            $file->move(public_path('images'), $image_name);
+            $file->move(public_path('../../images'), $image_name);
 
         } else {
             if (auth()->user()->school_id == null) {

@@ -64,7 +64,7 @@
                                     <h5 class="card-title mb-0">O'qtuvchi rasimi</h5>
 
                                     <div class="card-body">
-                                        <img width="300px" src="{{asset('images/'.$teacher->image)}}" alt="">
+                                        <img width="300px" src="{{$teacher->image}}" alt="">
                                     </div>
                                 </div>
                                 @if(auth()->user()->school_id==null)

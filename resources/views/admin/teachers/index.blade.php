@@ -41,8 +41,8 @@
                                         <td class="d-none d-xl-table-cell">{{$teacher->lastname}}</td>
                                         <td>{{$teacher->category}}</td>
                                         <td class="d-none d-xl-table-cell"><img width="100px"
-                                                                                src="{{'images/'.$teacher->image}}"
-                                                                                alt="{{$teacher->name}} rasimi"></td>
+                                                                                src="{{$teacher->image}}"
+                                                                                alt="{{$teacher->lastname}} rasimi"></td>
                                         @php
                                             $school=App\Models\About::find($teacher->school_id);
                                             @endphp

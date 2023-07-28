@@ -32,7 +32,7 @@
                             <tr>
                                 <th>Rasimi</th>
 
-                                <td><img width="340px" src="{{asset('images/'.$student->image)}}"
+                                <td><img width="340px" src="{{$student->image}}"
                                          alt="O'quchini rasimi">
                                 </td>
                             </tr>

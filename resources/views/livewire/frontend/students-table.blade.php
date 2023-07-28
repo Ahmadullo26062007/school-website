@@ -4,7 +4,7 @@
             @foreach ($students as $student)
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
-                        <div class="class-thumb"><img src="{{ asset('images/' . $student->class->image) }}" alt="Student's class image"
+                        <div class="class-thumb"><img src="{{$student->image}}" alt="Student's class image"
                                 class="w-100">
                         </div>
                         <div class="class-info">
@@ -16,10 +16,12 @@
                                 @if (!empty($student->certificate))
                                     @if (App\Models\Student::TYPES[$student->certificate->type] == 1)
                                         {{ App\Models\Student::TYPES[$student->certificate->type] }}
-                                        {{ $student->certificate->ball }}
                                     @else
                                         {{ App\Models\Student::TYPES[$student->certificate->type] }}
-                                        {{ $student->certificate->degree }}
+                                        {{App\Models\Student::DEGREE[$student->certificate->degree] }}
+                                        @if($student->certificate->ball>0)
+                                            {{ $student->certificate->ball }}
+                                        @endif
                                     @endif
                                 @else
                                     Sertifikat yo'q
@@ -28,7 +30,7 @@
                             </span> <span></span>
                             <div class="d-flex flex-wrap align-items-center">
                                 <div class="posted-by">
-                                    <a href="#" title="">{{ $student->class->class }} Sinf
+                                    <a title="">{{ $student->class->class }} Sinf
                                     </a>
                                 </div>
                             </div>

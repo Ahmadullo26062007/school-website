@@ -60,7 +60,7 @@
                                     <h5 class="card-title mb-0">Yanglik rasimi rasimi</h5>
 
                                     <div class="card-body">
-                                        <img width="200px" src="{{asset('images/'.$blog->image)}}"
+                                        <img width="200px" src="{{$blog->image}}"
                                              alt="{{$blog->name}} sinf rasimi">
                                     </div>
                                 </div>

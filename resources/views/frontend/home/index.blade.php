@@ -27,7 +27,7 @@
                             <!--section-title end-->
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <div class="avt-img"><img width="500" height="500" src="{{ asset("images/$a->image") }}"
+                            <div class="avt-img"><img width="500" height="500" src="{{$a->image}}"
                                                       alt=""></div>
                             <!--avt-img end-->
                         </div>
@@ -65,8 +65,7 @@
                                             <div class="posted-by"><img style="width: 30px; height: 30px"
                                                                         src="{{ asset('images/' . $class->teacher->image) }}"
                                                                         alt="">
-                                                <a href="assets/images/resources/bg4.jpg.html#"
-                                                   title="">{{ $class->teacher->firstname }}
+                                                <a title="">{{ $class->teacher->firstname }}
                                                     {{ $class->teacher->lastname }}</a>
                                             </div>
                                         </div>
@@ -99,12 +98,12 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
                                 <div class="teacher">
                                     <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                                  src="{{ asset("images/$teacher->image") }}" alt=""
+                                                                  src="{{ $teacher->image }}" alt=""
                                                                   class="w-100">
 
                                     </div>
                                     <div class="teacher-info">
-                                        <h3><a href="teacher-single.html" title="">{{ $teacher->firstname }}
+                                        <h3><a title="">{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }} O`qituvchisi</span>
                                         <span>@if($teacher->degree)
@@ -167,9 +166,9 @@
                                            title="">{{ $course->name }}</a></h3>
                                     <div class="d-flex flex-wrap">
                                         <div class="posted-by"><img style="width: 25px ;height: 25px"
-                                                                    src="{{ asset("images/".$course->teacher->image) }}"
+                                                                    src="{{ $course->teacher->image }}"
                                                                     alt="Class image">
-                                            <a href="{{ asset('images/' . $course->teacher->image) }}"
+                                            <a href="{{ $course->teacher->image }}"
                                                title="">{{ $course->teacher->firstname }}
                                                 {{ $course->teacher->firstname }}</a></div>
                                         <span class="locat"><img
@@ -198,7 +197,7 @@
 
 
                                                 <div class="blog-thumbnail"><img style="width: 369px; height: 246px"
-                                                                                 src="{{ asset('images/' . $blog->image) }}"
+                                                                                 src="{{$blog->image}}"
                                                                                  alt="" class="w-100">
 
                                                     <span class="category">{{ $blog->title }}</span>

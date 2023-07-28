@@ -23,7 +23,7 @@
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{"images/$blog->image"}}"
+                                <td><img width="100px" src="{{$blog->image}}"
                                          alt="O'qtuvchi rasimi"></td>
                             </tr>
                         </table>
