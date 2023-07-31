@@ -80,6 +80,16 @@
                                         </div>
                                     </div>
                                 @endif
+                                <div class="col-6 ">
+                                    <h5 class="card-title mb-0">yaxshi oqtuvchimi</h5>
+                                    <div class="card-body">
+                                        <select class="form-select" name="great_teacher" id="">
+                                            <option disabled selected>Tanlang</option>
+                                            <option @if($teacher->great_teacher==0) selected @endif value="0">Yo'q</option>
+                                            <option @if($teacher->great_teacher==1) selected @endif value="1">Ha</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <button class="btn btn-primary mt-3" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
