@@ -21,13 +21,14 @@
 
 
                                     vestibulum leo sagittis et.</p><a href="{{ route('classes.index') }}" title=""
-                                    class="btn-default">Classes <i class="fa fa-long-arrow-alt-right"></i></a>
+                                                                      class="btn-default">Classes <i
+                                        class="fa fa-long-arrow-alt-right"></i></a>
                             </div>
                             <!--section-title end-->
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="avt-img"><img width="500" height="500" src="{{ asset("images/$a->image") }}"
-                                    alt=""></div>
+                                                      alt=""></div>
                             <!--avt-img end-->
                         </div>
                     </div>
@@ -52,19 +53,20 @@
                             <div class="col-lg-3">
                                 <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
                                     <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}"
-                                            alt="" class="w-100">
+                                                                  alt="" class="w-100">
 
                                     </div>
                                     <div class="class-info">
                                         <h3><a href="{{ route('class.detail', $class->id) }}"
-                                                title="">{{ $class->class }}-
+                                               title="">{{ $class->class }}-
                                                 Sinf</a></h3>
                                         <span>Xar kuni</span> <span></span>
                                         <div class="d-flex flex-wrap align-items-center">
                                             <div class="posted-by"><img style="width: 30px; height: 30px"
-                                                    src="{{ asset('images/' . $class->teacher->image) }}" alt="">
+                                                                        src="{{ asset('images/' . $class->teacher->image) }}"
+                                                                        alt="">
                                                 <a href="assets/images/resources/bg4.jpg.html#"
-                                                    title="">{{ $class->teacher->firstname }}
+                                                   title="">{{ $class->teacher->firstname }}
                                                     {{ $class->teacher->lastname }}</a>
                                             </div>
                                         </div>
@@ -75,7 +77,8 @@
                         @endforeach
                     </div>
                     <div class="lnk-dv text-center"><a href="{{ route('classes.index') }}" title=""
-                            class="btn-default">Classes <i class="fa fa-long-arrow-alt-right"></i></a></div>
+                                                       class="btn-default">Classes <i
+                                class="fa fa-long-arrow-alt-right"></i></a></div>
                 </div>
                 <!--classes-sec end-->
             </div>
@@ -95,15 +98,14 @@
                         @foreach ($teachers as $teacher)
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
                                 <div class="teacher">
+
                                     <div class="teacher-img">
                                         <img style="width: 235px; height: 425px;"
-                                            src="{{ '../../images/' . $teacher->image }}" alt="teacher's image"
-                                            class="w-100">
-
-
+                                             src="{{"../../images/$teacher->image"}}" alt="teacher's image"
+                                             class="w-100">
                                     </div>
                                     <div class="teacher-info">
-                                        <h3><a href="teacher-single.html" title="">{{ $teacher->firstname }}
+                                        <h3><a>{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }} O`qituvchisi</span>
                                         <span>
@@ -141,9 +143,9 @@
                             <!--course-img end-->
                         </div>
                         <a href="{{ route('course.index') }}" title=""
-                            style="color: #044e7c
+                           style="color: #044e7c
                                  "
-                            class="read-more text-bg-primary">Ko`proq
+                           class="read-more text-bg-primary">Ko`proq
                             <i class="fa fa-long-arrow-alt-right"></i></a>
                         <!--find-course end-->
                     </div>
@@ -152,26 +154,28 @@
                         <div class="courses-list">
                             <!--course-card end-->
                             @foreach ($courses as $course)
-                                <div class="course-card wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="400ms">
+                                <div class="course-card wow fadeInLeft" data-wow-duration="1000ms"
+                                     data-wow-delay="400ms">
                                     <div class="d-flex flex-wrap align-items-center">
                                         <ul class="course-meta">
                                             <li><img src="assets/img/icon12.png" alt="">
-                                                {{-- {{ $course->created_at->format('d/m/Y') }}</li> --}}
+                                            {{-- {{ $course->created_at->format('d/m/Y') }}</li> --}}
                                             <li>{{ $course->start_time }} - {{ $course->end_time }}</li>
                                         </ul>
                                         <span>{{ $course->price }} UZS </span>
                                     </div>
                                     <h3><a href="{{ route('course.detail', $course->id) }}"
-                                            title="">{{ $course->name }}</a></h3>
+                                           title="">{{ $course->name }}</a></h3>
                                     <div class="d-flex flex-wrap">
                                         <div class="posted-by"><img style="width: 25px ;height: 25px"
-                                                src="{{ asset('images/' . $course->teacher->image) }}" alt="Class image">
+                                                                    src="{{ asset('images/' . $course->teacher->image) }}"
+                                                                    alt="Class image">
                                             <a href="{{ asset('images/' . $course->teacher->image) }}"
-                                                title="">{{ $course->teacher->firstname }}
+                                               title="">{{ $course->teacher->firstname }}
                                                 {{ $course->teacher->firstname }}</a>
                                         </div>
                                         <span class="locat"><img src="assets/img/loct.png"
-                                                alt="">{{ $a->name }}
+                                                                 alt="">{{ $a->name }}
                                         </span>
                                     </div>
                                 </div>
@@ -195,18 +199,19 @@
 
 
                                                 <div class="blog-thumbnail"><img style="width: 369px; height: 246px"
-                                                        src="{{ asset('images/' . $blog->image) }}" alt=""
-                                                        class="w-100">
+                                                                                 src="{{ asset('images/' . $blog->image) }}"
+                                                                                 alt=""
+                                                                                 class="w-100">
 
                                                     <span class="category">{{ $blog->title }}</span>
                                                 </div>
                                                 <div class="blog-info">
                                                     <ul class="meta">
                                                         <li><a href="assets/images/resources/bg4.jpg.html#"
-                                                                title=""></a>
+                                                               title=""></a>
                                                         </li>
                                                         <li><a href="assets/images/resources/bg4.jpg.html#"
-                                                                title="">by
+                                                               title="">by
                                                                 Admin</a></li>
                                                         <li><img src="assets/img/icon13.png" alt=""><a
                                                                 href="assets/images/resources/bg4.jpg.html#"
@@ -216,10 +221,10 @@
                                                                 School</a></li>
                                                     </ul>
                                                     <h3><a href="{{ route('blog.show', $blog->id) }}"
-                                                            title="">{{ $blog->title }}</a></h3>
+                                                           title="">{{ $blog->title }}</a></h3>
                                                     <p>{{ substr($blog->description, 0, 25) }}...
                                                     </p><a href="{{ route('blog.show', $blog->id) }}" title=""
-                                                        class="read-more">Read <i
+                                                           class="read-more">Read <i
                                                             class="fa fa-long-arrow-alt-right"></i></a>
                                                 </div>
                                             </div>
