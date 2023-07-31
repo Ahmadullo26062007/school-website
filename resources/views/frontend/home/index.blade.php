@@ -97,9 +97,9 @@
                                 <div class="teacher">
                                     <div class="teacher-img">
                                         <img style="width: 235px; height: 425px;"
-                                            src="{{ asset('../../images/...' . $teacher->image) }}" alt="teacher's image"
+                                            src="{{ '../../images/' . $teacher->image }}" alt="teacher's image"
                                             class="w-100">
-                                        
+
 
                                     </div>
                                     <div class="teacher-info">
