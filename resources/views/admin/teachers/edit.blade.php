@@ -81,7 +81,7 @@
                                     </div>
                                 @endif
                                 <div class="col-6 ">
-                                    <h5 class="card-title mb-0">yaxshi oqtuvchimi</h5>
+                                    <h5 class="card-title mb-0">To'p o'qtuvchi</h5>
                                     <div class="card-body">
                                         <select class="form-select" name="great_teacher" id="">
                                             <option disabled selected>Tanlang</option>

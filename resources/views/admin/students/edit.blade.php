@@ -69,7 +69,17 @@
                                 <div class="col text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">O'quchini Rasimi</h5>
-                                        <img width="340px" src="{{asset($student->image}}" alt="O'quchini rasimi">
+                                        <img width="340px" src="{{$student->image}}" alt="O'quchini rasimi">
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <h5 class="card-title mb-0">To'p o'qtuvchi</h5>
+                                    <div class="card-body">
+                                        <select class="form-select" name="great_student" id="">
+                                            <option disabled selected>Tanlang</option>
+                                            <option @if($student->great_student==0) selected @endif value="0">Yo'q</option>
+                                            <option @if($student->great_student==1) selected @endif value="1">Ha</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

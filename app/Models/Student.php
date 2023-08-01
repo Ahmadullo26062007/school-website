@@ -13,7 +13,8 @@ class Student extends Model
         'fullname',
         'class_id',
         'school_id',
-        'image'
+        'image',
+        'great_student'
     ];
     const TYPES=[
         '0'=>null,
