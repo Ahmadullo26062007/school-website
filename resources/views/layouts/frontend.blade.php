@@ -114,8 +114,7 @@
                               function GreatTeachersProsent($a){
                             if (!count($a->teachers->ToArray())==0){
                             $c=0;
-                          $t=count($a->teachers->ToArray());
-                           $p=100/$t;
+
                             foreach ($a->teachers as $t){
                                 if($t->degrees){
                              if (count($t->degrees)!==0){
@@ -126,9 +125,9 @@
                              }
                                      }
                                    if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                       $n=$c*$p;
+                                       $n=$c;
                            return floor($n);
                                    }
                             }else{
@@ -151,13 +150,13 @@
                                    }
                              }
                                      }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
                           if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                $n=$c*$p;
+                                $n=$c;
                            return floor($n);
                                    }
                                }
@@ -180,13 +179,13 @@
                                    }
                              }
                                      }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
                            if($c==0){
                                        return 0;
                                    }       else{
-                                 $n=$c*$p;
+                                 $n=$c;
                            return floor($n);
                                    }
                                }
@@ -208,14 +207,14 @@
             }
 
            }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
 
                             if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                 $n=$c*$p;
+                                 $n=$c;
                            return floor($n);
                                    }
 
@@ -238,14 +237,14 @@
             }
 
            }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
 
                          if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                $n=$c*$p;
+                                $n=$c;
                            return floor($n);
                                    }
                                }
@@ -267,14 +266,14 @@
             }
 
            }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
 
                            if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                $n=$c*$p;
+                                $n=$c;
                            return floor($n);
                                    }
                                }
@@ -298,14 +297,14 @@
             }
 
            }
-                               if($c*$p==0){
-                                   return 1;
+                               if($c==0){
+                                   return 0;
                                }else{
 
                            if($c==0){
-                                       return 1;
+                                       return 0;
                                    }       else{
-                                $n=$c*$p;
+                                $n=$c;
                            return floor($n);
                                    }
                                }
@@ -553,13 +552,13 @@
     new Chart(ctx, {
         type: 'bar',
         data: {
-            colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar'],
+            colors: ['#000', 'Blue', 'Orange', 'Yellow', 'Green', 'Purple'],
+            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', '1-toifali o`qtuvchilar', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
-                label: "",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}],
+                label: "Statistika",
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
 
-                backgroundColor: ['green', 'red', 'blue', '#5bbe00', '#2dff00', 'gold', 'gold'],
+                backgroundColor: ['green', 'red', 'gold', 'blue', '#5bbe00', '#2dff00'],
 
                 borderWidth: 2,
             }],

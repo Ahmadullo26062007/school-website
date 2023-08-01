@@ -43,7 +43,7 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         @if((count( \App\Models\Teacher::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
-                            <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a>
+                            <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="viewMore()">Yana+</a>
                             </li>
                         @endif
                     </ul>
