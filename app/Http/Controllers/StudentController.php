@@ -41,24 +41,25 @@ class StudentController extends Controller
             'fullname.required' => 'Ismni kiriting',
             'class_id.required' => 'Sinf kiriting',
         ]);
-
         $data = $request->all();
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
+        $file->move(public_path('../../images'), $image_name);
+        $n='https://bxtb.uz/images/'.$data['image'];
+
         if (auth()->user()->school_id == null) {
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => $request->school_id,
             ]);
         } else {
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => auth()->user()->school_id,
             ]);
         }
@@ -99,17 +100,18 @@ class StudentController extends Controller
         ]);
         if ($request->image) {
             // removing old image
-//            unlink(public_path("images/$student->image"));
+//            unlink(public_path("../../images/$student->image"));
             // get image
             $data = $request->all();
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
+            $n='https://bxtb.uz/images/'.$data['image'];
             if (auth()->user()->school_id == null) {
                 $student->update([
                     'fullname' => $request->fullname,
                     'class_id' => $request->class_id,
-                    'image' => $image_name,
+                    'image' => $n,
                     'school_id' => $request->school_id,
 
                 ]);
@@ -122,7 +124,7 @@ class StudentController extends Controller
                 ]);
             }
 
-            $file->move(public_path('images'), $image_name);
+            $file->move(public_path('../../images'), $image_name);
 
         } else {
             if (auth()->user()->school_id == null) {

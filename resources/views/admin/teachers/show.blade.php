@@ -23,7 +23,7 @@
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{asset("images/$teacher->image")}}"
+                                <td><img width="100px" src="{{$teacher->image}}"
                                          alt="O'qtuvchi rasimi"></td>
                             </tr>
                         </table>

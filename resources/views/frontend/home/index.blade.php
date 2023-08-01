@@ -5,7 +5,7 @@
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
     @endphp
-    @if($a->classes)
+    @if ($a->classes)
         @php
             $classes = $a->classes;
         @endphp
@@ -27,7 +27,7 @@
                             <!--section-title end-->
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <div class="avt-img"><img width="500" height="500" src="{{ asset("images/$a->image") }}"
+                            <div class="avt-img"><img width="500" height="500" src="{{ $a->image }}"
                                                       alt=""></div>
                             <!--avt-img end-->
                         </div>
@@ -52,8 +52,8 @@
                         @foreach ($classes as $class)
                             <div class="col-lg-3">
                                 <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
-                                    <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}" alt=""
-                                                                  class="w-100">
+                                    <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}"
+                                                                  alt="" class="w-100">
 
                                     </div>
                                     <div class="class-info">
@@ -63,7 +63,7 @@
                                         <span>Xar kuni</span> <span></span>
                                         <div class="d-flex flex-wrap align-items-center">
                                             <div class="posted-by"><img style="width: 30px; height: 30px"
-                                                                        src="{{ asset('images/' . $class->teacher->image) }}"
+                                                                        src="{{ $class->teacher->image }}"
                                                                         alt="">
                                                 <a href="assets/images/resources/bg4.jpg.html#"
                                                    title="">{{ $class->teacher->firstname }}
@@ -98,18 +98,21 @@
                         @foreach ($teachers as $teacher)
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
                                 <div class="teacher">
-                                    <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                                  src="{{ asset("images/$teacher->image") }}" alt=""
-                                                                  class="w-100">
 
+                                    <div class="teacher-img">
+                                        <img style="width: 235px; height: 425px;"
+                                             src="{{"$teacher->image"}}" alt="teacher's image"
+                                             class="w-100">
                                     </div>
                                     <div class="teacher-info">
-                                        <h3><a href="teacher-single.html" title="">{{ $teacher->firstname }}
+                                        <h3><a>{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }} O`qituvchisi</span>
-                                        <span>@if($teacher->degree)
+                                        <span>
+                                            @if ($teacher->degree)
                                                 @dd($teacher->degree)
-                                            @endif O`qituvchi</span>
+                                            @endif O`qituvchi
+                                        </span>
                                     </div>
                                 </div>
                                 <!--teacher end-->
@@ -136,16 +139,14 @@
                                     </strong></h3>
                             </div>
                             <!--sec-title end-->
-                            <div class="course-img"><img class="course-imj" src="{{asset('images/course.jpg')}}" alt=""></div>
+                            <div class="course-img"><img src="assets/img/course-img.png" alt=""></div>
                             <!--course-img end-->
                         </div>
-{{--                        <a href="{{ route('course.index') }}" title=""--}}
-{{--                           style="color: #044e7c--}}
-{{--                                 " class="read-more text-bg-primary">Ko`proq--}}
-{{--                            <i class="fa fa-long-arrow-alt-right"></i></a>--}}
-                        <div class="lnk-dv"><a href="{{ route('course.index') }}" title=""
-                                                           class="btn-default">Koproq <i
-                                    class="fa fa-long-arrow-alt-right"></i></a></div>
+                        <a href="{{ route('course.index') }}" title=""
+                           style="color: #044e7c
+                                 "
+                           class="read-more text-bg-primary">Ko`proq
+                            <i class="fa fa-long-arrow-alt-right"></i></a>
                         <!--find-course end-->
                     </div>
                     {{-- Ma'lumot yo' --}}
@@ -167,14 +168,15 @@
                                            title="">{{ $course->name }}</a></h3>
                                     <div class="d-flex flex-wrap">
                                         <div class="posted-by"><img style="width: 25px ;height: 25px"
-                                                                    src="{{ asset("images/".$course->teacher->image) }}"
+                                                                    src="{{ asset('images/' . $course->teacher->image) }}"
                                                                     alt="Class image">
                                             <a href="{{ asset('images/' . $course->teacher->image) }}"
                                                title="">{{ $course->teacher->firstname }}
-                                                {{ $course->teacher->firstname }}</a></div>
-                                        <span class="locat"><img
-                                                src="assets/img/loct.png" alt="">{{ $a->name }}
-                                    </span>
+                                                {{ $course->teacher->firstname }}</a>
+                                        </div>
+                                        <span class="locat"><img src="assets/img/loct.png"
+                                                                 alt="">{{ $a->name }}
+                                        </span>
                                     </div>
                                 </div>
                             @endforeach
@@ -182,7 +184,6 @@
                         </div>
                     </div>
                     <!--course-section end-->
-
                     <section class="blog-section">
                         <div class="container">
                             <div class="section-title text-center">
@@ -199,7 +200,8 @@
 
                                                 <div class="blog-thumbnail"><img style="width: 369px; height: 246px"
                                                                                  src="{{ asset('images/' . $blog->image) }}"
-                                                                                 alt="" class="w-100">
+                                                                                 alt=""
+                                                                                 class="w-100">
 
                                                     <span class="category">{{ $blog->title }}</span>
                                                 </div>
@@ -208,12 +210,14 @@
                                                         <li><a href="assets/images/resources/bg4.jpg.html#"
                                                                title=""></a>
                                                         </li>
-                                                        <li><a href="assets/images/resources/bg4.jpg.html#" title="">by
+                                                        <li><a href="assets/images/resources/bg4.jpg.html#"
+                                                               title="">by
                                                                 Admin</a></li>
                                                         <li><img src="assets/img/icon13.png" alt=""><a
                                                                 href="assets/images/resources/bg4.jpg.html#"
                                                                 title="">{{ $blog->category->name }},</a><a
-                                                                href="assets/images/resources/bg4.jpg.html#" title="">
+                                                                href="assets/images/resources/bg4.jpg.html#"
+                                                                title="">
                                                                 School</a></li>
                                                     </ul>
                                                     <h3><a href="{{ route('blog.show', $blog->id) }}"
@@ -232,12 +236,7 @@
                             <!--blog-posts end-->
                         </div>
                     </section>
-
                     <!--blog-section end-->
                     <!--newsletter-sec end-->
-                </div>
-
-            </div>
-        </section>
     @endif
 @endsection

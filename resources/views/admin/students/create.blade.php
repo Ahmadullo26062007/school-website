@@ -32,6 +32,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 ">
+
                                     <div class="card-body">
                                         <h5 class="card-title mb-3">Sinifi</h5>
                                        <select name="class_id" class="form-select">

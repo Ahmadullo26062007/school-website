@@ -9,7 +9,7 @@
             <div class="pager-content text-center">
                 <h2>Biz haqimizda</h2>
                 <ul>
-                    <li><a href="contacts.html#" title="">Bosh sahifa</a></li>
+                    <li><a href="{{route('home')}}" title="">Bosh sahifa</a></li>
                     <li><span>Bog'lanish</span></li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                         <!--section-title end-->
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="avt-img" ><img width="500" height="500" src="{{asset("images/$a->image")}}" alt=""></div>
+                        <div class="avt-img" ><img width="500" height="500" src="{{$a->image}}" alt=""></div>
                         <!--avt-img end-->
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="col-lg-8 col-md-7">
                         <div class="comment-area">
                             <h3>Kamentariya Qo'shish</h3>
-                            <form id="contact-form" method="post" action="contacts.html#">
+                            <form id="contact-form" method="post" >
                                 <div class="response"></div>
                                 <div class="row">
                                     <div class="col-lg-6">

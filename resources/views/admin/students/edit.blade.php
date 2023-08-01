@@ -69,7 +69,7 @@
                                 <div class="col text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">O'quchini Rasimi</h5>
-                                        <img width="340px" src="{{asset('images/'.$student->image)}}" alt="O'quchini rasimi">
+                                        <img width="340px" src="{{asset($student->image}}" alt="O'quchini rasimi">
                                     </div>
                                 </div>
                             </div>

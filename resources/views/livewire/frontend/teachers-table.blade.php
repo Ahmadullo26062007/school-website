@@ -9,12 +9,12 @@
                                 <div class="teacher-img">
                                     <div style="height: 300px">
 
-                                        <img style="width: 235px; height: 300px;" src="{{ asset("images/$teacher->image") }}" alt="" class="w-100">
+                                        <img style="width: 235px; height: 300px;" src="{{$teacher->image }}" alt="" class="w-100">
                                     </div>
 
                                     <div class="teacher-info">
-                                        <h3><a href="#" title="">{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</a></h3>
+                                        <h3>{{ $teacher->firstname }}
+                                                {{ $teacher->lastname }}</h3>
                                         <span>{{ $teacher->category }}
                                             O'qituvchisi</span>
                                         @if (empty($teacher->degrees[0]))

@@ -70,8 +70,8 @@
                                     <h5 class="card-title mb-0">Sinf Rasimi</h5>
                                     <div class="card-body">
                                         <label class="form-label">
-                                            <img width="100px" src="{{asset('images/'.$classes->image)}}"
-                                                 alt="{{$classes->number}} {{$classes->name}} sinf rasimi">
+                                            <img width="100px" src="{{$classes->image}}"
+                                                 alt="{{$classes->class}} sinf rasimi">
 
                                         </label>
                                     </div>

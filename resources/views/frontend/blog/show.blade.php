@@ -5,19 +5,18 @@
            $a = \App\Models\About::find(env('SCHOOL_ID'));
 
        @endphp
-    <section style="background-image: url({{asset("images/$blog->image")}});" class="pager-section blog-version">
+    <section style="background-image: url({{$blog->image}});" class="pager-section blog-version">
         <div class="container">
             <div class="pager-content text-center">
                 <ul>
                     <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><a href="{{route('blog.index')}}" title="">Blog</a></li>
-                    <li><span> {{$blog->title}} </span></li>
                 </ul>
-                <h2>{{$blog->title}}</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
-                <ul class="meta">
-                    <li><a href="" title="">{{$blog->created_at->format('d/m/y')}}</a></li>
-                    <li><a href="" title="">by Admin</a></li>
-                    <li><img src="" alt=""><a href="" title="">{{$blog->category->name}},</a><a href="" title=""> maktab</a></li>
+                <h2>{{substr($blog->title,0,30)}}...</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
+                <ul class="meta text-light">
+                    <li>{{$blog->created_at->format('d/m/y')}}</li>
+                    <li>by Admin</li>
+                    <li><img src="" alt="">{{$blog->category->name}}, {{$a->name}}</li>
                 </ul>
             </div><!--pager-content end-->
         </div>
@@ -33,11 +32,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="oderd">
-                                <h3>Tartibsiz jadval</h3>
+                                <h3>Tartibli jadval</h3>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>Darslarni o`z vaqtida qatiy bo`lish</li>
+                                    <li>Masuliyatli va Malakali O`qtuvchilar</li>
+                                    <li>Yangilangan jadval tartiblari</li>
                                 </ul>
                             </div>
                             <!--ordrd end-->
@@ -46,14 +45,15 @@
                             <div class="oderd">
                                 <h3>Tartibsiz jadval</h3>
                                 <ol>
-                                    <li>1. Etiam ante nisl, maximus vitae sem non, dignissim</li>
-                                    <li>2. Donec blandit, sapien eu porttitor blandit</li>
-                                    <li>3. Sed at urna at massa viverra feugiat non</li>
+                                    <li>1. Darslarni o`z vaqtida bo`lishga etiborsizlik</li>
+                                    <li>2. O`qtuvchilarning Darsga va O`quvchilarga etiborsizligi</li>
+                                    <li>3. O`quvchilarning Dars jadvaliga Etiborsizligi</li>
                                 </ol>
                             </div>
                             <!--ordrd end-->
                         </div>
                     </div>
+
 
 
                 </div>
@@ -81,7 +81,7 @@
                         <div class="wd-posts">
                             @foreach(\App\Models\Blog::where('school_id',env('SCHOOL_ID'))->take(3)->orderByDesc('id')->get() as $b)
                                 <div class="wd-post d-flex flex-wrap">
-                                    <div class="wd-thumb"><img style="width: 52px;height: 52px;border-radius: 18%" src="{{asset('images/'.$b->image)}}" alt=""></div>
+                                    <div class="wd-thumb"><img style="width: 52px;height: 52px;border-radius: 18%" src="{{$b->image}}" alt=""></div>
                                     <div class="wd-info">
                                         <h3><a href="{{route('blog.show',$b->id)}}" title="">{{$b->title}}</a></h3>
                                         <span>{{$b->created_at->format('d/m/y')}}</span>

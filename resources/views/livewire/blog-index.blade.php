@@ -11,7 +11,7 @@
                 <div class="blog-post">
                     <div class="blog-thumbnail">
                         <a href="" title="">
-                            <img src="{{asset('images/'.$blog->image)}}" alt="" class="w-100">
+                            <img src="{{$blog->image}}" alt="" class="w-100">
                         </a>
                         <span class="category"> {{$blog->category->name}}, {{$a->name}}</span></div>
                     <div class="blog-info">

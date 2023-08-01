@@ -13,7 +13,8 @@ class Teacher extends Model
         'lastname',
         'category',
         'image',
-        'school_id'
+        'school_id',
+        'great_teacher'
     ];
 
     public function classes()

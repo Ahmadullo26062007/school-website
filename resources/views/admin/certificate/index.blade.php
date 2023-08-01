@@ -34,6 +34,7 @@
                             <tbody>
                                 @if (auth()->user()->school_id == null)
                                 @foreach ($certificates as $certificate)
+
                                         <tr>
                                             @php
                                                 $student = App\Models\Student::find($certificate->student_id);
@@ -44,6 +45,7 @@
                                             <td>{{ \App\Models\Student::TYPES[$certificate->type] }}</td>
                                             <td class="d-none d-xl-table-cell">
                                                 {{ \App\Models\Student::DEGREE[$certificate->degree] }}</td>
+
                                             <td>{{ $certificate->ball }}</td>
                                             <td>{{ $school1->name }}</td>
                                             <td>

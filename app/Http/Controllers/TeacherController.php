@@ -47,22 +47,26 @@ class TeacherController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
+
         if (auth()->user()->school_id == null) {
             Teacher::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'category' => $request->category,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => $request->school_id,
+                'great_teacher'=>$request->great_teacher
             ]);
         } else {
             Teacher::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'category' => $request->category,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => auth()->user()->school_id,
+                'great_teacher'=>$request->great_teacher
             ]);
         }
         return redirect()->route('teacher.index');
@@ -107,26 +111,28 @@ class TeacherController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
+            $n = 'https://bxtb.uz/images/' . $data['image'];
             if (auth()->user()->school_id == null) {
                 $teacher->update([
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
-                    'image' => $image_name,
+                    'image' => $n,
                     'school_id' => $request->school_id,
-
+                    'great_teacher'=>$request->great_teacher
                 ]);
             } else {
                 $teacher->update([
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
-                    'image' => $image_name,
+                    'image' => $n,
                     'school_id' => auth()->user()->school_id,
+                    'great_teacher'=>$request->great_teacher
                 ]);
             }
 
-            $file->move(public_path('images'), $image_name);
+            $file->move(public_path('../../images'), $image_name);
 
         } else {
             if (auth()->user()->school_id == null) {
@@ -135,8 +141,7 @@ class TeacherController extends Controller
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'school_id' => $request->school_id,
-
-
+                    'great_teacher'=>$request->great_teacher
                 ]);
             } else {
                 $teacher->update([
@@ -144,6 +149,7 @@ class TeacherController extends Controller
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'school_id' => auth()->user()->school_id,
+                    'great_teacher'=>$request->great_teacher
                 ]);
             }
         }

@@ -46,7 +46,7 @@
 
                                         <td class="d-none d-xl-table-cell">{{$blog->description}}</td>
                                         <td class="d-none d-xl-table-cell"><img width="100px"
-                                                                                src="{{asset('images/'.$blog->image)}}"
+                                                                                src="{{$blog->image}}"
                                                                                 alt="{{$blog->name}} rasimi"></td>
 
                                         <td>
