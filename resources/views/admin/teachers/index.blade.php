@@ -92,7 +92,7 @@
                                         <td>{{$teacher->firstname}}</td>
                                         <td class="d-none d-xl-table-cell">{{$teacher->lastname}}</td>
                                         <td>{{$teacher->category}}</td>
-                                        <td class="d-none d-xl-table-cell"><img width="100px"
+                                        <td class="d-none d-xl-table-cell"><img width="100px" height="50px"
                                                                                 src="{{$teacher->image}}"
                                                                                 alt="{{$teacher->name}} rasimi"></td>
                                         @php
