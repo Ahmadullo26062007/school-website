@@ -11,6 +11,7 @@
     <meta name="author" content="merkulove">
     <meta name="keywords" content="">
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
     <link rel="stylesheet" href="{{asset('st.css')}}">
@@ -585,6 +586,9 @@
         gtag('js', new Date());
         gtag('config', 'UA-180910402-1');
     </script>
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
