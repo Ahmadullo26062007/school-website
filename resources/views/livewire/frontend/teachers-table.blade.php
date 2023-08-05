@@ -1,15 +1,12 @@
-<section class="page-content">
-    <div class="container">
-        <!--classes-banner end-->
-        <div class="classes-section">
-            <div class="classes-sec">
-                <div class="row">
+<div class="classes-section">
+    <div class="classes-sec">
+        <div class="row">
                     @foreach ($teachers as $teacher)
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 {{-- @dd($teacher)--}}
                                 <div class="class-thumb"><img src="{{"$teacher->image"}}"
-                                                              alt="Student's class image"
+                                                              alt="Teacher's class image"
                                                               style="width: 277px; height: 100px">
                                 </div>
                                 <div class="class-info">
@@ -52,5 +49,3 @@
             </div>
             <!--pagination-end-->
         </div>
-    </div>
-</section>

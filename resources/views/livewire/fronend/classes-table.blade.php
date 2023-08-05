@@ -1,4 +1,4 @@
-<div class="classes-section">
+    <div class="classes-section">
     <div class="classes-sec">
         <div class="row">
             @foreach ($classes as $class)

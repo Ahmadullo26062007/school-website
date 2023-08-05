@@ -10,7 +10,7 @@
             <div class="pager-content text-center">
                 <h2>Sinflar</h2>
                 <ul>
-                    <li><a href="classes.html#" title="">Bosh sahifa</a></li>
+                    <li><a href="{{route('home')}}" title="">Bosh sahifa</a></li>
                     <li><span>Sinflar</span></li>
                 </ul>
             </div>
