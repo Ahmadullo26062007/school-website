@@ -19,13 +19,12 @@
                                     <h5>
                                         @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
-                                                Yangi toifa
+                                                2-toifali
                                             </span>
                                         @else
                                             @foreach ($teacher->degrees as $degree)
                                                 <span class="text-dark">
                                                     {{ App\Models\Degree::TYPES[$degree->type_id] }}
-
                                                 </span>
                                             @endforeach
                                         @endif
