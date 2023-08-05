@@ -106,8 +106,8 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                src="{{ asset('images/logo.png') }}" alt=""
-                                srcset="assets/img/01_Logo_2x.png 2x"></a>
+                                style="width: 150px" src="{{ '../../images/webkingpng.png' }}" alt=""
+                                srcset="../../images/webkingpng.png 2x"></a>
                     </div>
                     @php
 
@@ -429,7 +429,7 @@
             <div class="top-footer">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img src="{{ asset('images/logo.png') }}" alt="">
+                        <div class="widget widget-about"><img style="width: 150px" src="{{'../../images/webkingpng.png' }}" alt="">
                             <p>Vivamus porta efficitur nibh nec convallis. Vestibulum egestas eleifend justo. Ut
                                 tellus ipsum,
                                 accumsan</p>

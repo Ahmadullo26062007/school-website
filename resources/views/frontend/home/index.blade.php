@@ -84,45 +84,55 @@
             </div>
         </section>
         <!--classes-section end-->
-        <section class="teachers-section">
+        <section class="classes-page">
+            <div class="section-title text-center">
+                <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
+                <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
+                    mumkin."
+                </p>
+            </div>
             <div class="container">
-                <div class="section-title text-center">
-                    <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
-                    <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
-                        mumkin."
-                    </p>
-                </div>
-                <!--section-title end-->
-                <div class="teachers">
-                    <div class="row">
-                        @foreach ($teachers as $teacher)
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
-                                <div class="teacher">
+                <!--classes-banner end-->
+                <div class="classes-section">
+                    <div class="classes-sec">
+                        <div class="row">
+                            @foreach ($teachers as $teacher)
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="classes-col">
+                                            <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                          alt="Student's class image"
+                                                                          style="width: 277px; height: 100px;">
+                                            </div>
+                                            <div class="class-info">
+                                                <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                                </h3>
+                                                <h5>
+                                                    @if (empty($teacher->degrees[0]))
+                                                        <span class="text-dark">
+                                                Yangi toifa
+                                            </span>
+                                                    @else
+                                                        @foreach ($teacher->degrees as $degree)
+                                                            <span class="text-dark">
+                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
 
-                                    <div class="teacher-img">
-                                        <img style="width: 235px; height: 425px;"
-                                             src="{{"$teacher->image"}}" alt="teacher's image"
-                                             class="w-100">
+                                                </span>
+                                                        @endforeach
+                                                    @endif
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--classes-col end-->
                                     </div>
-                                    <div class="teacher-info">
-                                        <h3><a>{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</a></h3>
-                                        <span>{{ $teacher->category }} O`qituvchisi</span>
-                                        <span>
-                                            @if ($teacher->degree)
-                                                @dd($teacher->degree)
-                                            @endif O`qituvchi
-                                        </span>
-                                    </div>
-                                </div>
-                                <!--teacher end-->
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
+                    <!--classes-sec end-->
                 </div>
-                <!--teachers end-->
+
             </div>
         </section>
+
         <section class="course-section">
             <div class="container">
                 <div class="row">
