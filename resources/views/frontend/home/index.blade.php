@@ -231,7 +231,7 @@
                                                                 School</a></li>
                                                     </ul>
                                                     <h3><a href="{{ route('blog.show', $blog->id) }}"
-                                                           title="">{{ $blog->title }}</a></h3>
+                                                           title="">{{substr($blog->title,0,30)}}</a></h3>
                                                     <p>{{ substr($blog->description, 0, 25) }}...
                                                     </p><a href="{{ route('blog.show', $blog->id) }}" title=""
                                                            class="read-more">Read <i
