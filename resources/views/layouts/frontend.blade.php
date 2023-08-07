@@ -430,8 +430,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget widget-about"><img style="width: 150px" src="{{'../../images/webkingpng.png' }}" alt="">
-                            <p>Hayot darvozasi ariq va vodiydan qurilgan. Yoshlarga bo'lgan ehtiyoj go'zal. Tuproqning o'zi sifatida, qadamma-qadam amalga oshiriladi.</p>
-                        </div>
+                            <p>{{$a->description}}</p>  </div>
                         <!--widget-about end-->
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
