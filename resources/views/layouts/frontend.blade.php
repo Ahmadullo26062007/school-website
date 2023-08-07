@@ -11,6 +11,7 @@
     <meta name="author" content="merkulove">
     <meta name="keywords" content="">
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
     <link rel="stylesheet" href="{{asset('st.css')}}">
@@ -105,8 +106,8 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                src="{{ asset('images/logo.png') }}" alt=""
-                                srcset="assets/img/01_Logo_2x.png 2x"></a>
+                                style="width: 250px" src="{{ '../../images/inkubatsiya.png' }}" alt=""
+                                srcset="../../images/inkubatsiya.png 2x"></a>
                     </div>
                     @php
 
@@ -423,16 +424,13 @@
     @yield('content')
 
 
-    <footer>
         <div class="container">
-            <div class="top-footer">
+    <footer>
+            <div class="top-footer" style="padding-right: 20px; padding-bottom: 20px;padding-left: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img src="{{ asset('images/logo.png') }}" alt="">
-                            <p>Vivamus porta efficitur nibh nec convallis. Vestibulum egestas eleifend justo. Ut
-                                tellus ipsum,
-                                accumsan</p>
-                        </div>
+                        <div class="widget widget-about"><img style="width: 250px" src="{{'../../images/inkubatsiya.png' }}" alt="">
+                            <p>{{$a->description}}</p>  </div>
                         <!--widget-about end-->
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -498,7 +496,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <ul class="social-links">
+                        <ul class="social-links" style="padding-right: 20px">
 
                             <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="{{$a->instagram}}"><i
@@ -509,8 +507,8 @@
                 </div>
             </div>
             <!--bottom-footer end-->
-        </div>
     </footer>
+        </div>
     <!--footer end-->
 </div>
 
@@ -586,6 +584,9 @@
         gtag('js', new Date());
         gtag('config', 'UA-180910402-1');
     </script>
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>

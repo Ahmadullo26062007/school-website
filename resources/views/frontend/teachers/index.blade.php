@@ -5,6 +5,7 @@
         $a = \App\Models\About::find(env('SCHOOL_ID'));
 
     @endphp
+
     <section class="pager-section">
         <div class="container">
             <div class="pager-content text-center">
@@ -18,8 +19,13 @@
             {{--            <h2 class="page-titlee">{{$a->name}}</h2> --}}
         </div>
     </section>
-    <!--pager-section end-->
-    @livewire('frontend.teachers-table')
+    <section class="classes-page">
+        <div class="container">
 
+            <!--classes-banner end-->
+    @livewire('frontend.teachers-table')
+        </div>
+    </section>
+    <!--pager-section end-->
 
 @endsection

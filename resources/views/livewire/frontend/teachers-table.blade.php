@@ -1,54 +1,51 @@
-<section class="page-content">
-    <div class="container">
-        <div class="teachers-section p-0">
-            <div class="teachers">
-                <div class="row griddd">
+<div class="classes-section">
+    <div class="classes-sec">
+        <div class="row">
                     @foreach ($teachers as $teacher)
-                        <div>
-                            <div class="teacher">
-                                <div class="teacher-img">
-                                    <div style="height: 300px">
-
-                                        <img style="width: 235px; height: 300px;" src="{{$teacher->image }}" alt="" class="w-100">
-                                    </div>
-
-                                    <div class="teacher-info">
-                                        <h3>{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</h3>
-                                        <span>{{ $teacher->category }}
-                                            O'qituvchisi</span>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="classes-col">
+                                {{-- @dd($teacher)--}}
+                                <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                              alt="Teacher's class image"
+                                                              style="width: 277px; height: 100px">
+                                </div>
+                                <div class="class-info">
+                                    <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                    </h3>
+                                    <span>{{$teacher->category}} O'qtuvchisi</span>
+                                    <h5>
                                         @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
-                                                Yangi toifa
+                                                2-toifali
                                             </span>
                                         @else
                                             @foreach ($teacher->degrees as $degree)
                                                 <span class="text-dark">
                                                     {{ App\Models\Degree::TYPES[$degree->type_id] }}
-
                                                 </span>
                                             @endforeach
                                         @endif
-                                    </div>
+                                    </h5>
                                 </div>
-                                <!--teacher end-->
                             </div>
+                            <!--classes-col end-->
                         </div>
                     @endforeach
                 </div>
-                <!--teachers end-->
+                <!--teachers e11nd-->
             </div>
             <!--teachers-section end-->
             <div class="mdp-pagiation">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         @if((count( \App\Models\Teacher::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
-                            <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="viewMore()">Yana+</a>
+                            <li class="page-item"><a wire:click="viewMore" role="button" type="button"
+                                                     class="page-link">Yana</a>
                             </li>
                         @endif
+
                     </ul>
                 </nav>
             </div>
             <!--pagination-end-->
         </div>
-</section>

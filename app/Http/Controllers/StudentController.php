@@ -54,6 +54,7 @@ class StudentController extends Controller
                 'class_id' => $request->class_id,
                 'image' => $n,
                 'school_id' => $request->school_id,
+                'great_student'=>$request->great_student
             ]);
         } else {
             Student::create([
@@ -61,6 +62,7 @@ class StudentController extends Controller
                 'class_id' => $request->class_id,
                 'image' => $n,
                 'school_id' => auth()->user()->school_id,
+                'great_student'=>$request->great_student
             ]);
         }
 
@@ -113,7 +115,7 @@ class StudentController extends Controller
                     'class_id' => $request->class_id,
                     'image' => $n,
                     'school_id' => $request->school_id,
-
+                    'great_student'=>$request->great_student
                 ]);
             } else {
                 $student->update([
@@ -121,6 +123,7 @@ class StudentController extends Controller
                     'class_id' => $request->class_id,
                     'image' => $image_name,
                     'school_id' => auth()->user()->school_id,
+                    'great_student'=>$request->great_student
                 ]);
             }
 
@@ -132,14 +135,14 @@ class StudentController extends Controller
                     'fullname' => $request->fullname,
                     'class_id' => $request->class_id,
                     'school_id' => $request->school_id,
-
-
+                    'great_student'=>$request->great_student
                 ]);
             } else {
                 $student->update([
                     'fullname' => $request->fullname,
                     'class_id' => $request->class_id,
                     'school_id' => auth()->user()->school_id,
+                    'great_student'=>$request->great_student
                 ]);
             }
         }
