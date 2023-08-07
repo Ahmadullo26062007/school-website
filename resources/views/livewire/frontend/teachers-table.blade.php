@@ -32,7 +32,7 @@
                         </div>
                     @endforeach
                 </div>
-                <!--teachers end-->
+                <!--teachers e11nd-->
             </div>
             <!--teachers-section end-->
             <div class="mdp-pagiation">
