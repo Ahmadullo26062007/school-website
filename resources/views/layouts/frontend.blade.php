@@ -424,15 +424,13 @@
     @yield('content')
 
 
-    <footer>
         <div class="container">
-            <div class="top-footer">
+    <footer>
+            <div class="top-footer" style="padding-right: 20px; padding-bottom: 20px;padding-left: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget widget-about"><img style="width: 150px" src="{{'../../images/webkingpng.png' }}" alt="">
-                            <p>Vivamus porta efficitur nibh nec convallis. Vestibulum egestas eleifend justo. Ut
-                                tellus ipsum,
-                                accumsan</p>
+                            <p>Hayot darvozasi ariq va vodiydan qurilgan. Yoshlarga bo'lgan ehtiyoj go'zal. Tuproqning o'zi sifatida, qadamma-qadam amalga oshiriladi.</p>
                         </div>
                         <!--widget-about end-->
                     </div>
@@ -499,7 +497,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <ul class="social-links">
+                        <ul class="social-links" style="padding-right: 20px">
 
                             <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="{{$a->instagram}}"><i
@@ -510,8 +508,8 @@
                 </div>
             </div>
             <!--bottom-footer end-->
-        </div>
     </footer>
+        </div>
     <!--footer end-->
 </div>
 
