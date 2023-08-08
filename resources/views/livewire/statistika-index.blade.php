@@ -83,7 +83,7 @@
             <h4>IELTS olganlar</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
-            <div style=" width: 35px; height: 20px; background-color: #5bbe00; margin-left: 30px"></div>
+            <div style=" width: 35px; height: 20px; background-color: #1cffca; margin-left: 30px"></div>
             <h4>CEFR olganlar</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">

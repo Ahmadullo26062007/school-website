@@ -557,7 +557,7 @@
                 label: "Statistika",
                 data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
 
-                backgroundColor: ['green', 'red', 'gold', 'blue', '#5bbe00', '#2dff00'],
+                backgroundColor: ['green', 'red', 'gold', 'blue', '#1cffca', '#2dff00'],
 
                 borderWidth: 2,
             }],
