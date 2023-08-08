@@ -10,7 +10,7 @@
             <div class="pager-content text-center">
                 <h2>Blog</h2>
                 <ul>
-                    <li><a href="blog.html#" title="">Home</a></li>
+                    <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><span>Blog</span></li>
                 </ul>
             </div>
