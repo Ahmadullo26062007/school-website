@@ -109,7 +109,7 @@
     <div class="row py-5">
         <div class="col-12 ">
 
-            <ul class="responsive-table"  style="width: 1230px; overflow-x: auto">
+            <ul class="responsive-table"  style=" overflow-x: auto">
                 <li class="table-header li1 d-none d-md-flex">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
