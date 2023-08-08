@@ -551,10 +551,11 @@
         type: 'bar',
         data: {
             colors: ['#000', 'Blue', 'Orange', 'Yellow', 'Green', 'Purple'],
-            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', '1-toifali o`qtuvchilar', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
+            labels: ['','','','','',''],
+            // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', '1-toifali o`qtuvchilar', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "Statistika",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
 
                 backgroundColor: ['green', 'red', 'gold', 'blue', '#5bbe00', '#2dff00'],
 
