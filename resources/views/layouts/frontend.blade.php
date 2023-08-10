@@ -165,6 +165,35 @@
                                   return 0;
                                    }
                               }
+                              function WellTeachersProsent($a)
+                                             {
+                              if (!count($a->teachers->ToArray())==0){
+                            $c=0;
+                          $t=count($a->teachers->ToArray());
+                           $p=100/$t;
+                            foreach ($a->teachers as $t){
+                                if($t->degrees){
+                             if (count($t->degrees)!==0){
+                             if($t->degrees[0]->type_id ==3){
+                             if($c++ == 1)continue;
+                                 }
+                                   }
+                             }
+                                     }
+                               if($c==0){
+                                   return 0;
+                               }else{
+                          if($c==0){
+                                       return 0;
+                                   }       else{
+                                $n=$c;
+                           return floor($n);
+                                   }
+                               }
+                                   }else{
+                                  return 0;
+                                   }
+                              }
                               function EmptyTeachersProsent($a)
                                              {
                              if (!count($a->teachers->ToArray())==0){
@@ -555,9 +584,9 @@
             // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', '1-toifali o`qtuvchilar', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "Statistika",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{WellTeachersProsent($a)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
 
-                backgroundColor: ['green', 'red', 'gold', 'blue', '#1cffca', '#2dff00'],
+                backgroundColor: ['green', 'red','#ff8016','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
 
                 borderWidth: 2,
             }],
