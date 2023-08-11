@@ -272,8 +272,8 @@
                         <th rowspan="1" scope="col">2-toifa</th>
                         <th rowspan="1" scope="col">Mutaxasis</th>
                         <th rowspan="1" scope="col">It</th>
-                        <th rowspan="1" scope="col">IELTS</th>
                         <th rowspan="1" scope="col">CEFR</th>
+                        <th rowspan="1" scope="col">IELTS</th>
                     </tr>
                     </thead>
 
