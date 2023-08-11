@@ -225,7 +225,7 @@
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: yellow; margin-left: 30px"></div>
-            <h4>O`rta maxsus</h4>
+            <h4>Mutaxasis</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: blue; margin-left: 30px"></div>
