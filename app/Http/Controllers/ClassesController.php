@@ -33,13 +33,11 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'number'=>'required',
-           'name'=>'required',
+           'class'=>'required',
            'teacher_id'=>'required',
            'description'=>'required|min:10',
         ],[
-            'number.required'=>'Sinf raqami kiritilmadi',
-            'name.required'=>'Sinf Harifi kiritilmadi',
+            'class.required'=>'Sinf Nomi kiritilmadi',
             'teacher_id.required'=>'Sinf Raxbari tanlanmadi',
 
             'description.required'=>'Sinf Haqida ma\'lumot kiritilmadi',

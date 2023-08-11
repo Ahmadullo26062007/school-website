@@ -54,7 +54,7 @@
                                 <tr>
                                     <td>{{$about2->name}}</td>
                                     <td class="d-none d-xl-table-cell"><img width="100px"
-                                                                            src="{{'images/'.$about2->image}}"
+                                                                            src="{{$about2->image}}"
                                                                             alt="{{$about2->name}} rasimi"></td>
                                     <td>{{$about2->phone_number}}</td>
                                     <td class="d-none d-md-table-cell">{{$about2->viloyat}}</td>
