@@ -257,51 +257,6 @@
 
     <div class="row py-5">
         <div class="col-12 ">
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered text-center ">
-                    <thead class="thead">
-                    <tr>
-                        <th class="headcol" rowspan="3" scope="col">No</th>
-                        <th class="headcol" rowspan="3" scope="col">Maktab</th>
-                        <th rowspan="1" colspan="4" scope="col">O'qituvchi</th>
-                        <th rowspan="1" colspan="3" scope="col">O'quvchi</th>
-                    </tr>
-                    <tr>
-                        <th class="not" rowspan="1" scope="col">Oliy</th>
-                        <th class="not" rowspan="1" scope="col">1-toifa</th>
-                        <th rowspan="1" scope="col">2-toifa</th>
-                        <th rowspan="1" scope="col">Mutaxasis</th>
-                        <th rowspan="1" scope="col">It</th>
-                        <th rowspan="1" scope="col">CEFR</th>
-                        <th rowspan="1" scope="col">IELTS</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    @foreach ($r as $c => $b)
-                        @if(empty($c==1))
-                            @php
-                                $a1 = \App\Models\About::find($c);
-                                if($count++ == 1);
-                            @endphp
-
-                            <tr class="t-row">
-                                <td class="headcol">{{$count}}</td>
-                                <td class="headcol">{{$a1->name}}</td>
-                                <td>{{ GreatTeachers($a1) }}</td>
-                                <td>{{GoodTeachers($a1)}}</td>
-                                <td>{{WellTeachers($a1)}}</td>
-                                <td>{{EmptyTeachers($a1)}}</td>
-                                <td>{{ITStudents($a1)}}</td>
-                                <td>{{CEFRStudents($a1)}}</td>
-                                <td>{{GreatStudents($a1)}}</td>
-
-                            </tr>
-                        @endif
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
 
 {{--            <ul class="responsive-table"  style=" overflow-x: auto">--}}
 {{--                <li class="table-header li1 d-none d-md-flex">--}}
