@@ -18541,7 +18541,7 @@ header .navigation-bar nav ul ul ul {
 
 .classes-section .classes-col .class-thumb > img {
     border-radius: 10px 10px 0 0;
-    min-height: 180px;
+    min-height: 280px;
     object-fit: cover
 }
 
@@ -19333,7 +19333,7 @@ footer .bottom-footer .social-links {
 }
 
 .classes-page {
-    padding: 80px 0
+    padding: 0
 }
 @media (max-width: 350px) {
     .classes-page {
