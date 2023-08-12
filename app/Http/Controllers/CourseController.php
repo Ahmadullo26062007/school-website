@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Teacher;
 use App\Models\week;
+use http\Env;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -48,8 +49,18 @@ class CourseController extends Controller
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('images'), $image_name);
-        $c = Course::create($data);
-        $c->weeks()->sync($request->weeks);
+            $c = Course::create([
+                'name'=>$data['name'],
+                'start_time'=>$data['start_time'],
+                'end_time'=>$data['end_time'],
+                'teacher_id'=>$data['teacher_id'],
+                'description'=>$data['description'],
+                'price'=>$data['price'],
+                'school_id'=>\env('SCHOOL_ID'),
+                'image'=>$data['image']
+            ]);
+            $c->weeks()->sync($request->weeks);
+
         return redirect()->route('courses.index');
     }
 

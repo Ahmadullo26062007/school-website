@@ -19335,7 +19335,11 @@ footer .bottom-footer .social-links {
 .classes-page {
     padding: 80px 0
 }
-
+@media (max-width: 350px) {
+    .classes-page {
+        padding: 0;
+    }
+}
 .classes-page .classes-banner {
     background-image: url(../img/classes-banner.jpg);
     background-repeat: no-repeat;
@@ -19375,7 +19379,7 @@ footer .bottom-footer .social-links {
 }
 
 .classes-page .classes-section {
-    padding-top: 80px;
+    padding-top: 0px;
     padding-bottom: 0
 }
 
@@ -21476,7 +21480,11 @@ footer .bottom-footer .social-links {
     footer {
         padding: 219px 0 40px
     }
-
+    @media (max-width: 350px) {
+        footer {
+            padding: 0;
+        }
+    }
     .meta li {
         margin-right: 5px
     }
@@ -21702,7 +21710,7 @@ footer .bottom-footer .social-links {
     }
 
     .classes-page {
-        padding: 100px 0
+        padding: 0px 0
     }
 
     .classes-page .classes-banner {
