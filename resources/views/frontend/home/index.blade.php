@@ -101,7 +101,7 @@
                                         <div class="classes-col">
                                             <div class="class-thumb"><img src="{{"$teacher->image"}}"
                                                                           alt="Student's class image"
-                                                                          style="width: 100%; height: 100px;">
+                                                                          style="width: 100%; height: 150px;">
                                             </div>
                                             <div class="class-info">
                                                 <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
