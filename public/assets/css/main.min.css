@@ -19337,7 +19337,7 @@ footer .bottom-footer .social-links {
 }
 @media (max-width: 350px) {
     .classes-page {
-        padding: 0;
+        padding: 10px;
     }
 }
 .classes-page .classes-banner {
@@ -19379,7 +19379,7 @@ footer .bottom-footer .social-links {
 }
 
 .classes-page .classes-section {
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 0
 }
 
