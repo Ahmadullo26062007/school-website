@@ -24,14 +24,14 @@
                                 }
                                 @endphp
                                 {{$weeks}}
-                            </span> <span>{{$course->start_time}} - {{$course->end_time}}</span>
+                            </span> <span>{{$course->start_time}} - {{$course->end_time}}</span><br>
+                                <strong
+                                    class="price">{{$course->price}} so'm</strong><br>
                             <div class="d-flex flex-wrap align-items-center">
                                 <div class="posted-by"><img style="width: 30px; height: 30px"
                                                             src="{{$course->teacher->image}}" alt="">
 
                                        {{$course->teacher->firstname}} {{$course->teacher->lastname}}</div>
-                                <strong
-                                    class="price">{{$course->price}}</strong>
                             </div>
                         </div>
                     </div>
