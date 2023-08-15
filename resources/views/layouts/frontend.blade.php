@@ -453,28 +453,30 @@
     @yield('content')
 
 
+    <footer style="padding-top: 20px;" >
         <div class="container">
-    <footer>
-            <div class="top-footer" style="padding-right: 20px; padding-bottom: 20px;padding-left: 20px">
+            <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img width="120px" src="{{ '../../images/inkubatsiya.png' }}"
+                        <div class="widget widget-about"><img width="280px" src="{{ '../../images/inkubatsiya.png' }}"
                                                               alt="">
                             <p>{{$a->description}}</p>
                         </div>
+                        <!--widget-about end-->
+                    </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget widget-contact">
                             <ul class="contact-add">
                                 <li>
                                     <div class="contact-info"><img src="assets/img/icon1.png" alt="">
                                         <div class="contact-tt">
-                                                 {{-- formatting phone number start --}}
-                                             @php
-                                                 $phone_number = "+998" . $a->phone_number; // example phone number
-                                                 $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
-                                                 // echo $formatted_number; // output: +998 90 123 4567
-                                             @endphp
-                                            {{-- fromatting phone number end --}}
+
+                                            @php
+                                                $phone_number = "+998" . $a->phone_number; // example phone number
+                                                $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
+
+                                            @endphp
+
                                             <h4>Call</h4><span> {{ $formatted_number }}</span>
                                         </div>
                                     </div>
@@ -484,7 +486,7 @@
                                     <div class="contact-info"><img src="assets/img/icon2.png" alt="">
                                         <div class="contact-tt">
                                             <h4>O`qish vaqti</h4><span>Duy - Shan {{ $a->start_time }} -
-                                                    {{ $a->end_time }}</span>
+                                                            {{ $a->end_time }}</span>
                                         </div>
                                     </div>
                                     <!--contact-info end-->
@@ -493,7 +495,7 @@
                                     <div class="contact-info"><img src="assets/img/icon3.png" alt="">
                                         <div class="contact-tt">
                                             <h4>Manzil</h4><span>{{ $a->viloyat }}, {{ $a->tuman }}
-                                                    tumani</span>
+                                                            tumani</span>
                                         </div>
                                     </div>
                                     <!--contact-info end-->
@@ -526,7 +528,6 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <ul class="social-links" style="padding-right: 20px">
-
                             <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="{{$a->instagram}}"><i
                                         class="fab fa-instagram"></i></a></li>
@@ -536,8 +537,9 @@
                 </div>
             </div>
             <!--bottom-footer end-->
-    </footer>
         </div>
+    </footer>
+
     <!--footer end-->
 </div>
 

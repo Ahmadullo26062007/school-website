@@ -84,7 +84,7 @@
             </div>
         </section>
         <!--classes-section end-->
-        <section class="classes-page">
+        <section class="classes-section">
             <div class="section-title text-center">
                 <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
                 <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
@@ -193,6 +193,9 @@
 
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
                     <!--course-section end-->
                     <section class="blog-section">
                         <div class="container">
