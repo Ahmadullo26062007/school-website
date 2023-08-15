@@ -178,11 +178,11 @@
                                            title="">{{ $course->name }}</a></h3>
                                     <div class="d-flex flex-wrap">
                                         <div class="posted-by"><img style="width: 25px ;height: 25px"
-                                                                    src="{{ asset('images/' . $course->teacher->image) }}"
+                                                                    src="{{$course->teacher->image }}"
                                                                     alt="Class image">
-                                            <a href="{{ asset('images/' . $course->teacher->image) }}"
+                                            <a
                                                title="">{{ $course->teacher->firstname }}
-                                                {{ $course->teacher->firstname }}</a>
+                                                {{ $course->teacher->lastname }}</a>
                                         </div>
                                         <span class="locat"><img src="assets/img/loct.png"
                                                                  alt="">{{ $a->name }}
