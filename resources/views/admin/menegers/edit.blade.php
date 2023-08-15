@@ -11,12 +11,14 @@
                         </div>
 
 
-                        <form action="{{route('teacher.update',$teacher->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('menegers.update',$meneger->id)}}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger" role="alert">
-                                        {{ $error }}
+                                       <h3 class="text-danger">
+                                           {{ $error }}
+                                       </h3>
                                     </div>
                                 @endforeach
                             @endif
@@ -25,69 +27,56 @@
                             <div class="row">
                                 <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Ismi</h5>
+                                    <h5 class="card-title mb-0">Ism Familyasi</h5>
 
                                     <div class="card-body">
-                                        <input type="text" name="firstname" class="form-control"
-                                               placeholder="O'qtuvchi ismi" value="{{$teacher->firstname}}">
+                                        <input type="text" name="fullname" class="form-control"
+                                               placeholder="Menejerni ismi va familyasi" value="{{$meneger->fullname}}">
                                     </div>
                                 </div>
                                 <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Familyasi</h5>
+                                    <h5 class="card-title mb-0">Ro'li</h5>
 
                                     <div class="card-body">
-                                        <input type="text" name="lastname" class="form-control"
-                                               placeholder="O'qtuvchi familyasi" value="{{$teacher->lastname}}">
+                                        <select class="form-select" name="role_id" id="">
+                                            <option disabled selected>Ro'lni tanlang</option>
+                                            @foreach($roles as $id=> $r)
+                                                <option @if($meneger->role_id==$id) selected @endif value="{{$id}}">{{$r}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Fani</h5>
 
-                                    <div class="card-body">
-                                        <input type="text" name="category" class="form-control"
-                                               placeholder="O'qtuvchi qaysi fandan dars berishi"  value="{{$teacher->category}}">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-
-                                    <h5 class="card-title mb-0">O'qtuvchi rasimi</h5>
-
-                                    <div class="card-body">
-                                        <input type="file" class="form-control" name="image"
-                                               placeholder="O'qtuvchi rasimi">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-
-                                    <h5 class="card-title mb-0">O'qtuvchi rasimi</h5>
-
-                                    <div class="card-body">
-                                        <img width="300px" src="{{$teacher->image}}" alt="">
-                                    </div>
-                                </div>
                                 @if(auth()->user()->school_id==null)
                                     <div class="col-6 ">
                                         <h5 class="card-title mb-0">Maktabi</h5>
                                         <div class="card-body">
                                             <select class="form-select" name="school_id" id="">
                                                 <option disabled selected>Maktabni tanlang</option>
-                                                @foreach($school as $id=> $s)
-                                                    <option @if($teacher->school_id==$id) selected @endif value="{{$id}}">{{$s}}</option>
+                                                @foreach($schools as $id=> $s)
+                                                    <option @if($meneger->school_id==$id) selected @endif value="{{$id}}">{{$s}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 @endif
-                                <div class="col-6 ">
-                                    <h5 class="card-title mb-0">To'p o'qtuvchi</h5>
+                                <div class="col-6">
+
+                                    <h5 class="card-title mb-0">Menejerni rasimi</h5>
+
                                     <div class="card-body">
-                                        <select class="form-select" name="great_teacher" id="">
-                                            <option disabled selected>Tanlang</option>
-                                            <option @if($teacher->great_teacher==0) selected @endif value="0">Yo'q</option>
-                                            <option @if($teacher->great_teacher==1) selected @endif value="1">Ha</option>
-                                        </select>
+                                        <input type="file" class="form-control" name="image"
+                                               placeholder="Menejerni rasimi">
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <h5 class="card-title mb-0">Menejerni rasimi</h5>
+
+                                    <div class="card-body">
+                                        <img width="300px" src="{{asset('images/'.$meneger->image)}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +90,7 @@
                                 </svg>
                                 Yaratish
                             </button>
-                            <a class="btn btn-secondary mt-3" href="{{ route('teacher.index') }}">
+                            <a class="btn btn-secondary mt-3" href="{{ route('menegers.index') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-arrow-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"

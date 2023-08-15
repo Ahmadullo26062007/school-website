@@ -47,6 +47,10 @@ class About extends Model
     {
         return $this->hasMany(User::class,'school_id');
     }
+    public function menegers()
+    {
+        return $this->hasMany(Workers::class,'school_id');
+    }
 
     function GreatTeachers()
     {

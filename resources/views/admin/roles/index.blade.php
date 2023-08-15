@@ -7,8 +7,8 @@
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h5 class="card-title 0">Maktablar haqida</h5>
-                                <a href="{{route('users.create')}}"
+                            <h5 class="card-title 0">Rollar</h5>
+                                <a href="{{route('roles.create')}}"
                                    class="btn btn-success">Yaratish</a>
 
 
@@ -17,31 +17,33 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Ism</th>
-                                <th>Foydalanuvchi nomi</th>
-                                <th class="d-none d-xl-table-cell">Maktabi</th>
+                                <th>Nomi</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $user)
-                                    @php
-                                        $school=\App\Models\About::find($user->school_id);
-                                    @endphp
+                                @foreach($roles as $role)
                                     <tr>
-                                        <td>{{$user->id}}</td>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->username}}</td>
-                                        @if($school)
-                                        <td class="d-none d-md-table-cell">{{$school->name}}</td>
-                                        @else
-                                            @if($user->school_id==null)
-                                                <td class="d-none d-md-table-cell">Ega</td>
-                                            @endif
-                                        @endif
+                                        <td>{{$role->id}}</td>
+                                        <td>{{$role->title}}</td>
                                         <td>
-                                            <a href="{{route('users.edit',[$user->id])}}"
-                                               class="btn btn-info">Edit</a>
+                                            <a href="{{route('roles.edit',[$role->id])}}"
+                                               class="btn btn-info">Tahrirlash</a>
+                                            <form class="d-inline" action="{{ route('roles.destroy', $role->id) }}"
+                                                  method="post" onsubmit="return confirm('{{ trans('Ochirish') }}');">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button class="btn btn-danger btn-flat show_confirm"
+                                                        data-toggle="tooltip"
+                                                        title='Delete' type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         fill="currentColor" class="bi bi-trash-fill"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                    </svg>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -6,31 +6,35 @@
                 <div class="d-flex">
                     <div class="card flex-fill">
                         <div class="card-header">
-                            <h5 class="card-title 0">O'qtuvchini barcha ma'lumotlarini ko'rish</h5>
+                            <h5 class="card-title ">Menejerni barcha ma'lumotlarini ko'rish</h5>
                         </div>
                         <table class="table table-hover my-0">
                             <tr>
-                                <th>Ismi</th>
-                                <td>{{$teacher->firstname}}</td>
+                                <th>Ism Familyasi</th>
+                                <td>{{$meneger->fullname}}</td>
                             </tr>
                             <tr>
-                                <th>Familyasi</th>
-                                <td>{{$teacher->lastname}}</td>
+                                <th>Ro'li</th>
+                                @php
+                                    $role=\App\Models\Role::find($meneger->role_id);
+                                    $school=\App\Models\About::find($meneger->school_id);
+                                @endphp
+                                <td>{{$role->title}}</td>
                             </tr>
                             <tr>
-                                <th>Fani</th>
-                                <td>{{$teacher->category}}</td>
+                                <th>Maktabi</th>
+                                <td>{{$school->name}}</td>
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{$teacher->image}}"
-                                         alt="O'qtuvchi rasimi"></td>
+                                <td><img width="400px" src="{{asset('images/'.$meneger->image)}}"
+                                         alt="Menejer rasimi"></td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </div>
-            <a class="btn btn-secondary mt-3" href="{{route('teacher.index')}}">
+            <a class="btn btn-secondary mt-3" href="{{route('menegers.index')}}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      class="bi bi-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"

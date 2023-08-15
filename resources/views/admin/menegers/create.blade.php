@@ -7,15 +7,15 @@
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h5 class="card-title">O'qtuvchi qo'shish</h5>
+                            <h5 class="card-title">Menejer qo'shish</h5>
                         </div>
 
 
-                        <form action="{{ route('teacher.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('menegers.store') }}" method="post" enctype="multipart/form-data">
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger" role="alert">
-                                        {{ $error }}
+                                       <h3 class="text-danger"> {{ $error }} </h3>
                                     </div>
                                 @endforeach
                             @endif
@@ -24,47 +24,34 @@
                             <div class="row">
                                 <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Ismi</h5>
+                                    <h5 class="card-title mb-0">Ism Familyasi</h5>
 
                                     <div class="card-body">
-                                        <input type="text" name="firstname" class="form-control"
-                                               placeholder="O'qtuvchi ismi">
+                                        <input type="text" name="fullname" class="form-control"
+                                               placeholder="Menejerni ism familyasi">
                                     </div>
                                 </div>
                                 <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Familyasi</h5>
+                                    <h5 class="card-title mb-0">Ro'li</h5>
 
                                     <div class="card-body">
-                                        <input type="text" name="lastname" class="form-control"
-                                               placeholder="O'qtuvchi familyasi">
+                                        <select class="form-select" name="role_id" id="">
+                                            <option disabled selected>Ro'lni tanlang</option>
+                                            @foreach($roles as $id=> $r)
+                                                <option value="{{$id}}">{{$r}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Fani</h5>
-
-                                    <div class="card-body">
-                                        <input type="text" name="category" class="form-control"
-                                               placeholder="O'qtuvchi qaysi fandan dars berishi">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-
-                                    <h5 class="card-title mb-0">O'qtuvchi rasimi</h5>
-
-                                    <div class="card-body">
-                                        <input type="file" class="form-control" name="image"
-                                               placeholder="O'qtuvchi rasimi">
-                                    </div>
-                                </div>
                                 @if(auth()->user()->school_id==null)
                                     <div class="col-6 ">
                                         <h5 class="card-title mb-0">Maktabi</h5>
                                         <div class="card-body">
                                             <select class="form-select" name="school_id" id="">
                                                 <option disabled selected>Maktabni tanlang</option>
-                                                @foreach($school as $id=> $s)
+                                                @foreach($schools as $id=> $s)
                                                     <option value="{{$id}}">{{$s}}</option>
                                                 @endforeach
                                             </select>
@@ -72,13 +59,11 @@
                                     </div>
                                 @endif
                                 <div class="col-6 ">
-                                    <h5 class="card-title mb-0">To'p o'qtuvchi</h5>
+
+                                    <h5 class="card-title mb-0">Rasimi</h5>
+
                                     <div class="card-body">
-                                        <select class="form-select" name="great_teacher" id="">
-                                            <option disabled selected>Tanlang</option>
-                                            <option selected value="0">Yoq</option>
-                                            <option value="1">Ha</option>
-                                        </select>
+                                        <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +77,7 @@
                                 </svg>
                                 Yaratish
                             </button>
-                            <a class="btn btn-secondary mt-3" href="{{ route('teacher.index') }}">
+                            <a class="btn btn-secondary mt-3" href="{{ route('menegers.index') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-arrow-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"

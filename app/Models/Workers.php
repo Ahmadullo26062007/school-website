@@ -12,7 +12,8 @@ class Workers extends Model
     protected $fillable=[
         'fullname',
         'role_id',
-        'school_id'
+        'school_id',
+        'image'
     ];
     public function role(){
         return $this->belongsTo(Role::class);

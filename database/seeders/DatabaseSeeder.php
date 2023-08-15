@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Course;
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -37,6 +38,11 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password'=>bcrypt('password'),
             'school_id'=>1
+        ]);
+        Role::insert([
+            ['title'=>'Director'],
+            ['title'=>'Zam Director'],
+            ['title'=>'Zavuch'],
         ]);
         foreach (Course::all() as $k=>$c) {
             if ($k%2==0){

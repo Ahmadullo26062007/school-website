@@ -120,6 +120,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/students', \App\Http\Controllers\StudentController::class);
     Route::resource('/certificate', \App\Http\Controllers\CertificateController::class);
     Route::resource('/users', \App\Http\Controllers\UserController::class);
+    Route::resource('/roles', \App\Http\Controllers\RoleController::class);
+    Route::resource('/menegers', \App\Http\Controllers\WorkersController::class);
 
 });
 Route::get('login', function () {

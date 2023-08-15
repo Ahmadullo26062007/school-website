@@ -9,39 +9,20 @@
 
                             <h5 class="card-title">Maktab ma'lumotlarini yangilash</h5>
                         </div>
-                        <form action="{{route('users.update',$user->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('roles.update',$role->id)}}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
                         <div class="row">
-                            <div class="col-6">
-                                <h5 class="card-title mb-0">Maktabi</h5>
 
-                                <div class="card-body">
-                                    <select class="form-select" name="school_id">
-                                        <option disabled selected>Maktabni tanlang</option>
-                                        @foreach($school as $id=> $s)
-                                            <option @if($user->school_id==$id) selected @endif value="{{$id}}">{{$s}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col-6 ">
                                 <h5 class="card-title mb-0">Ismi</h5>
 
                                 <div class="card-body">
-                                    <input type="text" name="name" class="form-control" value="{{$user->name}}" placeholder="Ismi">
+                                    <input type="text" name="title" class="form-control" value="{{$role->title}}" placeholder="Nomi">
 
                                 </div>
                             </div>
-                            <div class="col-6 ">
 
-                                <h5 class="card-title mb-0">Foydalanuvchi nomi</h5>
-
-                                <div class="card-body">
-                                    <input type="text" name="username" class="form-control" value="{{$user->username}}" placeholder="Foydalanuchi nomi">
-
-                                </div>
-                            </div>
                         </div>
                         <div>
                             <button class="btn btn-success mt-3" type="submit">
@@ -52,7 +33,7 @@
                                 </svg>
                                 Saqlash
                             </button>
-                            <a class="btn btn-secondary mt-3" href="{{route('users.index')}}">
+                            <a class="btn btn-secondary mt-3" href="{{route('roles.index')}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-arrow-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"

@@ -53,6 +53,17 @@
                         </a>
                     </li>
                 @endif
+
+                <li class="sidebar-item {{ request()->is('roles*') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{route('roles.index')}}">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Rollar</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->is('menegers*') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{route('menegers.index')}}">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Menejirlar</span>
+                    </a>
+                </li>
                 <li class="sidebar-item {{ request()->is('teacher*') ? 'active' : '' }}">
                     <a class="sidebar-link" href="{{route('teacher.index')}}">
                         <i class="align-middle" data-feather="users"></i> <span class="align-middle">O'qtuvchilar</span>
