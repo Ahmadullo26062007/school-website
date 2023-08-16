@@ -43,6 +43,47 @@
         </div>
     </section>
 
+    @php
+        function director()
+           {
+               $d=false;
+               $a=\App\Models\About::find(env('SCHOOL_ID'));
+               foreach ($a->menegers as $m){
+                  if ($m->role_id==1){
+                      $d=$m;
+                  }
+               }
+
+               return $d;
+           }
+
+           function zamdirector()
+           {
+               $d=false;
+               $a=\App\Models\About::find(env('SCHOOL_ID'));
+               foreach ($a->menegers as $m){
+                  if ($m->role_id==2){
+                      $d=$m;
+                  }
+               }
+
+               return $d;
+           }
+
+           function zauch()
+           {
+               $d=false;
+               $a=\App\Models\About::find(env('SCHOOL_ID'));
+               foreach ($a->menegers as $m){
+                  if ($m->role_id==3){
+                      $d=$m;
+                  }
+               }
+
+               return $d;
+           }
+
+ @endphp
     <section class="classes-section">
         <div class="section-title text-center">
             <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
@@ -55,21 +96,21 @@
             <div class="classes-section">
                 <div class="classes-sec">
                     <div class="row d-flex justify-content-center gap-5">
+
+                                @if(director())
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            @foreach($a->menegers as $m)
                             <div class="classes-col">
-                                <div class="class-thumb"><img src="{{$m->image}}"
+                                <div class="class-thumb"><img src="{{director()->image}}"
                                                               alt="Student's class image"
                                                               style="width: 100%; height: 100px;">
                                 </div>
                                 <div class="class-info">
-                                @if($m->role_id==1)
 
                                         <p>
                                             rdgtertete fghdrt
                                         </p>
                                         <h3>
-                                            {{$m->fullname}}
+                                            {{director()->fullname}}
                                         </h3>
                                         <span>sfsefdfgdr sedffse</span>
                                         <h5>
@@ -80,89 +121,129 @@
 
                                         </h5>
 
-                                    @else
-                                        <p></p>
-                                        <h3>Direktor</h3>
-                                        <span></span>
-                                        <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                @endif
                                 </div>
                             </div>
-                            @endforeach
                             <!--classes-col end-->
                         </div>
+
+                                    @else
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="classes-col">
+                                        <div class="class-thumb"><img src="gsgsegseg"
+                                                                      alt="Student's class image"
+                                                                      style="width: 100%; height: 100px;">
+                                        </div>
+                                        <div class="class-info">
+
+                                            <p></p>
+                                            <h3>Direktor</h3>
+                                            <span></span>
+                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                        </div>
+                                    </div>
+                                    <!--classes-col end-->
+                                </div>
+                                @endif
+
+
+
+                                @if(zamdirector())
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            @foreach($a->menegers as $m)
                             <div class="classes-col">
-                                <div class="class-thumb"><img src="{{$m->image}}"
+                                <div class="class-thumb"><img src="{{zamdirector()->image}}"
                                                               alt="Student's class image"
                                                               style="width: 100%; height: 100px;">
                                 </div>
                                 <div class="class-info">
-                                @if($m->role_id==2)
 
                                         <p>
                                             rdgtertete fghdrt
                                         </p>
                                         <h3>
-                                            {{$m->fullname}}
+                                            {{zamdirector()->fullname}}
                                         </h3>
                                         <span>sfsefdfgdr sedffse</span>
                                         <h5>
 
                                                             <span class="text-dark">
-                                                          {{$a->name}} direktori
+                                                          {{$a->name}} direktor O`rinbosari
                                                         </span>
 
                                         </h5>
 
-                                    @else
-                                        <p></p>
-                                        <h3>Zam direktor</h3>
-                                        <span></span>
-                                      <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                @endif
                                 </div>
                             </div>
-                            @endforeach
                             <!--classes-col end-->
                         </div>
+
+                                    @else
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="classes-col">
+                                        <div class="class-thumb"><img src="gsgsegseg"
+                                                                      alt="Student's class image"
+                                                                      style="width: 100%; height: 100px;">
+                                        </div>
+                                        <div class="class-info">
+
+                                            <p></p>
+                                            <h3>Direktor</h3>
+                                            <span></span>
+                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                        </div>
+                                    </div>
+                                    <!--classes-col end-->
+                                </div>
+                                @endif
+
+
+                                @if(zauch())
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            @foreach($a->menegers as $m)
                             <div class="classes-col">
-                                <div class="class-thumb"><img src="{{$m->image}}"
+                                <div class="class-thumb"><img src="{{zauch()->image}}"
                                                               alt="Student's class image"
                                                               style="width: 100%; height: 100px;">
                                 </div>
                                 <div class="class-info">
-                                @if($m->role_id==3)
 
                                         <p>
                                             rdgtertete fghdrt
                                         </p>
                                         <h3>
-                                            {{$m->fullname}}
+                                            {{zauch()->fullname}}
                                         </h3>
                                         <span>sfsefdfgdr sedffse</span>
                                         <h5>
 
                                                             <span class="text-dark">
-                                                          {{$a->name}} direktori
+                                                          {{$a->name}} zauchi
                                                         </span>
 
                                         </h5>
 
-                                    @else
-                                        <p></p>
-                                        <h3>Zauch</h3>
-                                        <span></span>
-                                        <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                @endif
                                 </div>
                             </div>
-                            @endforeach
                             <!--classes-col end-->
                         </div>
+
+                                    @else
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="classes-col">
+                                        <div class="class-thumb"><img src="gsgsegseg"
+                                                                      alt="Student's class image"
+                                                                      style="width: 100%; height: 100px;">
+                                        </div>
+                                        <div class="class-info">
+
+                                            <p></p>
+                                            <h3>Direktor</h3>
+                                            <span></span>
+                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                        </div>
+                                    </div>
+                                    <!--classes-col end-->
+                                </div>
+                                @endif
+
 
                     </div>
                 </div>
