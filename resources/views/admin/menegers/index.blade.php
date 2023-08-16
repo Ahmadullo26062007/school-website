@@ -36,7 +36,7 @@
                                 @foreach($menegers as $meneger)
                                     <tr>
                                         <td>{{$meneger->id}}</td>
-                                        <td class="d-none d-xl-table-cell"><img width="100px" height="80px" src="{{'images/'.$meneger->image}}" alt=""></td>
+                                        <td class="d-none d-xl-table-cell"><img width="100px" height="80px" src="{{$meneger->image}}" alt=""></td>
                                         <td>{{$meneger->fullname}}</td>
                                         @php
                                             $role=\App\Models\Role::find($meneger->role_id);
@@ -90,7 +90,7 @@
                                 @endphp
                                     <tr>
                                         <td>{{$meneger->id}}</td>
-                                        <td class="d-none d-xl-table-cell"><img width="100px" height="80px" src="{{'images/'.$meneger->image}}" alt=""></td>
+                                        <td class="d-none d-xl-table-cell"><img width="100px" height="80px" src="{{$meneger->image}}" alt=""></td>
                                         <td>{{$meneger->fullname}}</td>
                                         <td class="d-none d-xl-table-cell">{{$role->title}}</td>
 

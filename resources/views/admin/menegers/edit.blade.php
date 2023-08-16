@@ -76,7 +76,7 @@
                                     <h5 class="card-title mb-0">Menejerni rasimi</h5>
 
                                     <div class="card-body">
-                                        <img width="300px" src="{{asset('images/'.$meneger->image)}}" alt="">
+                                        <img width="300px" src="{{$meneger->image}}" alt="">
                                     </div>
                                 </div>
                             </div>
