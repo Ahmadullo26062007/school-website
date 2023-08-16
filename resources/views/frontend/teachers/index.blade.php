@@ -20,11 +20,10 @@
         </div>
     </section>
     <section class="classes-page">
-        <div class="container">
 
             <!--classes-banner end-->
     @livewire('frontend.teachers-table')
-        </div>
+
     </section>
     <!--pager-section end-->
 

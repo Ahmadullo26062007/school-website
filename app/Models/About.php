@@ -52,6 +52,45 @@ class About extends Model
         return $this->hasMany(Workers::class,'school_id');
     }
 
+    function director()
+    {
+        $d=[];
+        $a=About::find(env('SCHOOL_ID'));
+        foreach ($a->menegers as $m){
+           if ($m->role_id==1){
+               $d=$m;
+           }
+        }
+
+        return $d;
+    }
+
+    function zamdirector()
+    {
+        $d=[];
+        $a=About::find(env('SCHOOL_ID'));
+        foreach ($a->menegers as $m){
+           if ($m->role_id==2){
+               $d=$m;
+           }
+        }
+
+        return $d;
+    }
+
+    function zauch()
+    {
+        $d=[];
+        $a=About::find(env('SCHOOL_ID'));
+        foreach ($a->menegers as $m){
+           if ($m->role_id==3){
+               $d=$m;
+           }
+        }
+
+        return $d;
+    }
+
     function GreatTeachers()
     {
         $c=0;

@@ -43,6 +43,135 @@
         </div>
     </section>
 
+    <section class="classes-section">
+        <div class="section-title text-center">
+            <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
+            <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
+                mumkin."
+            </p>
+        </div>
+        <div class="container">
+            <!--classes-banner end-->
+            <div class="classes-section">
+                <div class="classes-sec">
+                    <div class="row d-flex justify-content-center gap-5">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            @foreach($a->menegers as $m)
+                            <div class="classes-col">
+                                <div class="class-thumb"><img src="{{$m->image}}"
+                                                              alt="Student's class image"
+                                                              style="width: 100%; height: 100px;">
+                                </div>
+                                <div class="class-info">
+                                @if($m->role_id==1)
+
+                                        <p>
+                                            rdgtertete fghdrt
+                                        </p>
+                                        <h3>
+                                            {{$m->fullname}}
+                                        </h3>
+                                        <span>sfsefdfgdr sedffse</span>
+                                        <h5>
+
+                                                            <span class="text-dark">
+                                                          {{$a->name}} direktori
+                                                        </span>
+
+                                        </h5>
+
+                                    @else
+                                        <p></p>
+                                        <h3>Direktor</h3>
+                                        <span></span>
+                                        <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                @endif
+                                </div>
+                            </div>
+                            @endforeach
+                            <!--classes-col end-->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            @foreach($a->menegers as $m)
+                            <div class="classes-col">
+                                <div class="class-thumb"><img src="{{$m->image}}"
+                                                              alt="Student's class image"
+                                                              style="width: 100%; height: 100px;">
+                                </div>
+                                <div class="class-info">
+                                @if($m->role_id==2)
+
+                                        <p>
+                                            rdgtertete fghdrt
+                                        </p>
+                                        <h3>
+                                            {{$m->fullname}}
+                                        </h3>
+                                        <span>sfsefdfgdr sedffse</span>
+                                        <h5>
+
+                                                            <span class="text-dark">
+                                                          {{$a->name}} direktori
+                                                        </span>
+
+                                        </h5>
+
+                                    @else
+                                        <p></p>
+                                        <h3>Zam direktor</h3>
+                                        <span></span>
+                                      <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                @endif
+                                </div>
+                            </div>
+                            @endforeach
+                            <!--classes-col end-->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            @foreach($a->menegers as $m)
+                            <div class="classes-col">
+                                <div class="class-thumb"><img src="{{$m->image}}"
+                                                              alt="Student's class image"
+                                                              style="width: 100%; height: 100px;">
+                                </div>
+                                <div class="class-info">
+                                @if($m->role_id==3)
+
+                                        <p>
+                                            rdgtertete fghdrt
+                                        </p>
+                                        <h3>
+                                            {{$m->fullname}}
+                                        </h3>
+                                        <span>sfsefdfgdr sedffse</span>
+                                        <h5>
+
+                                                            <span class="text-dark">
+                                                          {{$a->name}} direktori
+                                                        </span>
+
+                                        </h5>
+
+                                    @else
+                                        <p></p>
+                                        <h3>Zauch</h3>
+                                        <span></span>
+                                        <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
+                                @endif
+                                </div>
+                            </div>
+                            @endforeach
+                            <!--classes-col end-->
+                        </div>
+
+                    </div>
+                </div>
+                <!--classes-sec end-->
+            </div>
+
+        </div>
+    </section>
+
     <!--pager-section end-->
     <section class="page-content">
         <div class="container">

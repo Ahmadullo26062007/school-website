@@ -1,22 +1,158 @@
-<div class="classes-section">
+<div class="container">
+
+    <div class="classes-section">
+        <div class="classes-sec">
+            <div class="row d-flex flex-wrap mt-5">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Oliy toifalilar</h1>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($teachers as $teacher)
+                    @if($teacher->degrees)
+                        @if(count($teacher->degrees->ToArray())>0 )
+                        @if($teacher->degrees[0]->type_id==1 )
+
+
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                  alt="Teacher's class image"
+                                                                  style="width: 100%; height: 100px">
+                                    </div>
+                                    <div class="class-info">
+                                        <p>@php
+                                                $a=\App\Models\About::find($teacher->school_id);
+                                            @endphp
+                                            {{$a->name}} O'qtuvchisi
+                                        </p>
+                                        <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                        </h3>
+                                        <span>{{$teacher->category}} Fani O'qtuvchisi</span>
+                                        <h5>
+                                            @if (empty($teacher->degrees[0]))
+                                                <span class="text-dark">
+                                                O`rta maxsus
+                                            </span>
+                                            @else
+                                                @foreach ($teacher->degrees as $degree)
+                                                    <span class="text-dark">
+                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
+                                                </span>
+                                                @endforeach
+                                            @endif
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--classes-col end-->
+                            </div>
+                        @endif
+                        @endif
+                    @endif
+                @endforeach
+            </div>
+            <!--teachers end-->
+        </div>
+        <!--teachers-section end-->
+
+        <!--pagination-end-->
+    </div>
+    <div class="classes-section">
+        <div class="classes-sec">
+            <div class="row d-flex flex-wrap mt-5">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">1-toifalilar</h1>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($teachers as $teacher)
+                    @if($teacher->degrees)
+                        @if(count($teacher->degrees->ToArray())>0 )
+                        @if($teacher->degrees[0]->type_id==2 )
+
+
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                  alt="Teacher's class image"
+                                                                  style="width: 100%; height: 100px">
+                                    </div>
+                                    <div class="class-info">
+                                        <p>@php
+                                                $a=\App\Models\About::find($teacher->school_id);
+                                            @endphp
+                                            {{$a->name}} O'qtuvchisi
+                                        </p>
+                                        <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                        </h3>
+                                        <span>{{$teacher->category}} Fani O'qtuvchisi</span>
+                                        <h5>
+                                            @if (empty($teacher->degrees[0]))
+                                                <span class="text-dark">
+                                                O`rta maxsus
+                                            </span>
+                                            @else
+                                                @foreach ($teacher->degrees as $degree)
+                                                    <span class="text-dark">
+                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
+                                                </span>
+                                                @endforeach
+                                            @endif
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--classes-col end-->
+                            </div>
+                        @endif
+                        @endif
+                    @endif
+                @endforeach
+            </div>
+            <!--teachers end-->
+        </div>
+        <!--teachers-section end-->
+
+        <!--pagination-end-->
+    </div>
+    <div class="classes-section">
     <div class="classes-sec">
+        <div class="row d-flex flex-wrap mt-5">
+
+            <div class="col-12 d-flex justify-content-center">
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">2-toifalilar</h1>
+            </div>
+        </div>
         <div class="row">
-                    @foreach ($teachers as $teacher)
+            @foreach ($teachers as $teacher)
+                @if($teacher->degrees)
+                    @if(count($teacher->degrees->ToArray())>0 )
+                    @if($teacher->degrees[0]->type_id==3)
+
+
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 {{-- @dd($teacher)--}}
                                 <div class="class-thumb"><img src="{{"$teacher->image"}}"
                                                               alt="Teacher's class image"
-                                                              style="width: 277px; height: 100px">
+                                                              style="width: 100%; height: 100px">
                                 </div>
                                 <div class="class-info">
+                                    <p>@php
+                                            $a=\App\Models\About::find($teacher->school_id);
+                                        @endphp
+                                        {{$a->name}} O'qtuvchisi
+                                    </p>
                                     <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
                                     </h3>
-                                    <span>{{$teacher->category}} O'qtuvchisi</span>
+                                    <span>{{$teacher->category}} Fani O'qtuvchisi</span>
                                     <h5>
                                         @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
-                                                2-toifali
+                                                O`rta maxsus
                                             </span>
                                         @else
                                             @foreach ($teacher->degrees as $degree)
@@ -30,8 +166,11 @@
                             </div>
                             <!--classes-col end-->
                         </div>
-                    @endforeach
-                </div>
+                    @endif
+                    @endif
+                @endif
+            @endforeach
+        </div>
                 <!--teachers e11nd-->
             </div>
             <!--teachers-section end-->
@@ -49,3 +188,60 @@
             </div>
             <!--pagination-end-->
         </div>
+    <div class="classes-section">
+        <div class="classes-sec">
+            <div class="row d-flex flex-wrap mt-5">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">O`rta maxsus</h1>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($teachers as $teacher)
+                    @if(count($teacher->degrees->ToArray())==0 )
+
+
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="classes-col">
+                                        {{-- @dd($teacher)--}}
+                                        <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                      alt="Teacher's class image"
+                                                                      style="width: 100%; height: 100px">
+                                        </div>
+                                        <div class="class-info">
+                                            <p>@php
+                                                    $a=\App\Models\About::find($teacher->school_id);
+                                                @endphp
+                                                {{$a->name}} O'qtuvchisi
+                                            </p>
+                                            <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                            </h3>
+                                            <span>{{$teacher->category}} Fani O'qtuvchisi</span>
+                                            <h5>
+                                                @if (empty($teacher->degrees[0]))
+                                                    <span class="text-dark">
+                                                O`rta maxsus
+                                            </span>
+                                                @else
+                                                    @foreach ($teacher->degrees as $degree)
+                                                        <span class="text-dark">
+                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
+                                                </span>
+                                                    @endforeach
+                                                @endif
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <!--classes-col end-->
+                                </div>
+
+                    @endif
+                @endforeach
+            </div>
+            <!--teachers end-->
+        </div>
+        <!--teachers-section end-->
+
+        <!--pagination-end-->
+    </div>
+</div>
