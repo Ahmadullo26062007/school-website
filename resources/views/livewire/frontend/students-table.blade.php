@@ -224,7 +224,7 @@
             <div class="row d-flex flex-wrap mt-5">
 
                 <div class="col-12 d-flex justify-content-center">
-                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Sertificati yo'q o`quvchilar</h1>
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Qizil toifadagi yoshlar</h1>
                 </div>
             </div>
             <div class="row">

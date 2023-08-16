@@ -60,21 +60,22 @@ class WorkersController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
 
         if (auth()->user()->school_id == null) {
             Workers::create([
                 'fullname' => $request->fullname,
                 'role_id' => $request->role_id,
                 'school_id' => $request->school_id,
-                'image' => $data['image'],
+                'image' => $n,
             ]);
         } else {
             Workers::create([
                 'fullname' => $request->fullname,
                 'role_id' => $request->role_id,
                 'school_id' => auth()->user()->school_id,
-                'image' => $data['image']
+                'image' => $n
             ]);
         }
         return redirect()->route('menegers.index');
@@ -133,23 +134,25 @@ class WorkersController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
+            $file->move(public_path('../../images'), $image_name);
+            $n = 'https://bxtb.uz/images/' . $data['image'];
+
             if (auth()->user()->school_id == null) {
                 $meneger->update([
                     'fullname' => $request->fullname,
                     'role_id' => $request->role_id,
                     'school_id' => $request->school_id,
-                    'image' => $data['image'],
+                    'image' => $n,
                 ]);
             } else {
                 $meneger->update([
                     'fullname' => $request->fullname,
                     'role_id' => $request->role_id,
                     'school_id' => auth()->user()->school_id,
-                    'image' => $data['image'],
+                    'image' => $n,
                 ]);
             }
 
-            $file->move(public_path('images'), $image_name);
 
         } else {
             if (auth()->user()->school_id == null) {
