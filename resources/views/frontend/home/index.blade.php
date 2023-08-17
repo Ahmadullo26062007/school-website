@@ -203,8 +203,8 @@
                                 <h2>So'nggi yangiliklar</h2>
                                 <p>Biz haqimizdagi eng sara so'nggi yangiliklar haqida bilib oling</p>
 
-                                @if(!$blogs)
-                                    <p class="text-danger">Ma'lumot mavjud emas</p>
+                                @if(count($blogs->toArray()) == 0)
+                                    <h2 class="text-danger" style="margin-top: 2%">Ma'lumot mavjud emas</h2>
                                 @endif
                             </div>
                             <!--section-title end-->
