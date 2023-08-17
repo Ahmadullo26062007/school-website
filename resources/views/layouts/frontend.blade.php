@@ -453,12 +453,12 @@
     @yield('content')
 
 
-    <footer style="padding-top: 20px;" >
+    <footer style="padding-top: 80px;" >
         <div class="container">
             <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img width="280px" src="{{ '../../images/inkubatsiya.png' }}"
+                        <div class="widget widget-about"><img width="120px" src="{{ '../../images/inkubatsiya.png' }}"
                                                               alt="">
                             <p>{{$a->description}}</p>
                         </div>
@@ -540,6 +540,7 @@
         </div>
     </footer>
 
+
     <!--footer end-->
 </div>
 
@@ -585,7 +586,7 @@
             labels: ['','','','','',''],
             // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', '1-toifali o`qtuvchilar', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
-                label: "Statistika",
+                label: "",
                 data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{WellTeachersProsent($a)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
 
                 backgroundColor: ['green', 'red','#ff8016','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
