@@ -197,11 +197,15 @@
             </div>
         </section>
                     <!--course-section end-->
-                    <section class="blog-section">
+                    <section class="blog-section" style="margin-top: 50px">
                         <div class="container">
                             <div class="section-title text-center">
                                 <h2>So'nggi yangiliklar</h2>
                                 <p>Biz haqimizdagi eng sara so'nggi yangiliklar haqida bilib oling</p>
+
+                                @if(!$blogs)
+                                    <p class="text-danger">Ma'lumot mavjud emas</p>
+                                @endif
                             </div>
                             <!--section-title end-->
                             <div class="blog-posts">
