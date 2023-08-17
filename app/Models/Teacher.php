@@ -14,7 +14,8 @@ class Teacher extends Model
         'category',
         'image',
         'school_id',
-        'great_teacher'
+        'great_teacher',
+        'like'
     ];
 
     public function classes()
