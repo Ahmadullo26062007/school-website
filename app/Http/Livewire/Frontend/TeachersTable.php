@@ -20,9 +20,9 @@ class TeachersTable extends Component
 
     public function likeable($id)
     {
-      $ar=  $_SESSION['likeable'];
-      $ar[$id]=false;
-      $_SESSION['likeable']=$ar;
+//        [id=>true|| false]
+
+      $_SESSION["$id"]=false;
        $this->render();
     }
     public function render()

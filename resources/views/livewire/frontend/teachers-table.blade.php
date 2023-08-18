@@ -174,18 +174,7 @@
                 <!--teachers e11nd-->
             </div>
             <!--teachers-section end-->
-            <div class="mdp-pagiation">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        @if((count( \App\Models\Teacher::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
-                            <li class="page-item"><a wire:click="viewMore" role="button" type="button"
-                                                     class="page-link">Yana</a>
-                            </li>
-                        @endif
 
-                    </ul>
-                </nav>
-            </div>
             <!--pagination-end-->
         </div>
     <div class="classes-section">
@@ -197,6 +186,7 @@
                 </div>
             </div>
             <div class="row">
+                @dump($_SESSION)
                 @foreach ($teachers as $teacher)
                     @if(count($teacher->degrees->ToArray())==0 )
                         @php
@@ -215,10 +205,12 @@
                                                 <h3 style="font-size: 20px; font-weight: 600" class="text-dark">
                                                     {{ $teacher->firstname }} {{$teacher->lastname}}
                                                 </h3>
-                                                 @if(array_key_exists($teacher->id, $_SESSION['likeable']))
-                                                <button class="btn btn-danger"> li</button>
+
+                                                 @if(array_key_exists($teacher->id, $_SESSION ))
+                                                    <button style="background:none ;color: red; font-size: 30px" >   <i class="fa-solid fa-heart"></i></button>
                                                 @else
-                                                <button  class="btn btn-danger" wire:click="likeable({{$teacher->id}})">not </button>
+                                                            <button style="background:none ;color: red; font-size: 30px" wire:click="likeable({{$teacher->id}})">   <i class="fa-regular fa-heart"></i></i>
+                                                            </button>
                                                 @endif
                                             </div>
                                             <p>
@@ -249,7 +241,18 @@
             <!--teachers end-->
         </div>
         <!--teachers-section end-->
+        <div class="mdp-pagiation">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if((count( \App\Models\Teacher::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
+                        <li class="page-item"><a wire:click="viewMore" role="button" type="button"
+                                                 class="page-link">Yana</a>
+                        </li>
+                    @endif
 
+                </ul>
+            </nav>
+        </div>
         <!--pagination-end-->
     </div>
 </div>
