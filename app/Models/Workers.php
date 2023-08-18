@@ -16,7 +16,9 @@ class Workers extends Model
         'image'
     ];
     public function role(){
+
         return $this->belongsTo(Role::class);
+
     }
 
     public function schools()

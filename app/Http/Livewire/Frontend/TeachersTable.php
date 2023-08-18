@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Models\Teacher;
 use Livewire\Component;
+use function Termwind\render;
 
 class TeachersTable extends Component
 {
@@ -15,6 +16,13 @@ class TeachersTable extends Component
     {
         $this->count = $this->count + 8;
         $this->emit('render_teachers_table');
+    }
+
+    public function likeable($id)
+    {
+        $_SESSION['likeable'][$id]= false;
+
+       $this->render();
     }
     public function render()
     {

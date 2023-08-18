@@ -86,10 +86,8 @@
  @endphp
     <section class="classes-section">
         <div class="section-title text-center">
-            <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
-            <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
-                mumkin."
-            </p>
+            <h2>Bizning <br>Hodimlar</h2>
+
         </div>
         <div class="container">
             <!--classes-banner end-->
@@ -106,13 +104,11 @@
                                 </div>
                                 <div class="class-info">
 
-                                        <p>
-                                            rdgtertete fghdrt
-                                        </p>
+
                                         <h3>
                                             {{director()->fullname}}
                                         </h3>
-                                        <span>sfsefdfgdr sedffse</span>
+
                                         <h5>
 
                                                             <span class="text-dark">
@@ -125,24 +121,6 @@
                             </div>
                             <!--classes-col end-->
                         </div>
-
-                                    @else
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="classes-col">
-                                        <div class="class-thumb"><img src="gsgsegseg"
-                                                                      alt="Student's class image"
-                                                                      style="width: 100%; height: 100px;">
-                                        </div>
-                                        <div class="class-info">
-
-                                            <p></p>
-                                            <h3>Direktor</h3>
-                                            <span></span>
-                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                        </div>
-                                    </div>
-                                    <!--classes-col end-->
-                                </div>
                                 @endif
 
 
@@ -156,13 +134,11 @@
                                 </div>
                                 <div class="class-info">
 
-                                        <p>
-                                            rdgtertete fghdrt
-                                        </p>
+
                                         <h3>
                                             {{zamdirector()->fullname}}
                                         </h3>
-                                        <span>sfsefdfgdr sedffse</span>
+
                                         <h5>
 
                                                             <span class="text-dark">
@@ -175,24 +151,6 @@
                             </div>
                             <!--classes-col end-->
                         </div>
-
-                                    @else
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="classes-col">
-                                        <div class="class-thumb"><img src="gsgsegseg"
-                                                                      alt="Student's class image"
-                                                                      style="width: 100%; height: 100px;">
-                                        </div>
-                                        <div class="class-info">
-
-                                            <p></p>
-                                            <h3>Direktor</h3>
-                                            <span></span>
-                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                        </div>
-                                    </div>
-                                    <!--classes-col end-->
-                                </div>
                                 @endif
 
 
@@ -205,13 +163,11 @@
                                 </div>
                                 <div class="class-info">
 
-                                        <p>
-                                            rdgtertete fghdrt
-                                        </p>
+
                                         <h3>
                                             {{zauch()->fullname}}
                                         </h3>
-                                        <span>sfsefdfgdr sedffse</span>
+
                                         <h5>
 
                                                             <span class="text-dark">
@@ -224,24 +180,6 @@
                             </div>
                             <!--classes-col end-->
                         </div>
-
-                                    @else
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="classes-col">
-                                        <div class="class-thumb"><img src="gsgsegseg"
-                                                                      alt="Student's class image"
-                                                                      style="width: 100%; height: 100px;">
-                                        </div>
-                                        <div class="class-info">
-
-                                            <p></p>
-                                            <h3>Direktor</h3>
-                                            <span></span>
-                                            <h3 class="text-danger">hali bu haqida malumot yo`q</h3>
-                                        </div>
-                                    </div>
-                                    <!--classes-col end-->
-                                </div>
                                 @endif
 
 
@@ -256,9 +194,7 @@
     <!--pager-section end-->
     <section class="page-content">
         <div class="container">
-            <div class="mdp-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d477.9651760676301!2d71.97734725308199!3d40.8765122093165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca0b64ef43357%3A0x8d7798d2806477f0!2zQ2hpbm9ib2QsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e1!3m2!1sru!2s!4v1687605922962!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+
             <!--mdp-map end-->
             <div class="mdp-contact">
                 <div class="row">
@@ -331,6 +267,9 @@
                 </div>
             </div>
             <!--mdp-contact end-->
+            <div class="mdp-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d477.9651760676301!2d71.97734725308199!3d40.8765122093165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca0b64ef43357%3A0x8d7798d2806477f0!2zQ2hpbm9ib2QsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e1!3m2!1sru!2s!4v1687605922962!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 @endsection

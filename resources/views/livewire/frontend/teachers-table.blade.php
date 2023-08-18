@@ -199,8 +199,9 @@
             <div class="row">
                 @foreach ($teachers as $teacher)
                     @if(count($teacher->degrees->ToArray())==0 )
-
-
+                        @php
+                            $a=\App\Models\About::find($teacher->school_id);
+                        @endphp
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="classes-col">
                                         {{-- @dd($teacher)--}}
@@ -209,13 +210,20 @@
                                                                       style="width: 100%; height: 100px">
                                         </div>
                                         <div class="class-info">
-                                            <p>@php
-                                                    $a=\App\Models\About::find($teacher->school_id);
-                                                @endphp
+
+                                            <div class="d-flex justify-content-between">
+                                                <h3 style="font-size: 20px; font-weight: 600" class="text-dark">
+                                                    {{ $teacher->firstname }} {{$teacher->lastname}}
+                                                </h3>
+                                                 @if(array_key_exists($teacher->id, $_SESSION['likeable']))
+                                                <button class="btn btn-danger"> li</button>
+                                                @else
+                                                <button  class="btn btn-danger" wire:click="likeable({{$teacher->id}})">not </button>
+                                                @endif
+                                            </div>
+                                            <p>
                                                 {{$a->name}} O'qtuvchisi
-                                            </p>
-                                            <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
-                                            </h3>
+                                            </p><br>
                                             <span>{{$teacher->category}} Fani O'qtuvchisi</span>
                                             <h5>
                                                 @if (empty($teacher->degrees[0]))
@@ -226,7 +234,7 @@
                                                     @foreach ($teacher->degrees as $degree)
                                                         <span class="text-dark">
                                                     {{ App\Models\Degree::TYPES[$degree->type_id] }}
-                                                </span>
+                                                       </span>
                                                     @endforeach
                                                 @endif
                                             </h5>

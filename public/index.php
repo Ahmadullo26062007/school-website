@@ -3,6 +3,12 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+session_start([
+    'cookie_lifetime' => 86400,
+    'read_and_close'  => true,
+]);
+$_SESSION['likeable']   = [];
+
 define('LARAVEL_START', microtime(true));
 
 /*
