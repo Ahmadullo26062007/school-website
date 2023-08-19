@@ -16,8 +16,9 @@
                                 @php
                                     $image = $class->teacher->image;
                                 @endphp
-                                <div class="posted-by"><img style="width: 30px; height: 30px" src="{{ asset("images/$image") }}" alt="">
-                                    <a href="classes.html#" title="">{{ $class->teacher->firstname }}
+                    
+                                <div class="posted-by"><img style="width: 30px; height: 30px" src="{{ $image }}" alt="">
+                                    <a title="">{{ $class->teacher->firstname }}
                                         {{ $class->teacher->lastname }}</a></div>
                             </div>
                         </div>
