@@ -21,6 +21,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_ielts_student = 0;
+                @endphp
                 @foreach ($students as $student)
 
                     {{--                @if (student_b($student)) --}}
@@ -64,9 +67,19 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                            @php
+                                $count_ielts_student = 1;
+                            @endphp
                         @endif
                     @endif
                 @endforeach
+                @if ($count_ielts_student == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
         </div>
         <!--classes-sec end-->
@@ -85,6 +98,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_seft_student = 0;
+                @endphp
                 @foreach ($students as $student)
 
                     {{--                @if (student_b($student)) --}}
@@ -128,9 +144,19 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                            @php
+                                $count_seft_student = 1;
+                            @endphp
                         @endif
                     @endif
                 @endforeach
+                @if ($count_seft_student == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
         </div>
         <!--classes-sec end-->
@@ -149,6 +175,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_it_student = 0;
+                @endphp
                 @foreach ($students as $student)
 
                     {{--                @if (student_b($student)) --}}
@@ -192,9 +221,19 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                            @php
+                                $count_it_student = 1;
+                            @endphp
                         @endif
                     @endif
                 @endforeach
+                @if ($count_it_student == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
         </div>
         <!--classes-sec end-->
@@ -213,6 +252,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_student = 0;
+                @endphp
                 @foreach ($students as $student)
 
                     {{--                @if (student_b($student)) --}}
@@ -256,9 +298,19 @@
                             </div>
                             <!--classes-col end-->
                         </div>
+                        @php
+                            $count_student = 1;
+                        @endphp
                     @endif
 
                 @endforeach
+                @if ($count_student == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
         </div>
         <!--classes-sec end-->
