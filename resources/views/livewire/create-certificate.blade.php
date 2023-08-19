@@ -15,7 +15,9 @@
                         </div>
                     @endforeach
                 @endif
-
+                    <div class="alert alert-danger" role="alert">
+                        {{ $error }}
+                    </div>
                 @csrf
                 <div class="row">
                     <div class="col-6 ">
