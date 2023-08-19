@@ -85,7 +85,7 @@ $d = ((int) $e) - ((int) $s);
                                 <div class="tech-tble"><img src="assets/img/thumb1.png" alt="">
                                     <div class="tch-info">
                                         <h3>{{ $class->teacher->firstname }} {{ $class->teacher->lastname }} </h3>
-                                        <span>{{ $class->class }}</span>
+                                        <span>{{ $class->class }} sinf</span>
                                     </div>
                                 </div>
                             </div>
