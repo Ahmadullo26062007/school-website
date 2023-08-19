@@ -97,7 +97,7 @@
                     <div class="classes-sec">
                         <div class="row">
                             @foreach ($teachers as $teacher)
-                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="col-lg-3 col-md-6 col-sm-6" style="margin-top:10px">
                                         <div class="classes-col">
                                             <div class="class-thumb"><img src="{{"$teacher->image"}}"
                                                                           alt="Student's class image"
