@@ -1,9 +1,5 @@
 <div class="container">
-    @php
-        session_start();
 
-
- @endphp
     <div class="classes-section">
         <div class="classes-sec">
             <div class="row d-flex flex-wrap mt-5">
