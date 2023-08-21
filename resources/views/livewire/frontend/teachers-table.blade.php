@@ -205,13 +205,6 @@
                                                 <h3 style="font-size: 20px; font-weight: 600" class="text-dark">
                                                     {{ $teacher->firstname }} {{$teacher->lastname}}
                                                 </h3>
-
-                                                 @if(array_key_exists($teacher->id, $_SESSION ))
-                                                    <button style="background:none ;color: red; font-size: 30px" >   <i class="fa-solid fa-heart"></i></button>
-                                                @else
-                                                            <button style="background:none ;color: red; font-size: 30px" wire:click="likeable({{$teacher->id}})">   <i class="fa-regular fa-heart"></i></i>
-                                                            </button>
-                                                @endif
                                             </div>
                                             <p>
                                                 {{$a->name}} O'qtuvchisi
