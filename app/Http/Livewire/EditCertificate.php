@@ -6,41 +6,47 @@ use App\Models\Certificate;
 use App\Models\Student;
 use Livewire\Component;
 
-class CreateCertificate extends Component
+class EditCertificate extends Component
 {
-
-    public $student_id, $type, $degree, $band ,$error;
-
+    public $student_id, $type, $degree, $band,$error;
+    public $certificate;
     public $IT = true;
     public $Cefr = false;
     public $IELTS = false;
 
+    public function mount($certificate){
+        $certificate=$this->certificate;
 
+        $this->student_id=$this->certificate->student_id;
+     }
 
     public function createCertificate()
     {
         if ($this->type == 1) {
-            if ($this->band>=5 && $this->band<=9){
-            Certificate::create([
-                'type' => $this->type,
-                'ball' => $this->band,
-                'student_id' => $this->student_id,
-
-            ]);
+            if ($this->band>=5 && $this->band<=9) {
+                $this->certificate->update([
+                    'type' => $this->type,
+                    'ball' => $this->band,
+                    'degree' => '0',
+                    'student_id' => $this->student_id,
+                ]);
                 return redirect()->route('certificate.index');
             }else{
                 $this->error='ball 5 dan 9 gacha bo`lsin';
             }
         } else if ($this->type == 2) {
-            Certificate::create([
+            $this->certificate->update([
                 'type' => $this->type,
                 'degree' => $this->degree,
+                'ball' => '',
                 'student_id' => $this->student_id,
             ]);
             return redirect()->route('certificate.index');
         } else if ($this->type == 3) {
-            Certificate::create([
+            $this->certificate->update([
                 'type' => $this->type,
+                'ball' => '0',
+                'degree' => '0',
                 'student_id' => $this->student_id,
             ]);
             return redirect()->route('certificate.index');
@@ -69,6 +75,7 @@ class CreateCertificate extends Component
     public function render()
     {
         $students = Student::pluck('fullname', 'id');
-        return view('livewire.create-certificate', compact('students'));
+
+        return view('livewire.edit-certificate',compact('students'));
     }
 }

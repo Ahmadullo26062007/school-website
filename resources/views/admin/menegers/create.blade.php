@@ -39,7 +39,9 @@
                                         <select class="form-select" name="role_id" id="">
                                             <option disabled selected>Ro'lni tanlang</option>
                                             @foreach($roles as $id=> $r)
+                                                @if(! $r->title=='Mudir' || ! $r->title=='Mudir Yordamchisi')
                                                 <option value="{{$id}}">{{$r}}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>

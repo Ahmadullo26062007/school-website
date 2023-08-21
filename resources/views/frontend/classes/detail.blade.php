@@ -14,10 +14,10 @@ $d = ((int) $e) - ((int) $s);
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <div class="class-single-content">
-                        <h2>{{ $class->number }}-{{ $class->name }}</h2>
+                        <h2>{{ $class->class }} Sinf</h2>
                         <ul class="meta-box">
                             <li><a href="{{ route('home') }}" title="">Bosh sahifa</a></li>
-                            <li><span>Sinf</span></li>
+                            <li><a href="{{ route('classes.index') }}" title="">Siniflar</a></li>
                         </ul>
                         <p>{{ $class->description }}</p>
 
@@ -85,7 +85,7 @@ $d = ((int) $e) - ((int) $s);
                                 <div class="tech-tble"><img src="assets/img/thumb1.png" alt="">
                                     <div class="tch-info">
                                         <h3>{{ $class->teacher->firstname }} {{ $class->teacher->lastname }} </h3>
-                                        <span>{{ $class->number }}-{{ $class->name }} </span>
+                                        <span>{{ $class->class }} sinf</span>
                                     </div>
                                 </div>
                             </div>

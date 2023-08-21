@@ -16,8 +16,9 @@
                                 @php
                                     $image = $class->teacher->image;
                                 @endphp
-                                <div class="posted-by"><img style="width: 30px; height: 30px" src="{{ asset("images/$image") }}" alt="">
-                                    <a href="classes.html#" title="">{{ $class->teacher->firstname }}
+
+                                <div class="posted-by"><img style="width: 30px; height: 30px" src="{{ $image }}" alt="">
+                                    <a title="">{{ $class->teacher->firstname }}
                                         {{ $class->teacher->lastname }}</a></div>
                             </div>
                         </div>
@@ -33,7 +34,7 @@
             <ul class="pagination">
                 @if(count(\App\Models\Classes::where('school_id',env('SCHOOL_ID'))->get()->ToArray()) > $count)
 
-                    <li class="page-item"><a wire:click="viewMore()" class="page-link" role="button" type="button">Yana</a>
+                    <li class="page-item"><a wire:click="viewMore()" class="page-link text-dark" role="button" type="button">Yana</a>
                 @endif
             </ul>
         </nav>

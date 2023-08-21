@@ -248,7 +248,7 @@
     <div class="row d-flex flex-wrap">
         <div class="col-12">
             <div>
-                <canvas id="myChart"></canvas>
+                <canvas style="margin-top: 15px" id="myChart"></canvas>
             </div>
         </div>
 

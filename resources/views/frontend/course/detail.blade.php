@@ -13,8 +13,8 @@
                 <div class="col-xl-8 col-lg-8">
                     <div class="class-single-content"><h2>{{$course->name}}</h2>
                         <ul class="meta-box">
-                            <li><a href="{{route('home')}}" title="">Home</a></li>
-                            <li><span>Course</span></li>
+                            <li><a href="{{route('home')}}" title="">Bosh sahifa</a></li>
+                            <li><a href="{{route('course.index')}}" title="">Kurslar</a></li>
                         </ul>
                         <p>{{$course->description}}</p>
 
@@ -85,7 +85,6 @@
                                 </li>
                                 <li><h4>Yosh</h4><span>12-18 Years</span></li>
                                 <li><h4>Bolalar soni</h4><span>15-20 Kids</span></li>
-                                <li><h4>Kurs davomiyligi</h4><span>{{$d}} soat</span></li>
                                 <li><h4>O'qtuvchisi</h4><span>{{$course->teacher->firstname}} {{$course->teacher->lastname}}</span></li>
 
                             </ul>
@@ -97,13 +96,13 @@
                                     <li>
                                         <div class="d-flex flex-wrap">
                                             <div class="icon-v"><img src="{{asset('assets/img/icon15.png')}}" alt=""></div>
-                                            <div class="dd-cont"><h4>Call</h4><span>+998 {{$a->phone_number}}</span></div>
+                                            <div class="dd-cont"><h4>Telefon Raqamlar</h4><span>+998 {{$a->phone_number}}</span></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="d-flex flex-wrap">
                                             <div class="icon-v"><img src="{{asset('assets/img/icon16.png')}}" alt=""></div>
-                                            <div class="dd-cont"><h4>Work Time</h4><span>Dush - Shan {{$a->start_time}} - {{$a->end_time}}</span>
+                                            <div class="dd-cont"><h4>Ish vaqti</h4><span>Dush - Shan {{$a->start_time}} - {{$a->end_time}}</span>
                                             </div>
                                         </div>
                                     </li>
@@ -111,7 +110,7 @@
                                         <div class="d-flex flex-wrap">
                                             <div class="icon-v"><img src="{{asset('assets/img/icon17.png')}}" alt=""></div>
                                             <div class="dd-cont"><h4>Manzil</h4>
-                                                <span>{{$a->viloyat}}, {{$a->tuman}} tumani</span></div>
+                                                <span>{{$a->viloyat}}, {{$a->tuman}}</span></div>
                                         </div>
                                     </li>
 
