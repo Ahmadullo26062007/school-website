@@ -1,7 +1,7 @@
 <div class="container">
     @php
         session_start();
-        $_SESSION['count']=1+$_SESSION['count'];
+
 
  @endphp
     <div class="classes-section">
