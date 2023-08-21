@@ -1,5 +1,9 @@
 <div class="container">
+    @php
+        session_start();
+        $_SESSION['count']=1+$_SESSION['count'];
 
+ @endphp
     <div class="classes-section">
         <div class="classes-sec">
             <div class="row d-flex flex-wrap mt-5">
@@ -186,7 +190,7 @@
                 </div>
             </div>
             <div class="row">
-                @dump($_SESSION)
+
                 @foreach ($teachers as $teacher)
                     @if(count($teacher->degrees->ToArray())==0 )
                         @php

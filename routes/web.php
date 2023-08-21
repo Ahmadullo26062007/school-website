@@ -8,7 +8,7 @@ use App\Models\Teacher;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-$_SESSION['names']   = ['name'=>"abduraxmon"];
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
