@@ -9,6 +9,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_teacher = 0;
+                @endphp
                 @foreach ($teachers as $teacher)
                     @if($teacher->degrees)
                         @if(count($teacher->degrees->ToArray())>0 )
@@ -48,10 +51,20 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                                @php
+                                    $count_teacher = 1;
+                                @endphp
                         @endif
                         @endif
                     @endif
                 @endforeach
+                @if ($count_teacher == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
             <!--teachers end-->
         </div>
@@ -68,6 +81,9 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                    $count_1_teacher = 0;
+                @endphp
                 @foreach ($teachers as $teacher)
                     @if($teacher->degrees)
                         @if(count($teacher->degrees->ToArray())>0 )
@@ -107,10 +123,20 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                                @php
+                                    $count_1_teacher = 1;
+                                @endphp
                         @endif
                         @endif
                     @endif
                 @endforeach
+                @if ($count_1_teacher == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
             <!--teachers end-->
         </div>
@@ -127,6 +153,9 @@
             </div>
         </div>
         <div class="row">
+            @php
+                $count_2_teacher = 0;
+            @endphp
             @foreach ($teachers as $teacher)
                 @if($teacher->degrees)
                     @if(count($teacher->degrees->ToArray())>0 )
@@ -166,10 +195,20 @@
                             </div>
                             <!--classes-col end-->
                         </div>
+                            @php
+                                $count_2_teacher = 1;
+                            @endphp
                     @endif
                     @endif
                 @endif
             @endforeach
+            @if ($count_2_teacher == 0)
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                        emas
+                    </h1>
+                </div>
+            @endif
         </div>
                 <!--teachers e11nd-->
             </div>
@@ -186,7 +225,9 @@
                 </div>
             </div>
             <div class="row">
-
+                @php
+                    $count_3_teacher = 0;
+                @endphp
                 @foreach ($teachers as $teacher)
                     @if(count($teacher->degrees->ToArray())==0 )
                         @php
@@ -227,9 +268,18 @@
                                     </div>
                                     <!--classes-col end-->
                                 </div>
-
+                        @php
+                            $count_3_teacher = 1;
+                        @endphp
                     @endif
                 @endforeach
+                @if ($count_3_teacher == 0)
+                    <div class="col-12 d-flex justify-content-center">
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                            emas
+                        </h1>
+                    </div>
+                @endif
             </div>
             <!--teachers end-->
         </div>
