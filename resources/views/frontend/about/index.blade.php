@@ -27,8 +27,8 @@
                             <p class="mw-100">{{$a->description}}
 
 
-                                vestibulum leo sagittis et.</p><a href="{{ route('classes.index') }}" title=""
-                                                                  class="btn-default">Classes <i class="fa fa-long-arrow-alt-right"></i></a>
+                                </p><a href="{{ route('classes.index') }}" title=""
+                                                                  class="btn-default">Siniflar <i class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
                         <!--section-title end-->
                     </div>
@@ -93,10 +93,10 @@
             <!--classes-banner end-->
             <div class="classes-section">
                 <div class="classes-sec">
-                    <div class="row d-flex justify-content-center gap-5">
+                    <div class="row d-flex gap-5">
 
                                 @if(director())
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 <div class="class-thumb"><img src="{{director()->image}}"
                                                               alt="Student's class image"
@@ -126,7 +126,7 @@
 
 
                                 @if(zamdirector())
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 <div class="class-thumb"><img src="{{zamdirector()->image}}"
                                                               alt="Student's class image"
@@ -155,7 +155,7 @@
 
 
                                 @if(zauch())
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 <div class="class-thumb"><img src="{{zauch()->image}}"
                                                               alt="Student's class image"
@@ -192,7 +192,7 @@
     </section>
 
     <!--pager-section end-->
-    <section class="page-content">
+    <section class="page-content" style="padding-top: 0px;">
         <div class="container">
 
             <!--mdp-map end-->

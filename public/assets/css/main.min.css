@@ -19646,7 +19646,8 @@ footer .bottom-footer .social-links {
 
 .mdp-contact .comment-area form .form-submit {
     margin-top: 10px;
-    text-align: right
+    text-align: right;
+    padding-bottom: 50px
 }
 
 .mdp-contact .comment-area form .form-submit .btn-default {
