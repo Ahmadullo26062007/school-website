@@ -84,7 +84,7 @@
            }
 
  @endphp
-    <section class="classes-section">
+    <section class="classes-section" style="padding-bottom: 5px">
         <div class="section-title text-center">
             <h2>Bizning <br>Hodimlar</h2>
 

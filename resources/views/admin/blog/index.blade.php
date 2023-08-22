@@ -37,7 +37,7 @@
                                 @foreach($blogs as $blog)
                                     <tr>
                                         <td>{{$blog->id}}</td>
-                                        <td>{{$blog->title}}</td>
+                                        <td>{{substr($blog->title,0,20)}}</td>
                                         <td>{{$blog->category->name}}</td>
                                         @php
                                             $school=App\Models\About::find($blog->school_id);
@@ -90,14 +90,14 @@
                                 @foreach($about->blogs as $blog)
                                     <tr>
                                         <td>{{$blog->id}}</td>
-                                        <td>{{$blog->title}}</td>
+                                        <td>{{substr($blog->title,0,20)}}...</td>
                                         <td>{{$blog->category->name}}</td>
                                         @php
                                             $school=App\Models\About::find($blog->school_id);
                                         @endphp
                                         <td>{{$school->name}}</td>
 
-                                        <td class="d-none d-xl-table-cell">{{$blog->description}}</td>
+                                        <td class="d-none d-xl-table-cell">{{substr($blog->description,0,20)}}...</td>
                                         <td class="d-none d-xl-table-cell"><img width="100px"
                                                                                 src="{{asset('images/'.$blog->image)}}"
                                                                                 alt="{{$blog->name}} rasimi"></td>
