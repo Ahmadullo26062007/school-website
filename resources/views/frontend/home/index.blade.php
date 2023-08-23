@@ -52,7 +52,7 @@
                         @foreach ($classes as $class)
                             <div class="col-lg-3">
                                 <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
-                                    <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}"
+                                    <div class="class-thumb"><img src="{{ $class->image }}"
                                                                   alt="" class="w-100">
 
                                     </div>
@@ -65,8 +65,7 @@
                                             <div class="posted-by"><img style="width: 30px; height: 30px"
                                                                         src="{{ $class->teacher->image }}"
                                                                         alt="">
-                                                <a href="assets/images/resources/bg4.jpg.html#"
-                                                   title="">{{ $class->teacher->firstname }}
+                                                <a title="">{{ $class->teacher->firstname }}
                                                     {{ $class->teacher->lastname }}</a>
                                             </div>
                                         </div>

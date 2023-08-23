@@ -6,7 +6,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
-                        <div class="class-thumb"><img src="{{asset('images/'.$course->image)}}" alt="" class="w-100"> <a
+                        <div class="class-thumb"><img src="{{$course->image}}" alt="" class="w-100"> <a
                                 href="{{route('course.detail',$course->id)}}" title="" class="crt-btn">
                                 <img src="{{asset('assets/img/icon10.png')}}" alt=""></a></div>
                         <div class="class-info">
