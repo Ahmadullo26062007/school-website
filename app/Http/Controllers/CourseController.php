@@ -48,8 +48,10 @@ class CourseController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
-            $c = Course::create([
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
+
+        $c = Course::create([
                 'name'=>$data['name'],
                 'start_time'=>$data['start_time'],
                 'end_time'=>$data['end_time'],
@@ -57,7 +59,7 @@ class CourseController extends Controller
                 'description'=>$data['description'],
                 'price'=>$data['price'],
                 'school_id'=>\env('SCHOOL_ID'),
-                'image'=>$data['image']
+                'image'=>$n
             ]);
             $c->weeks()->sync($request->weeks);
 
@@ -96,16 +98,34 @@ class CourseController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
         ]);
-            $data = $request->all();
+        $data = $request->all();
 
         if($request->image) {
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
-            $file->move(public_path('images'), $image_name);
-            $course->update($data);
+            $file->move(public_path('../../images'), $image_name);
+            $n = 'https://bxtb.uz/images/' . $data['image'];
+            $course->update([
+                'name'=>$data['name'],
+                'start_time'=>$data['start_time'],
+                'end_time'=>$data['end_time'],
+                'teacher_id'=>$data['teacher_id'],
+                'price'=>$data['price'],
+                'description'=>$data['description'],
+                'image'=>$n,
+                'school_id'=>\env('SCHOOL_ID')
+            ]);
         }else{
-            $course->update($data);
+            $course->update([
+                'name'=>$data['name'],
+                'start_time'=>$data['start_time'],
+                'end_time'=>$data['end_time'],
+                'teacher_id'=>$data['teacher_id'],
+                'price'=>$data['price'],
+                'description'=>$data['description'],
+                'school_id'=>\env('SCHOOL_ID')
+            ]);
         }
         $course->weeks()->sync($request->weeks);
         return redirect()->route('courses.index');

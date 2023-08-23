@@ -46,26 +46,14 @@ class StudentController extends Controller
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('../../images'), $image_name);
-        $n='https://bxtb.uz/images/'.$data['image'];
-
-        if (auth()->user()->school_id == null) {
-            Student::create([
-                'fullname' => $request->fullname,
-                'class_id' => $request->class_id,
-                'image' => $n,
-                'school_id' => $request->school_id,
-                'great_student'=>$request->great_student
-            ]);
-        } else {
+        $n = 'https://bxtb.uz/images/' . $data['image'];
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
                 'image' => $n,
                 'school_id' => auth()->user()->school_id,
-                'great_student'=>$request->great_student
+                'great_student' => $request->great_student
             ]);
-        }
-
         return redirect()->route('students.index');
     }
 
@@ -108,43 +96,22 @@ class StudentController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
-            $n='https://bxtb.uz/images/'.$data['image'];
-            if (auth()->user()->school_id == null) {
+            $n = 'https://bxtb.uz/images/' . $data['image'];
                 $student->update([
                     'fullname' => $request->fullname,
                     'class_id' => $request->class_id,
                     'image' => $n,
-                    'school_id' => $request->school_id,
-                    'great_student'=>$request->great_student
-                ]);
-            } else {
-                $student->update([
-                    'fullname' => $request->fullname,
-                    'class_id' => $request->class_id,
-                    'image' => $image_name,
                     'school_id' => auth()->user()->school_id,
-                    'great_student'=>$request->great_student
+                    'great_student' => $request->great_student
                 ]);
-            }
-
             $file->move(public_path('../../images'), $image_name);
-
         } else {
-            if (auth()->user()->school_id == null) {
-                $student->update([
-                    'fullname' => $request->fullname,
-                    'class_id' => $request->class_id,
-                    'school_id' => $request->school_id,
-                    'great_student'=>$request->great_student
-                ]);
-            } else {
                 $student->update([
                     'fullname' => $request->fullname,
                     'class_id' => $request->class_id,
                     'school_id' => auth()->user()->school_id,
-                    'great_student'=>$request->great_student
+                    'great_student' => $request->great_student
                 ]);
-            }
         }
 
         return redirect()->route('students.index');
@@ -155,7 +122,12 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        $student->delete();
+        if ($student->certificate) {
+            $student->certificate->delete();
+            $student->delete();
+        } else {
+            $student->delete();
+        }
         return back();
     }
 }

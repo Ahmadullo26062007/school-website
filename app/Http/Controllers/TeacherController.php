@@ -49,26 +49,14 @@ class TeacherController extends Controller
         $data['image'] = $image_name;
         $file->move(public_path('../../images'), $image_name);
         $n = 'https://bxtb.uz/images/' . $data['image'];
-
-        if (auth()->user()->school_id == null) {
-            Teacher::create([
-                'firstname' => $request->firstname,
-                'lastname' => $request->lastname,
-                'category' => $request->category,
-                'image' => $n,
-                'school_id' => $request->school_id,
-                'great_teacher'=>$request->great_teacher
-            ]);
-        } else {
             Teacher::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'category' => $request->category,
                 'image' => $n,
                 'school_id' => auth()->user()->school_id,
-                'great_teacher'=>$request->great_teacher
+                'great_teacher' => $request->great_teacher
             ]);
-        }
         return redirect()->route('teacher.index');
     }
 
@@ -112,46 +100,23 @@ class TeacherController extends Controller
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
             $n = 'https://bxtb.uz/images/' . $data['image'];
-            if (auth()->user()->school_id == null) {
-                $teacher->update([
-                    'firstname' => $request->firstname,
-                    'lastname' => $request->lastname,
-                    'category' => $request->category,
-                    'image' => $n,
-                    'school_id' => $request->school_id,
-                    'great_teacher'=>$request->great_teacher
-                ]);
-            } else {
                 $teacher->update([
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'image' => $n,
                     'school_id' => auth()->user()->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
-            }
-
             $file->move(public_path('../../images'), $image_name);
-
         } else {
-            if (auth()->user()->school_id == null) {
-                $teacher->update([
-                    'firstname' => $request->firstname,
-                    'lastname' => $request->lastname,
-                    'category' => $request->category,
-                    'school_id' => $request->school_id,
-                    'great_teacher'=>$request->great_teacher
-                ]);
-            } else {
                 $teacher->update([
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'school_id' => auth()->user()->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
-            }
         }
 
         return redirect()->route('teacher.index');
@@ -162,7 +127,21 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        $teacher->delete();
+        if (!$teacher->classes && !$teacher->courses && !$teacher->degrees) {
+            $teacher->delete();
+        }
+        if ($teacher->classes && !$teacher->courses && !$teacher->degrees) {
+            $teacher->classes->update(['teacher_id' => null]);
+            $teacher->delete();
+        }
+        if (!$teacher->classes && $teacher->courses && !$teacher->degrees) {
+            $teacher->courses->update(['teacher_id' => null]);
+            $teacher->delete();
+        }
+        if (!$teacher->classes && !$teacher->courses && $teacher->degrees) {
+            $teacher->degrees[0]->delete();
+            $teacher->delete();
+        }
         return back();
     }
 }
