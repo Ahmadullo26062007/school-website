@@ -34,7 +34,7 @@
                                     <tr>
 
                                         <td>{{$class->id}}</td>
-                                        <td>{{$class->number}}"<sup>{{$class->name}}</sup>"</td>
+                                        <td>{{$class->class}}</td>
                                         @if($class->teacher_id)
 
                                         @php

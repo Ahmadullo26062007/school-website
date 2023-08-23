@@ -127,21 +127,21 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        if (!$teacher->classes && !$teacher->courses && !$teacher->degrees) {
+        if (!$teacher->classes && !$teacher->courses && !count($teacher->degrees->ToArray())>0) {
             $teacher->delete();
-        }
-        if ($teacher->classes && !$teacher->courses && !$teacher->degrees) {
+        }else{
+        if ($teacher->classes) {
             $teacher->classes->update(['teacher_id' => null]);
-            $teacher->delete();
         }
-        if (!$teacher->classes && $teacher->courses && !$teacher->degrees) {
+        if ($teacher->courses) {
             $teacher->courses->update(['teacher_id' => null]);
-            $teacher->delete();
         }
-        if (!$teacher->classes && !$teacher->courses && $teacher->degrees) {
+        if (count($teacher->degrees->ToArray())>0) {
             $teacher->degrees[0]->delete();
-            $teacher->delete();
         }
+        $teacher->delete();
+        }
+
         return back();
     }
 }

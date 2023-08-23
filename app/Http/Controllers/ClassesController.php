@@ -47,8 +47,15 @@ class ClassesController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
-        Classes::create($data);
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
+        Classes::create([
+            'class'=>$data['class'],
+            'teacher_id'=>$data['teacher_id'],
+            'description'=>$data['description'],
+            'image'=>$n,
+            'school_id' => env('SCHOOL_ID')
+        ]);
         return redirect()->route('class.index');
     }
 
@@ -94,10 +101,22 @@ class ClassesController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
-            $file->move(public_path('images'), $image_name);
-            $classes->update($data);
+            $file->move(public_path('../../images'), $image_name);
+            $n = 'https://bxtb.uz/images/' . $data['image'];
+            $classes->update([
+                'class'=>$data['class'],
+                'teacher_id'=>$data['teacher_id'],
+                'description'=>$data['description'],
+                'image'=>$n,
+                'school_id' => env('SCHOOL_ID')
+            ]);
         }else{
-            $classes->update($data);
+            $classes->update([
+                'class'=>$data['class'],
+                'teacher_id'=>$data['teacher_id'],
+                'description'=>$data['description'],
+                'school_id' => env('SCHOOL_ID')
+            ]);
         }
         return redirect()->route('class.index');
     }
